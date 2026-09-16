@@ -1,0 +1,44 @@
+import { PageHero, QuoteBand } from "@/components/ui";
+import ProductFilter from "@/components/product-filter";
+import { metadata, JsonLd, PageSchema } from "@/lib/seo";
+import { products } from "@/data/products";
+import { site } from "@/config/site";
+export const generateMetadata = () =>
+  metadata(
+    "Toilet & Washroom Cubicle Systems",
+    "Compare aluminium, stainless, box-up, floating, ceiling-hung, junior and custom washroom systems by profile, hardware and mounting.",
+    "/products/",
+  );
+export default function Products() {
+  return (
+    <>
+      <PageSchema
+        name="Product systems"
+        path="/products/"
+        type="CollectionPage"
+      />
+      <PageHero
+        eyebrow="Products"
+        title="A system for your space."
+        text="Explore the collection through its profiles, hardware and support configurations. Every final selection is confirmed against the approved project specification."
+        path="/products/"
+      />
+      <section className="container section">
+        <ProductFilter />
+      </section>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          itemListElement: products.map((p, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name: p.name,
+            url: `${site.url}/products/${p.slug}/`,
+          })),
+        }}
+      />
+      <QuoteBand />
+    </>
+  );
+}
