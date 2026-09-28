@@ -54,13 +54,14 @@ export default function Warranty() {
             title="The warranty follows the grade."
           />
           <p className="lede">
-            Panel warranty is applicable according to the approved material
-            grade and corresponding manufacturer warranty terms.
+            10-year manufacturer warranty from the date of work completion,
+            subject to standard usage conditions and the approved material
+            grade.
           </p>
           <p>
-            Extended manufacturer-backed panel warranty may apply depending on
-            the selected panel specification. The applicable terms are confirmed
-            with the project documentation.
+            The panel warranty applies to the specified panel material and its
+            stated usage conditions. The approved material grade and warranty
+            documentation form part of the project record.
           </p>
           <h3>Before handover</h3>
           <p>

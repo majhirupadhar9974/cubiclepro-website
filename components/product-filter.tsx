@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { products } from "@/data/products";
+import type { Product } from "@/data/products";
 import { ProductCard } from "./ui";
 const families = [
   "All systems",
@@ -10,7 +10,7 @@ const families = [
   "Suspended Systems",
   "More solutions",
 ];
-export default function ProductFilter() {
+export default function ProductFilter({ products }: { products: Product[] }) {
   const [family, setFamily] = useState("All systems");
   const visible = products.filter(
     (p) =>

@@ -49,16 +49,16 @@ export default function Contact() {
         <h2>Enquiry privacy</h2>
         <p>
           We use the contact and project details you submit to review and
-          respond to your enquiry. The form is processed by FormSubmit to
-          deliver your message to {site.email}; its service may retain
-          submissions for up to 30 days. You can choose phone, email or WhatsApp
-          instead. Please do not include sensitive personal information in your
-          project brief.
+          respond to your enquiry. If you attach a drawing or BOQ, it is stored
+          in access-restricted storage for enquiry handling. Please do not
+          include sensitive personal information that is not needed to assess
+          the project.
         </p>
         <p>
-          This website does not use advertising trackers or store your form
-          entries in browser storage. To request access to, correction of, or
-          deletion of enquiry information held by Cubiclepro, contact{" "}
+          Website analytics and service providers may process technical usage
+          data under their applicable terms. Enquiry data is sent to Cubiclepro
+          for follow-up. To request access to, correction of, or deletion of
+          enquiry information held by Cubiclepro, contact{" "}
           <a href={`mailto:${site.email}`}>{site.email}</a>.
         </p>
       </section>

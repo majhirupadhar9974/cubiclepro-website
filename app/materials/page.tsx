@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   PageHero,
   Eyebrow,
@@ -25,26 +26,22 @@ export default function Materials() {
       />
       <section className="section container">
         <div className="material-detail">
-          <div className="material-art">
-            <div className="material-edge edge-hpl">
-              <span />
-              <span />
-              <span />
-            </div>
-            <span className="micro">Material illustration</span>
-          </div>
+          <figure className="material-approved-visual">
+            <Image src="/images/approved/materials/hpl/hpl-approved-infographic.png" alt="Compact HPL approved material and composition infographic" fill sizes="(max-width: 760px) 100vw, 45vw" />
+            <figcaption>Approved material visual</figcaption>
+          </figure>
           <div>
             <Eyebrow>01 / Compact laminate</Eyebrow>
             <h2>COMPACT HPL</h2>
             <p className="lede">
-              A dense, self-supporting high-pressure laminate panel used for
+              A compact high-pressure laminate panel used for
               cubicles, partitions, modesty panels and coordinated washroom
               applications.
             </p>
             <p>
-              Depending on the selected grade and finish, documented properties
-              can include moisture, impact, scratch and stain resistance,
-              durability and an easy-care surface.
+              Wet-area suitability, moisture resistance, impact, scratch,
+              stain and hygiene properties are reviewed against the selected
+              panel grade and current technical documentation.
             </p>
             <p className="fine-print">
               Exact performance, fire classification, boiling-water test results
@@ -54,13 +51,9 @@ export default function Materials() {
           </div>
         </div>
         <div className="material-detail">
-          <div className="material-art">
-            <div className="material-edge edge-board">
-              <span />
-              <span />
-              <span />
-            </div>
-            <span className="micro">Material illustration</span>
+          <div className="material-text-panel" aria-label="BWP-FR High-Density Board text-led information panel">
+            <span className="micro">Material option</span><strong>BWP-FR</strong>
+            <span>High-Density Board</span><p>Grade-specific documentation reviewed project-wise.</p>
           </div>
           <div>
             <Eyebrow>02 / High-density board</Eyebrow>
@@ -107,6 +100,12 @@ export default function Materials() {
           <p>{specification}</p>
           <FinishNote />
         </div>
+      </section>
+      <section className="section container material-care" aria-labelledby="material-care-title">
+        <Eyebrow>Care & documentation</Eyebrow>
+        <h2 id="material-care-title">Use the approved grade documentation.</h2>
+        <p className="lede">Follow the care instructions issued for the selected material grade. Avoid unapproved abrasive cleaners, solvents or maintenance methods.</p>
+        <p>Current grade-specific technical documentation can be requested with a project enquiry. No generic test value, fire classification or standard is substituted for the approved product documentation.</p>
       </section>
       <QuoteBand />
     </>

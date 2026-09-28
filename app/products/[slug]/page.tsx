@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   products,
@@ -21,6 +22,8 @@ import {
 } from "@/components/ui";
 import { metadata, JsonLd } from "@/lib/seo";
 import { specification, thickness, site, whatsapp } from "@/config/site";
+import { juniorAgeBands, lockerTiers, modestyShapeImage, systemComponents } from "@/data/approved-gallery";
+import { getCatalogProduct } from "@/lib/cms";
 export const dynamicParams = false;
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -31,7 +34,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const p = productBySlug(slug);
+  const p = await getCatalogProduct(slug);
   return p
     ? metadata(
         `${p.name} ${slug === "hpl-lockers" ? "Commercial Storage" : slug === "modesty-panels" ? "Urinal Privacy Panels" : "Washroom Cubicle System"}`,
@@ -47,7 +50,7 @@ export default async function ProductPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const p = productBySlug(slug);
+  const p = await getCatalogProduct(slug);
   if (!p) notFound();
   return (
     <>
@@ -122,6 +125,15 @@ export default async function ProductPage({
           </Link>
         </div>
       </section>
+      {systemComponents[slug] && (
+        <section className="section surface"><div className="container">
+          <SectionHeading eyebrow="Approved component views" title={`${p.name}: profile and hardware.`} text="The system image and component detail are shown separately. The final configuration is confirmed in the approved project specification." />
+          <div className="component-grid two-columns">
+            <figure className="component-card"><div className="component-image"><Image src={`/images/approved/${systemComponents[slug].profile}`} alt={`${p.name} profile and support overview`} fill sizes="(max-width: 640px) 100vw, 50vw" /></div><figcaption>Profile / support <span>Product Visual</span></figcaption></figure>
+            <figure className="component-card"><div className="component-image"><Image src={`/images/approved/${systemComponents[slug].hardware}`} alt={`${p.name} hardware overview`} fill sizes="(max-width: 640px) 100vw, 50vw" /></div><figcaption>Hardware <span>Product Visual</span></figcaption></figure>
+          </div>
+        </div></section>
+      )}
       {p.variants && (
         <section className="section surface">
           <div className="container">
@@ -137,24 +149,24 @@ export default async function ProductPage({
             />
             {slug === "modesty-panels" && (
               <Visual
-                src={imageFor("shape-library")}
+                src={modestyShapeImage}
                 alt="Nine modesty panel reference outlines: Aero, Taper, Wave, Slant, Soft, Lean, Flow, Sweep and Dome"
                 className="shape-library"
                 label={false}
                 sizes="100vw"
               />
             )}
-            <div className="variant-list">
+            {slug !== "hpl-lockers" && <div className="variant-list">
               {p.variants.map((v) => (
                 <Link
-                  href={`/contact/?system=${encodeURIComponent(v)}`}
+                  href={slug === "hpl-lockers" ? `/products/hpl-lockers/${v.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-$/, "")}/` : `/contact/?system=${encodeURIComponent(v)}`}
                   key={v}
                 >
                   {v}
                   <span>↗</span>
                 </Link>
               ))}
-            </div>
+            </div>}
             <p className="fine-print">
               {slug === "modesty-panels"
                 ? "Reference size: approx. 1200 mm height × 450 mm width. Final dimensions are project-specific."
@@ -165,6 +177,8 @@ export default async function ProductPage({
           </div>
         </section>
       )}
+      {slug === "junior-series" && <section className="section surface"><div className="container"><SectionHeading eyebrow="Junior system records" title="Scaled for the intended age band." text="Use only the image and dimensions for the selected age group. The 15 years and above dimensions remain unverified and are intentionally withheld."/><div className="variant-visual-grid">{juniorAgeBands.map((band) => <article className="variant-visual" key={band.age}><div className="component-image"><Image src={band.src} alt={`${band.name} Junior Series product visual`} fill sizes="(max-width: 640px) 100vw, 50vw" /></div><div className="variant-visual-copy"><h3>{band.name}</h3>{band.measurements ? <dl>{band.measurements.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl> : <p className="fine-print">Dimensions: NOT VERIFIED — confirm from approved source before publishing.</p>}<Link className="text-link" href={`/products/junior-series/${band.age}/`}>View this age-band record ↗</Link></div></article>)}</div><p className="fine-print">Junior Nova, Junior Supernova, Junior Base Box, Junior Titan Black and Junior Custom are system variants. Final panel, support and hardware specifications are project-specific.</p></div></section>}
+      {slug === "hpl-lockers" && <section className="section surface"><div className="container"><SectionHeading eyebrow="Locker configurations" title="Six layout references." text="Each locker record uses its own approved visual. Dimensions, material thickness, locking and construction remain subject to approved schedule; none are assumed here."/><div className="variant-visual-grid">{lockerTiers.map(item => <article className="variant-visual" key={item.name}><div className="component-image"><Image src={item.src} alt={item.alt} fill sizes="(max-width: 640px) 100vw, 33vw" /></div><div className="variant-visual-copy"><h3>{item.name}</h3><p>Custom dimensions and internal configuration to approved locker schedule.</p><Link className="text-link" href={`/contact/?system=${encodeURIComponent(`HPL Locker ${item.name}`)}`}>Enquire about {item.name} ↗</Link></div></article>)}</div></div></section>}
       <section
         className="section container"
         aria-labelledby="configuration-heading"

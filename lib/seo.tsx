@@ -5,7 +5,7 @@ export function metadata(
   title: string,
   description: string,
   path: string,
-  image = "/images/products/hero.webp",
+  image = "/images/approved/cubicle-systems/sky-hung/sky-hung-main.jpg",
 ): Metadata {
   const approved = pageSeo[path];
   title = approved?.title || title;

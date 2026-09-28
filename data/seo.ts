@@ -52,10 +52,10 @@ export const pageSeo: Record<
     h1: "Base Box Pro cubicle system",
   },
   "/products/float/": {
-    title: "Float Wall-to-Wall Floating Toilet Cubicle | Cubiclepro",
+    title: "Flot Wall-to-Wall Floating Toilet Cubicle | Cubiclepro",
     description:
-      "Explore Float, a wall-to-wall floating toilet cubicle system with a square top rail, SS 316 hardware and a clean floor gap.",
-    h1: "Float wall-to-wall floating cubicle",
+      "Explore Flot, a wall-to-wall floating toilet cubicle system with anodised aluminium, H Type Top Rail, MS Bracket and SS 316 hardware.",
+    h1: "Flot wall-to-wall floating cubicle",
   },
   "/products/sky-hung/": {
     title: "Sky Hung Ceiling-Hung Toilet Cubicle | Cubiclepro",
@@ -92,6 +92,41 @@ export const pageSeo: Record<
     description:
       "Discuss a site-led customized washroom system developed around intended use, site conditions and the approved project detail.",
     h1: "Customized washroom systems",
+  },
+  "/products/shower-cubicles/": {
+    title: "Commercial Shower Cubicles | Cubiclepro India",
+    description: "Explore project-specified shower cubicles for commercial washroom environments, with material and configuration confirmed to the approved requirement.",
+    h1: "Shower cubicles for commercial washrooms",
+  },
+  "/products/changing-room-cubicles/": {
+    title: "Changing Room Cubicles | Cubiclepro India",
+    description: "Explore privacy-led changing room cubicles coordinated to site layout, circulation and the approved project specification.",
+    h1: "Changing room cubicles",
+  },
+  "/locations/": {
+    title: "Commercial Washroom Cubicles Across India | Cubiclepro",
+    description: "Discuss toilet cubicles, washroom partitions, lockers and commercial washroom requirements for projects in India. Share your city and site scope for confirmation.",
+    h1: "Start with your project city.",
+  },
+  "/solutions/washroom-partitions/": {
+    title: "Commercial Washroom Partitions | Cubiclepro India",
+    description: "Plan commercial washroom partitions around application, panel grade, support arrangement, door openings and verified site conditions.",
+    h1: "Commercial washroom partitions",
+  },
+  "/solutions/washroom-cladding/": {
+    title: "Washroom Cladding Solutions | Cubiclepro India",
+    description: "Coordinate washroom cladding by substrate, suitable panel grade, fixing, junction details, maintenance and approved project scope.",
+    h1: "Washroom cladding, specified project-wise",
+  },
+  "/solutions/washbasin-counters-storage/": {
+    title: "Washbasin Counters & Storage | Cubiclepro India",
+    description: "Discuss washbasin counters and storage coordinated with basin selection, plumbing, dimensions, access and approved material details.",
+    h1: "Washbasin counters and storage",
+  },
+  "/solutions/accessories/": {
+    title: "Washroom Cubicle Accessories & Hardware | Cubiclepro",
+    description: "Review cubicle hardware and accessories as part of the approved system schedule, with internal and exterior components identified separately.",
+    h1: "Accessories within the approved system",
   },
   "/materials/": {
     title: "Compact HPL & BWP-FR High-Density Board | Cubiclepro",

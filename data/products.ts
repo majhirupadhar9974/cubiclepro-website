@@ -10,7 +10,10 @@ export type Product = {
   detail: string;
   related: string[];
   variants?: string[];
+  image: string;
+  imageAlt: string;
 };
+const approved = (path: string) => `/images/approved/${path}`;
 export const products: Product[] = [
   {
     slug: "titan-black",
@@ -25,6 +28,8 @@ export const products: Product[] = [
     detail:
       "The black profile system gives each panel a defined edge. A practical aluminium configuration with a distinctive architectural character.",
     related: ["nova"],
+    image: approved("cubicle-systems/titan-black/titan-black-main.webp"),
+    imageAlt: "Titan Black product visual with dual-tone cubicle panels and black aluminium profiles",
   },
   {
     slug: "nova",
@@ -39,6 +44,8 @@ export const products: Product[] = [
     detail:
       "A restrained profile language supports coordinated commercial interiors. Final panel selection and site interfaces are reviewed with the project requirement.",
     related: ["titan-black"],
+    image: approved("cubicle-systems/nova/nova-main.jpg"),
+    imageAlt: "Nova product visual with anodised aluminium cubicle profiles",
   },
   {
     slug: "supernova",
@@ -53,6 +60,8 @@ export const products: Product[] = [
     detail:
       "A refined stainless-steel system family, with the profile and hardware grades clearly distinguished in the approved specification.",
     related: ["supernova-plus"],
+    image: approved("cubicle-systems/supernova/supernova-main.jpg"),
+    imageAlt: "Supernova product visual with stainless-steel cubicle construction",
   },
   {
     slug: "supernova-plus",
@@ -67,6 +76,8 @@ export const products: Product[] = [
     detail:
       "Stainless steel defines both the support system and hardware. The final material grade, finish and configuration remain tied to the approved requirement.",
     related: ["supernova"],
+    image: approved("cubicle-systems/supernova-plus/supernova-plus-main.jpg"),
+    imageAlt: "Supernova Plus product visual with stainless-steel cubicle construction",
   },
   {
     slug: "base-box",
@@ -81,6 +92,8 @@ export const products: Product[] = [
     detail:
       "The shoe-box base creates an ordered elevation. This system has no separate legs and no top rail; dimensions and fixing details are confirmed project-wise.",
     related: ["base-box-pro"],
+    image: approved("cubicle-systems/base-box/base-box-main.jpg"),
+    imageAlt: "Base Box product visual showing shoe-box base without legs or top rail",
   },
   {
     slug: "base-box-pro",
@@ -95,20 +108,24 @@ export const products: Product[] = [
     detail:
       "The shoe-box base and top rail create two clear architectural lines. The support arrangement is coordinated with the layout and approved detail.",
     related: ["base-box"],
+    image: approved("cubicle-systems/base-box-pro/base-box-pro-main.jpg"),
+    imageAlt: "Base Box Pro product visual showing shoe-box base and top rail support",
   },
   {
     slug: "float",
-    name: "Float",
+    name: "Flot",
     family: "Suspended Systems",
-    profile: "Square top rail",
+    profile: "Anodised aluminium; H Type Top Rail; MS Bracket",
     hardware: "SS 316",
     character: "An open floor. A lighter expression.",
     description:
-      "A wall-to-wall floating cubicle system defined by a square top rail, SS 316 hardware and a clean floor gap.",
+      "A wall-to-wall floating cubicle system with anodised aluminium, H Type Top Rail, MS Bracket and SS 316 hardware.",
     mounting: "Wall-to-wall floating",
     detail:
-      "Float is supported wall-to-wall through its square top rail. The site wall interfaces and final fixing arrangement are confirmed before specification.",
+      "Flot uses the support configuration stated in the approved system schedule. Site wall interfaces and final fixing arrangements are confirmed before specification.",
     related: ["sky-hung"],
+    image: approved("cubicle-systems/flot/flot-main.jpg"),
+    imageAlt: "Flot product visual showing a wall-to-wall floating cubicle system with clear floor gap",
   },
   {
     slug: "sky-hung",
@@ -123,6 +140,8 @@ export const products: Product[] = [
     detail:
       "The support arrangement is coordinated from the ceiling. Final feasibility and fixing details are subject to site and structural coordination.",
     related: ["float"],
+    image: approved("cubicle-systems/sky-hung/sky-hung-main.jpg"),
+    imageAlt: "Sky Hung product visual showing a ceiling-hung cubicle system with a leg-free floor",
   },
   {
     slug: "pro-doors",
@@ -137,6 +156,8 @@ export const products: Product[] = [
     detail:
       "The frame, hardware and panel are selected together for the application. Performance requirements are confirmed through the approved specification.",
     related: ["custom"],
+    image: approved("pro-doors/pro-doors-main.jpg"),
+    imageAlt: "Pro Doors product visual showing a project-specific framed door system",
   },
   {
     slug: "junior-series",
@@ -158,6 +179,8 @@ export const products: Product[] = [
       "Junior Titan Black",
       "Junior Custom",
     ],
+    image: approved("junior-series/junior-5-10-years-main.jpg"),
+    imageAlt: "Junior Series product visual showing child-scaled washroom cubicles",
   },
   {
     slug: "modesty-panels",
@@ -183,6 +206,8 @@ export const products: Product[] = [
       "CP SWEEP",
       "CP DOME",
     ],
+    image: approved("urinal-modesty-panels/urinal-modesty-panels-main.jpg"),
+    imageAlt: "Modesty panel product visual for urinal privacy",
   },
   {
     slug: "hpl-lockers",
@@ -197,7 +222,9 @@ export const products: Product[] = [
     detail:
       "HPL doors, internal layouts and suitable locking options are coordinated against the approved locker schedule and room dimensions.",
     related: ["custom", "modesty-panels"],
-    variants: ["Single-tier", "Multi-tier", "Custom banks"],
+    variants: ["Single-tier", "Multi-tier", "Custom banks", "Tier 1", "Tier 2", "Tier 3", "Tier 4", "Tier 5", "Z-Type"],
+    image: approved("hpl-lockers/locker-tier-1-main.jpg"),
+    imageAlt: "HPL locker product visual showing a single-tier locker configuration",
   },
   {
     slug: "custom",
@@ -212,39 +239,39 @@ export const products: Product[] = [
     detail:
       "When the scope moves beyond a standard layout, Cubiclepro coordinates the system around site interfaces and the approved project requirements.",
     related: ["pro-doors"],
+    image: approved("cubicle-systems/nova/nova-main.jpg"),
+    imageAlt: "Custom washroom system visual; final configuration is developed for the project",
+  },
+  {
+    slug: "shower-cubicles", name: "Shower Cubicles", family: "Washroom Solutions",
+    profile: "Project-specific support configuration", hardware: "Selected by approved specification",
+    character: "A considered enclosure for wet-area use.",
+    description: "Shower cubicles coordinated to the room layout, intended use and approved project specification.",
+    mounting: "Project-specific", detail: "Panel grade, thickness, hardware and interfaces are confirmed against the approved project specification.", related: ["custom"],
+    image: approved("shower-cubicles/shower-cubicle-main.jpg"), imageAlt: "Shower cubicle product visual from the approved Cubiclepro asset set",
+  },
+  {
+    slug: "changing-room-cubicles", name: "Changing Room Cubicles", family: "Washroom Solutions",
+    profile: "Project-specific support configuration", hardware: "Selected by application",
+    character: "Privacy and flow, planned together.",
+    description: "Changing room cubicles coordinated around privacy, circulation and the project layout.",
+    mounting: "Project-specific", detail: "Final dimensions, material and hardware are confirmed through the approved project detail.", related: ["custom"],
+    image: approved("changing-room-cubicles/changingroom-cubicle-main.jpg"), imageAlt: "Changing room cubicle product visual from the approved Cubiclepro asset set",
   },
 ];
 export const productBySlug = (slug: string) =>
   products.find((p) => p.slug === slug);
-export const imageFor = (slug: string) => `/images/products/${slug}.webp`;
-const productImageAlts: Record<string, string> = {
-  "titan-black":
-    "Titan Black concept visual: dual-tone cubicle panels framed by black profiles",
-  nova: "Nova concept visual: light cubicle panels with slim aluminium profiles and door fittings",
-  supernova:
-    "Supernova concept visual: dark blue cubicle doors with metallic supports and fittings",
-  "supernova-plus":
-    "Supernova+ concept visual: dark blue cubicle doors with metallic supports and fittings",
-  "base-box":
-    "Base Box concept visual: cubicles with shoe-box base support, no legs and no top rail",
-  "base-box-pro":
-    "Base Box Pro concept visual: cubicles with shoe-box base support and a top rail",
-  float:
-    "Float concept visual: wall-to-wall cubicles with a square top rail and open floor gap",
-  "sky-hung":
-    "Sky Hung concept visual: ceiling-supported cubicles with a leg-free floor",
-  "pro-doors":
-    "Pro Doors concept visual: framed partition doors in a commercial interior",
-  "junior-series":
-    "Junior Series concept visual: child-height privacy cubicles with shaped blue panels",
-  "modesty-panels":
-    "Modesty Panels concept visual: wall-mounted privacy panels between urinals",
-  "hpl-lockers":
-    "HPL Lockers concept visual: single-tier and multi-tier storage banks",
-  custom:
-    "Custom concept visual: partition doors arranged for an interior opening",
+export const imageFor = (slug: string) => {
+  const special: Record<string, string> = {
+    hero: approved("cubicle-systems/sky-hung/sky-hung-main.jpg"),
+    "shape-library": approved("urinal-modesty-panels/urinal-modesty-panel-shapes.png"),
+    "junior-series": approved("junior-series/junior-5-10-years-main.jpg"),
+    "hpl-lockers": approved("hpl-lockers/locker-tier-1-main.jpg"),
+  };
+  return special[slug] || productBySlug(slug)?.image || approved("cubicle-systems/nova/nova-main.jpg");
 };
-export const imageAltFor = (slug: string) => productImageAlts[slug];
+export const imageAltFor = (slug: string) =>
+  productBySlug(slug)?.imageAlt || "Cubiclepro product visual";
 export const applications = [
   [
     "Corporate Offices",

@@ -93,18 +93,13 @@ export function Visual({
       <Image
         src={src}
         alt={
-          imageAltFor(
-            src
-              .split("/")
-              .pop()
-              ?.replace(/\.webp$/, "") || "",
-          ) || alt
+          alt
         }
         fill
         sizes={sizes}
         priority={priority}
       />
-      {label && <figcaption>Concept Visual</figcaption>}
+      {label && <figcaption>Product Visual</figcaption>}
     </figure>
   );
 }
@@ -131,7 +126,7 @@ export function ProductCard({
           <span className="card-index">
             {String(index + 1).padStart(2, "0")}
           </span>
-          <span className="card-image-label">Concept Visual</span>
+          <span className="card-image-label">Product Visual</span>
           <span className="card-arrow">
             <Arrow diagonal />
           </span>

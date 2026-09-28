@@ -8,3 +8,6 @@ out/
 qa-results/
 *.tsbuildinfo
 asset-sources/
+
+.vercel
+.env*.local

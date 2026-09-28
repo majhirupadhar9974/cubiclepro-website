@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import localFont from "next/font/local";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -51,6 +53,8 @@ export default function RootLayout({
         <Footer />
         <MobileActions />
         <Motion />
+        <Analytics />
+        <SpeedInsights />
         <JsonLd
           data={{
             "@context": "https://schema.org",

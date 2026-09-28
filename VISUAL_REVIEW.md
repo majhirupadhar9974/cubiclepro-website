@@ -1,22 +1,9 @@
-# Visual requirements — owner corrections
+# Approved visual system
 
-## Current asset decision
+`public/images/approved/` is mapped from the approved image bundle and `data/approved-assets.json`. Do not replace these masters, retouch their content, or use design-reference/source-only images. Next.js image delivery may create device-sized optimized responses without changing the masters.
 
-The owner's final instruction supersedes image-generation work: use the official brochure images directly. All shipped raster product and brand images are extracted from the brochure; no generated drafts are shipped. Brochure visuals are used unchanged apart from format/size optimization, so their existing hardware appearance is retained. The notes below record earlier requested corrections for any future approved artwork revision.
+Use each asset only for its manifest role and matching product, hardware or profile. The shower-cubicle asset is the only image for that category. Areas listed as text-led in the approved bundle remain text/icon-led; do not insert unrelated project imagery.
 
-The following checklist is retained for future artwork revisions only. The current release follows the later instruction to use brochure images as-is; it does not claim to have digitally corrected the hardware visible in those source images.
+Public image captions use “Product Visual” for approved product imagery. Never label imagery as an installed, client or completed project.
 
-- Conceal hinges inside; no hinge leaves or barrels visible outside.
-- Coat hooks belong inside; never place or show them on the exterior.
-- Every cubicle door must visibly have BOTH a separate occupancy indicator lock and a separate door knob, horizontally side by side.
-- Do not merge the lock and knob into a single component.
-- Retain visible door-stopper profiles and U-channel profiles at wall/panel junctions where the system requires them.
-- Concealing hinges does not mean removing aluminium/stainless profiles, channels, top rails or structural supports.
-- Base Box: shoe-box support; no legs and no top rail.
-- Base Box Pro: shoe-box support and top rail; no separate legs.
-- Float: square top rail wall-to-wall, clear floor gap, no ceiling hangers.
-- Sky Hung: true ceiling suspension, visible ceiling supports, leg-free floor.
-- Do not generate or retouch replacement artwork unless the owner requests that work again.
-- Rejected drafts must never be promoted to public/images.
-
-These are appearance requirements. Do not turn concealed hinges or a specific channel geometry into an unverified product performance specification.
+When a separately approved system photograph is supplied, verify hardware visibility before use: the indicator lock and door knob are distinct components; hinges and coat hooks belong on the interior side. Door-stopper and U-channel profiles remain visible where applicable to that system. Do not alter current approved image masters to simulate these details.

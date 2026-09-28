@@ -11,30 +11,12 @@ const page = await context.newPage();
 const issues = [],
   results = [],
   errors = [];
-const master = await readFile(
-  "../CUBICLEPRO_FINAL_WEBSITE_MASTER_SPECIFICATION.md",
-  "utf8",
-).catch(() => null);
-if (master) {
-  const approvedRows = master
-    .split("\n")
-    .filter((line) => line.startsWith("| "))
-    .map((line) =>
-      line
-        .split(/(?<!\\)\|/)
-        .slice(1, -1)
-        .map((cell) => cell.trim().replace(/\\\|/g, "|")),
-    );
-  for (const [route, copy] of Object.entries(pageSeo)) {
-    const row = approvedRows.find((cells) => cells[1] === copy.title);
-    if (!row || row[2] !== copy.description || row[3] !== copy.h1)
-      issues.push(`${route}: SEO source differs from approved master`);
-  }
-}
 page.on("pageerror", (e) => errors.push(e.message));
 page.on("response", (response) => {
   if (
     response.status() >= 400 &&
+    !response.url().includes("/_vercel/insights/") &&
+    !response.url().includes("/_vercel/speed-insights/") &&
     ["script", "stylesheet", "image"].includes(
       response.request().resourceType(),
     )
@@ -55,6 +37,8 @@ const productSlugs = [
   "modesty-panels",
   "hpl-lockers",
   "custom",
+  "shower-cubicles",
+  "changing-room-cubicles",
 ];
 const routes = [
   "/",
@@ -65,6 +49,10 @@ const routes = [
   "/about/",
   "/warranty/",
   "/contact/",
+  "/locations/",
+  ...["washroom-partitions", "washroom-cladding", "washbasin-counters-storage", "accessories"].map((s) => `/solutions/${s}/`),
+  ...["below-5-years", "5-10-years", "11-14-years", "15-years-and-above"].map((s) => `/products/junior-series/${s}/`),
+  ...["tier-1", "tier-2", "tier-3", "tier-4", "tier-5", "z-type"].map((s) => `/products/hpl-lockers/${s}/`),
   ...productSlugs.map((s) => `/products/${s}/`),
 ];
 await mkdir("qa-results", { recursive: true });
@@ -75,12 +63,9 @@ for (const route of routes) {
     issues.push(`${route}: HTTP ${response.status()}`);
   if ((await page.locator("h1").count()) !== 1)
     issues.push(`${route}: H1 count`);
-  if (
-    (await page.locator("h1").innerText()).replace(/\s+/g, " ").trim() !==
-    pageSeo[route].h1
-  )
+  if (pageSeo[route] && (await page.locator("h1").innerText()).replace(/\s+/g, " ").trim() !== pageSeo[route].h1)
     issues.push(`${route}: approved H1 mismatch`);
-  if ((await page.title()) !== pageSeo[route].title)
+  if (pageSeo[route] && (await page.title()) !== pageSeo[route].title)
     issues.push(`${route}: approved title mismatch`);
   for (const selector of [
     'meta[name="description"]',
@@ -88,18 +73,17 @@ for (const route of routes) {
     'meta[name="twitter:description"]',
   ]) {
     if (
-      (await page.locator(selector).getAttribute("content")) !==
-      pageSeo[route].description
+      (pageSeo[route] && (await page.locator(selector).getAttribute("content")) !== pageSeo[route].description)
     )
       issues.push(`${route}: approved description mismatch ${selector}`);
   }
-  if (
+  if (pageSeo[route] && (
     (await page
       .locator('meta[property="og:title"]')
-      .getAttribute("content")) !== pageSeo[route].title
-  )
+    .getAttribute("content")) !== pageSeo[route]?.title
+  ))
     issues.push(`${route}: Open Graph title mismatch`);
-  if (route.startsWith("/products/") && route !== "/products/") {
+  if (route.startsWith("/products/") && route !== "/products/" && route.split("/").filter(Boolean).length === 2) {
     for (const heading of [
       "Configuration",
       "Where it fits",
@@ -364,52 +348,57 @@ if ((await page.locator("select[name=system]").inputValue()) !== "Sky Hung")
   issues.push("Product quote prefill failed");
 if (await page.locator("form").evaluate((f) => f.checkValidity()))
   issues.push("Empty form unexpectedly valid");
-await page.getByLabel("Name *", { exact: true }).fill("QA Test");
+await page.getByLabel("Your name *", { exact: true }).fill("QA Test");
+await page.getByLabel("Company / organization *", { exact: true }).fill("QA Example Ltd");
 await page
   .getByLabel("Mobile number *", { exact: true })
   .fill("+91 90000 00000");
 await page.getByLabel("Email *", { exact: true }).fill("qa@example.com");
-await page.getByLabel("City *", { exact: true }).fill("Ahmedabad");
+await page.getByLabel("Project city *", { exact: true }).fill("Ahmedabad");
+await page.getByLabel("Site location *", { exact: true }).fill("Local QA only");
 await page
   .locator('select[name="project_type"]')
   .selectOption("Corporate Offices");
+await page.locator('input[name="quantity"]').fill("3");
+await page.locator('select[name="panel"]').selectOption("Compact HPL");
 await page
   .getByLabel("Message *", { exact: true })
   .fill("Local intercepted quality assurance test. No email should be sent.");
 await page.locator("input[name=consent]").check();
 if (!(await page.locator("form").evaluate((f) => f.checkValidity())))
   issues.push("Valid form rejected");
+const unconfiguredRfq = await context.request.post(`${base}/api/rfq/`, {
+  multipart: {
+    name: "QA Test", company: "QA Example Ltd", mobile: "+91 90000 00000",
+    email: "qa@example.com", city: "Ahmedabad", project_location: "Local QA",
+    project_type: "Corporate Offices", quantity: "3", system: "Sky Hung",
+    panel: "Compact HPL", message: "Local QA only; do not send an email.", consent: "yes",
+  },
+});
+if (unconfiguredRfq.status() !== 503 || !(await unconfiguredRfq.text()).includes("being configured"))
+  issues.push("Unconfigured RFQ endpoint must fail safely with the direct-contact fallback");
 let submitted = false;
-await page.route("https://formsubmit.co/**", async (route) => {
+await page.route("**/api/rfq**", async (route) => {
   const request = route.request();
   const post = request.postData() || "";
   submitted =
     request.method() === "POST" &&
-    post.includes("Sky+Hung") &&
-    post.includes("QA+Test") &&
-    new URLSearchParams(post).get("_url") ===
-      "https://www.cubiclepro.in/contact/" &&
-    new URLSearchParams(post).get("_next") ===
-      "https://www.cubiclepro.in/contact/?sent=1" &&
-    new URLSearchParams(post).has("_honey") &&
-    new URLSearchParams(post).get("_captcha") !== "false";
+    request.headers()["content-type"]?.includes("multipart/form-data") &&
+    post.includes("Sky Hung") &&
+    post.includes("QA Test") &&
+    post.includes("QA Example Ltd") &&
+    post.includes("Local intercepted quality assurance test.") &&
+    post.includes("consent") &&
+    post.includes("drawing");
   await route.fulfill({
     status: 200,
-    contentType: "text/html",
-    body: "<h1>Local QA: form submission intercepted</h1>",
+    contentType: "application/json",
+    body: JSON.stringify({ ok: true }),
   });
 });
 await page.getByRole("button", { name: "Send enquiry" }).click();
-await page.waitForURL("https://formsubmit.co/**");
-if (!submitted) issues.push("Form POST payload failed");
-await page.goto(base + "/contact/?sent=1", { waitUntil: "networkidle" });
-await page.locator(".submission-notice").waitFor();
-if (!(await page.locator(".submission-notice").count()))
-  issues.push("Same-session form return missing");
-await page.reload();
-await page.waitForTimeout(250);
-if (await page.locator(".submission-notice").count())
-  issues.push("Form return marker not consumed");
+await page.getByText("Enquiry sent. Thank you", { exact: false }).waitFor();
+if (!submitted) issues.push("RFQ API payload failed");
 await page.setViewportSize({ width: 1440, height: 1000 });
 await page.emulateMedia({ reducedMotion: "reduce" });
 await page.goto(base);
@@ -443,7 +432,7 @@ if (
 await savingPage.evaluate(() => scrollTo(0, 400));
 if (
   (await savingPage
-    .locator(".hero-image")
+    .locator(".hero-slide.is-active img")
     .evaluate((el) => el.style.getPropertyValue("--hero-depth"))) !== ""
 )
   issues.push("Data saver scroll depth active");

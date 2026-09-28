@@ -1,7 +1,7 @@
 import { PageHero, QuoteBand } from "@/components/ui";
 import ProductFilter from "@/components/product-filter";
 import { metadata, JsonLd, PageSchema } from "@/lib/seo";
-import { products } from "@/data/products";
+import { getCatalog } from "@/lib/cms";
 import { site } from "@/config/site";
 export const generateMetadata = () =>
   metadata(
@@ -9,7 +9,8 @@ export const generateMetadata = () =>
     "Compare aluminium, stainless, box-up, floating, ceiling-hung, junior and custom washroom systems by profile, hardware and mounting.",
     "/products/",
   );
-export default function Products() {
+export default async function Products() {
+  const products = await getCatalog();
   return (
     <>
       <PageSchema
@@ -24,7 +25,7 @@ export default function Products() {
         path="/products/"
       />
       <section className="container section">
-        <ProductFilter />
+        <ProductFilter products={products} />
       </section>
       <JsonLd
         data={{

@@ -50,7 +50,9 @@ export function Motion() {
         );
         observer.observe(el);
       });
-      const hero = document.querySelector<HTMLElement>(".hero-image");
+      const hero = document.querySelector<HTMLElement>(
+        ".hero-slide.is-active img",
+      );
       let frame = 0;
       const scroll = () => {
         if (!hero || frame) return;
@@ -67,7 +69,9 @@ export function Motion() {
         observer.disconnect();
         window.removeEventListener("scroll", scroll);
         cancelAnimationFrame(frame);
-        hero?.style.removeProperty("--hero-depth");
+        document
+          .querySelectorAll<HTMLElement>(".hero-slide img")
+          .forEach((image) => image.style.removeProperty("--hero-depth"));
         elements.forEach((el) => {
           el.classList.remove("will-reveal", "media-reveal", "is-visible");
           el.style.removeProperty("--reveal-delay");

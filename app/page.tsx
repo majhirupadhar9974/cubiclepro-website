@@ -11,6 +11,7 @@ import {
   FinishNote,
 } from "@/components/ui";
 import ChooseSystem from "@/components/choose-system";
+import HeroCarousel from "@/components/hero-carousel";
 import {
   products,
   scope,
@@ -31,48 +32,7 @@ export default function Home() {
   return (
     <>
       <PageSchema name="Complete washroom solutions" path="/" />
-      <section className="hero">
-        <Visual
-          src={imageFor("hero")}
-          alt="Architectural blue washroom cubicles from the official Cubiclepro brochure"
-          priority
-          className="hero-image"
-          label={false}
-          sizes="100vw"
-        />
-        <div className="hero-shade" />
-        <div className="container hero-content">
-          <Eyebrow>Complete washroom solutions</Eyebrow>
-          <h1>
-            <span>Architectural washroom systems,</span>{" "}
-            <em>specified for the project.</em>
-          </h1>
-          <p className="hero-slogan">Considered spaces. Solid solutions.</p>
-          <p>
-            Cubicles, partitions and coordinated washroom systems.
-            <br className="desktop-only" /> Specified for the project. Detailed
-            for the everyday.
-          </p>
-          <div className="hero-buttons">
-            <Button href="/products/" light>
-              Explore products
-            </Button>
-            <Link href="/contact/" className="hero-text-link">
-              Request a quote <Arrow diagonal />
-            </Link>
-          </div>
-        </div>
-        <div className="hero-bottom">
-          <span>SUPPLY · INSTALLATION · COORDINATION</span>
-          <span className="hero-caption">Concept Visual</span>
-          <a
-            href="#solutions"
-            aria-label="Scroll to complete washroom solutions"
-          >
-            Scroll to explore <span>↓</span>
-          </a>
-        </div>
-      </section>
+      <HeroCarousel />
       <section id="solutions" className="section container">
         <SectionHeading
           eyebrow="01 / The complete scope"
@@ -94,10 +54,16 @@ export default function Home() {
                     : s === "Pro Doors"
                       ? "/products/pro-doors/"
                       : s === "Accessories"
-                        ? "/hardware/"
+                        ? "/solutions/accessories/"
                         : s === "Customized Systems"
                           ? "/products/custom/"
-                          : "/contact/"
+                          : s === "Washroom Cladding"
+                            ? "/solutions/washroom-cladding/"
+                            : s === "Washroom Partitions"
+                              ? "/solutions/washroom-partitions/"
+                              : s === "Shower Cubicles"
+                                ? "/products/shower-cubicles/"
+                                : "/products/"
               }
             >
               <span className="scope-number">0{i + 1}</span>
