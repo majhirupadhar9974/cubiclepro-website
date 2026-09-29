@@ -3216,3 +3216,57 @@ body { background: var(--cp-bg); color: var(--cp-text); }
   .variant-visual { transition: none; }
   .variant-visual:hover { transform: none; }
 }
+
+/* Focused interaction, warranty and application contrast adjustments. */
+.cp-rail-shell { position: relative; }
+.cp-rail-arrow {
+  position: absolute;
+  z-index: 5;
+  top: calc(50% - 28px);
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 50%;
+  background: rgba(13,17,19,.92);
+  color: #fff;
+  font-size: 23px;
+  box-shadow: 0 14px 34px rgba(0,0,0,.28);
+  backdrop-filter: blur(8px);
+  transition: transform .25s ease, background .25s ease;
+}
+.cp-rail-arrow:hover { transform: scale(1.08); background: #854026; }
+.cp-rail-arrow-left { left: -27px; }
+.cp-rail-arrow-right { right: -27px; }
+.cp-section:not(.cp-section-dark) .cp-rail-arrow { border-color: #a8a39a; }
+
+.cp-feature-stack h3 { color: #fff !important; }
+.cp-feature-stack article > p { color: #d2d7d7 !important; }
+
+.warranty-card { grid-template-columns: minmax(360px,.8fr) minmax(0,1.2fr); }
+.warranty-metrics { display: grid; grid-template-columns: 1.25fr .75fr; gap: 24px; padding-right: 44px; border-right: 1px solid #465054; }
+.warranty-number { border: 0; color: #f0ad86 !important; font-size: clamp(72px,8vw,118px); }
+.warranty-number-secondary { font-size: clamp(58px,6vw,90px); }
+.warranty-number > span,
+.section .warranty-number > span { max-width: 145px; color: #f0ad86 !important; font-weight: 750; line-height: 1.45; }
+.warranty-details h2 { color: #f0ad86 !important; }
+.cp-button-dark-outline { border-color: #344650; background: transparent; color: #172a3c; }
+.cp-button-dark-outline:hover { border-color: #854026; background: #854026; color: #fff; }
+
+@media (max-width: 1050px) {
+  .cp-rail-arrow-left { left: -12px; }
+  .cp-rail-arrow-right { right: -12px; }
+  .warranty-card { grid-template-columns: 1fr; gap: 34px; }
+  .warranty-metrics { border-right: 0; border-bottom: 1px solid #465054; padding: 0 0 32px; }
+}
+@media (max-width: 700px) {
+  .cp-rail-arrow { width: 44px; height: 44px; top: calc(50% - 24px); }
+  .cp-rail-arrow-left { left: -8px; }
+  .cp-rail-arrow-right { right: -8px; }
+  .warranty-metrics { grid-template-columns: 1fr 1fr; gap: 18px; }
+  .warranty-number { font-size: 68px; }
+  .warranty-number-secondary { font-size: 58px; }
+  .page-hero .cp-actions { align-items: stretch; flex-direction: column; }
+  .page-hero .cp-actions .cp-button { width: 100%; }
+}

@@ -28,7 +28,7 @@ for(const route of routes){
 }
 for(const [name,width,height] of [["desktop",1440,1000],["tablet",768,1024],["mobile",390,844],["small-mobile",360,800]]){
   await page.setViewportSize({width,height});
-  for(const route of ["/","/products/","/applications/","/products/titan-black/","/products/junior-series/","/products/hpl-lockers/","/products/hpl-lockers/z-type/","/products/modesty-panels/","/contact/"]){
+  for(const route of ["/","/products/","/applications/","/industries/corporate-offices/","/products/titan-black/","/products/junior-series/","/products/hpl-lockers/","/products/hpl-lockers/z-type/","/products/modesty-panels/","/warranty/","/technical-enquiry/","/contact/"]){
     await page.goto(base+route,{waitUntil:"networkidle"});
     await page.evaluate(async()=>{for(let y=0;y<document.body.scrollHeight;y+=700){scrollTo(0,y);await new Promise((resolve)=>setTimeout(resolve,40))}scrollTo(0,0)});
     await page.waitForTimeout(800);
@@ -38,6 +38,18 @@ for(const [name,width,height] of [["desktop",1440,1000],["tablet",768,1024],["mo
   }
 }
 await page.setViewportSize({width:1440,height:1000});
+await page.goto(base);
+const productRail=page.getByRole("region",{name:"Restroom cubicle systems"});
+const beforeRail=await productRail.evaluate((element)=>element.scrollLeft);
+await page.getByRole("button",{name:"View next Restroom cubicle systems"}).click();
+await page.waitForTimeout(600);
+const afterRail=await productRail.evaluate((element)=>element.scrollLeft);
+if(afterRail<=beforeRail)issues.push("Product rail next arrow did not move the slider");
+await page.goto(base+"/warranty/");
+for(const text of ["YEAR HPL BOARD WARRANTY","YEAR HARDWARE & CRAFTSMANSHIP"]){if(!(await page.getByText(text,{exact:true}).count()))issues.push(`Warranty label missing: ${text}`)}
+await page.goto(base+"/technical-enquiry/");
+const technicalWhatsApp=await page.getByRole("link",{name:/WhatsApp technical enquiry/}).getAttribute("href");
+if(!technicalWhatsApp?.startsWith("https://wa.me/918401118340?text="))issues.push("Technical WhatsApp target failed");
 await page.goto(base+"/products/hpl-lockers/");
 await page.locator("a.variant-visual").first().click();
 await page.waitForLoadState("networkidle");

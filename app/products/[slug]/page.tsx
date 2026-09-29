@@ -65,7 +65,7 @@ export default async function ProductPage({
     },
     {
       q: `Can ${p.name} be customised?`,
-      a: `Custom dimensions and configuration can be reviewed for ${p.name}, subject to site conditions, technical feasibility and the approved project specification. Colours and finishes are finalized project-wise.`,
+      a: `Yes. Custom dimensions and configuration can be reviewed for ${p.name}, subject to site conditions, technical feasibility and the approved project specification. Colours and finishes are finalized project-wise.`,
     },
     {
       q: `What should I share for a ${p.name} quotation?`,

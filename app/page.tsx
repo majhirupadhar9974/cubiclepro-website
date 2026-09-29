@@ -5,6 +5,7 @@ import { products, workflow } from "@/data/products";
 import { articles, faqs, industries, locations, mainCategories } from "@/data/site-content";
 import { metadata, PageSchema } from "@/lib/seo";
 import { specification, thickness } from "@/config/site";
+import HorizontalRail from "@/components/horizontal-rail";
 
 export const generateMetadata = () => metadata("Toilet Cubicles & Commercial Washroom Solutions India", "Explore CubiclePro restroom cubicles, urinal modesty panels, Junior Cubicles, HPL lockers, shower and changing-room solutions for commercial projects in India.", "/");
 
@@ -24,15 +25,15 @@ export default function Home() {
 
     <section className="cp-section" id="solutions"><div className="container">
       <header className="cp-section-head"><div><p className="cp-kicker">Complete solution scope</p><h2>One category at a time.<br /><span>One coordinated system.</span></h2></div><p>Explore the exact public portfolio. Categories with approved visuals use only the supplied image bundle; cladding and washbasin storage remains intentionally text-led.</p></header>
-      <div className="cp-card-rail cp-category-rail" role="region" aria-label="Main solution categories" tabIndex={0}>{mainCategories.map((category, index) => <Link className={`cp-tilt-card ${!category.image ? "is-text-card" : ""}`} href={category.href} key={category.slug}>
+      <HorizontalRail className="cp-card-rail cp-category-rail" label="Main solution categories">{mainCategories.map((category, index) => <Link className={`cp-tilt-card ${!category.image ? "is-text-card" : ""}`} href={category.href} key={category.slug}>
         {category.image ? <div className="cp-card-media"><Image src={category.image} alt={category.alt || ""} fill sizes="(max-width: 700px) 82vw, 32vw" /></div> : <div className="cp-line-art" aria-hidden="true"><i /><i /><i /><i /></div>}
         <div className="cp-card-copy"><span>0{index + 1}</span><h3>{category.name}</h3><p>{category.description}</p><b aria-hidden="true">↗</b></div>
-      </Link>)}</div>
+      </Link>)}</HorizontalRail>
     </div></section>
 
     <section className="cp-section cp-section-dark"><div className="container">
       <header className="cp-section-head"><div><p className="cp-kicker">Restroom cubicle systems</p><h2>Eight system directions.<br /><span>Clearly separated.</span></h2></div><Link href="/products/">Compare all systems ↗</Link></header>
-      <div className="cp-card-rail cp-product-rail" role="region" aria-label="Restroom cubicle systems" tabIndex={0}>{products.slice(0, 8).map((product, index) => <Link className="cp-tilt-card" href={`/products/${product.slug}/`} key={product.slug}><div className="cp-card-media"><Image src={product.image} alt={product.imageAlt} fill sizes="(max-width: 700px) 82vw, 34vw" /></div><div className="cp-card-copy"><span>{String(index + 1).padStart(2, "0")} · {product.family}</span><h3>{product.name}</h3><p>{product.character}</p><b aria-hidden="true">↗</b></div></Link>)}</div>
+      <HorizontalRail className="cp-card-rail cp-product-rail" label="Restroom cubicle systems">{products.slice(0, 8).map((product, index) => <Link className="cp-tilt-card" href={`/products/${product.slug}/`} key={product.slug}><div className="cp-card-media"><Image src={product.image} alt={product.imageAlt} fill sizes="(max-width: 700px) 82vw, 34vw" /></div><div className="cp-card-copy"><span>{String(index + 1).padStart(2, "0")} · {product.family}</span><h3>{product.name}</h3><p>{product.character}</p><b aria-hidden="true">↗</b></div></Link>)}</HorizontalRail>
     </div></section>
 
     <section className="cp-section"><div className="container">

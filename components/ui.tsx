@@ -239,14 +239,21 @@ export function QuoteBand({ product }: { product?: string }) {
 export function WarrantyCard() {
   return (
     <div className="warranty-card reveal">
-      <div className="warranty-number">
-        1<span>YEAR WARRANTY</span>
+      <div className="warranty-metrics">
+        <div className="warranty-number">
+          10<span>YEAR HPL BOARD WARRANTY</span>
+        </div>
+        <div className="warranty-number warranty-number-secondary">
+          1<span>YEAR HARDWARE &amp; CRAFTSMANSHIP</span>
+        </div>
       </div>
       <div>
         <h3>Clear cover. Clear conditions.</h3>
         <p>
-          On hardware, profiles and installation workmanship / craftsmanship,
-          subject to normal usage and Cubiclepro warranty conditions.
+          Ten-year HPL board warranty applies to the approved panel grade and
+          documented warranty terms. Hardware, profiles and installation
+          workmanship / craftsmanship carry one-year Cubiclepro warranty,
+          subject to normal usage and warranty conditions.
         </p>
         <Link href="/warranty/" className="text-link">
           Warranty & assurance <Arrow />

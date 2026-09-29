@@ -61,7 +61,7 @@ export default async function VariantPage({ params }: { params: Promise<{ slug: 
     },
     {
       q: junior ? "Can the profile, hardware or layout be customised?" : locker ? "How are final locker measurements confirmed?" : "Can this UMP shape be customised?",
-      a: junior ? "Custom dimensions, hardware and layout can be reviewed subject to the intended age group, site conditions, technical feasibility and approval." : locker ? locker.planning : "Custom shapes and dimensions can be reviewed. The final panel profile, wall clamps and fixing detail are confirmed in the approved project specification.",
+      a: junior ? "Yes. Custom dimensions, hardware and layout can be reviewed subject to the intended age group, site conditions, technical feasibility and approval." : locker ? locker.planning : "Yes. Custom shapes and dimensions can be reviewed. The final panel profile, wall clamps and fixing detail are confirmed in the approved project specification.",
     },
   ];
 

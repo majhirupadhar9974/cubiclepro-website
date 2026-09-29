@@ -8,7 +8,7 @@ import { metadata, PageSchema } from "@/lib/seo";
 export const generateMetadata = () =>
   metadata(
     "Warranty & Assurance",
-    "Review Cubiclepro’s one-year cover for hardware, profiles and installation workmanship, plus grade-specific panel warranty terms.",
+    "Review Cubiclepro’s 10-year approved HPL board warranty and one-year cover for hardware, profiles and installation workmanship.",
     "/warranty/",
   );
 export default function Warranty() {
@@ -25,6 +25,13 @@ export default function Warranty() {
         <WarrantyCard />
         <div className="detail-grid warranty-details">
           <article>
+            <h2>HPL board</h2>
+            <p>
+              10-year warranty for the approved HPL board grade, subject to
+              documented warranty terms and standard usage conditions.
+            </p>
+          </article>
+          <article>
             <h2>Hardware</h2>
             <p>
               1 year warranty, subject to normal usage and Cubiclepro warranty
@@ -32,17 +39,11 @@ export default function Warranty() {
             </p>
           </article>
           <article>
-            <h2>Profiles</h2>
+            <h2>Profiles &amp; craftsmanship</h2>
             <p>
-              1 year warranty, subject to normal usage and Cubiclepro warranty
+              1 year warranty on profiles and installation workmanship /
+              craftsmanship, subject to normal usage and Cubiclepro warranty
               conditions.
-            </p>
-          </article>
-          <article>
-            <h2>Installation workmanship</h2>
-            <p>
-              1 year warranty on installation workmanship / craftsmanship,
-              subject to normal usage and Cubiclepro warranty conditions.
             </p>
           </article>
         </div>
@@ -54,9 +55,9 @@ export default function Warranty() {
             title="The warranty follows the grade."
           />
           <p className="lede">
-            10-year manufacturer warranty from the date of work completion,
-            subject to standard usage conditions and the approved material
-            grade.
+            10-year HPL board warranty from the date of work completion,
+            subject to standard usage conditions, the approved material grade
+            and the documented warranty terms.
           </p>
           <p>
             The panel warranty applies to the specified panel material and its
