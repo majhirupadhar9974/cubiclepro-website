@@ -28,7 +28,7 @@ export const products: Product[] = [
     detail:
       "The black profile system gives each panel a defined edge. A practical aluminium configuration with a distinctive architectural character.",
     related: ["nova"],
-    image: approved("cubicle-systems/titan-black/titan-black-main.webp"),
+    image: approved("cubicle-systems/titan-black/titan-black-main.jpg"),
     imageAlt: "Titan Black product visual with dual-tone cubicle panels and black aluminium profiles",
   },
   {
@@ -155,29 +155,29 @@ export const products: Product[] = [
     mounting: "Project-specific",
     detail:
       "The frame, hardware and panel are selected together for the application. Performance requirements are confirmed through the approved specification.",
-    related: ["custom"],
+    related: ["titan-black"],
     image: approved("pro-doors/pro-doors-main.jpg"),
     imageAlt: "Pro Doors product visual showing a project-specific framed door system",
   },
   {
     slug: "junior-series",
-    name: "Junior Series",
-    family: "Junior Series",
-    profile: "Variant and project-specific",
-    hardware: "Coordinated to the approved variant",
+    name: "Junior Cubicles",
+    family: "Age-group Cubicles",
+    profile: "Age-group and project-specific",
+    hardware: "Coordinated to the approved age group",
     character: "Small users. Thoughtful spaces.",
     description:
       "Child-friendly privacy with shaped profiles, practical proportions and configurations for the intended age group.",
     mounting: "Age-group and site-specific",
     detail:
-      "Panel height, profile arrangement and hardware are confirmed for the intended age group and site. Adult-system specifications are not automatically assigned to Junior variants.",
-    related: ["titan-black", "nova", "supernova", "base-box", "custom"],
+      "Panel height, profile arrangement and hardware are confirmed for the intended age group and site. Adult-system specifications are not automatically assigned to Junior Cubicles.",
+    related: ["titan-black", "nova", "supernova", "base-box"],
     variants: [
-      "Junior Nova",
-      "Junior Supernova",
-      "Junior Base Box",
-      "Junior Titan Black",
-      "Junior Custom",
+      "Below 5 Years",
+      "5–10 Years",
+      "11–14 Years",
+      "15 Years & Above",
+      "Custom configuration",
     ],
     image: approved("junior-series/junior-5-10-years-main.jpg"),
     imageAlt: "Junior Series product visual showing child-scaled washroom cubicles",
@@ -194,7 +194,7 @@ export const products: Product[] = [
     mounting: "Wall-mounted",
     detail:
       "Reference size: approximately 1200 mm height × 450 mm width. Final dimensions and fixing details are confirmed project-wise.",
-    related: ["custom"],
+    related: ["junior-series"],
     variants: [
       "CP AERO",
       "CP TAPER",
@@ -221,33 +221,17 @@ export const products: Product[] = [
     mounting: "Approved locker schedule",
     detail:
       "HPL doors, internal layouts and suitable locking options are coordinated against the approved locker schedule and room dimensions.",
-    related: ["custom", "modesty-panels"],
-    variants: ["Single-tier", "Multi-tier", "Custom banks", "Tier 1", "Tier 2", "Tier 3", "Tier 4", "Tier 5", "Z-Type"],
+    related: ["modesty-panels"],
+    variants: ["Tier 1", "Tier 2", "Tier 3", "Tier 4", "Tier 5", "Z-Type", "Custom bank"],
     image: approved("hpl-lockers/locker-tier-1-main.jpg"),
     imageAlt: "HPL locker product visual showing a single-tier locker configuration",
-  },
-  {
-    slug: "custom",
-    name: "Custom",
-    family: "Doors and Custom",
-    profile: "Site-led configuration",
-    hardware: "As specified",
-    character: "Built around the requirement.",
-    description:
-      "A site-led washroom configuration developed around intended use, site conditions and the approved detail.",
-    mounting: "As specified",
-    detail:
-      "When the scope moves beyond a standard layout, Cubiclepro coordinates the system around site interfaces and the approved project requirements.",
-    related: ["pro-doors"],
-    image: approved("cubicle-systems/nova/nova-main.jpg"),
-    imageAlt: "Custom washroom system visual; final configuration is developed for the project",
   },
   {
     slug: "shower-cubicles", name: "Shower Cubicles", family: "Washroom Solutions",
     profile: "Project-specific support configuration", hardware: "Selected by approved specification",
     character: "A considered enclosure for wet-area use.",
     description: "Shower cubicles coordinated to the room layout, intended use and approved project specification.",
-    mounting: "Project-specific", detail: "Panel grade, thickness, hardware and interfaces are confirmed against the approved project specification.", related: ["custom"],
+    mounting: "Project-specific", detail: "Panel grade, thickness, hardware and interfaces are confirmed against the approved project specification. A custom configuration can be reviewed for the project.", related: ["changing-room-cubicles"],
     image: approved("shower-cubicles/shower-cubicle-main.jpg"), imageAlt: "Shower cubicle product visual from the approved Cubiclepro asset set",
   },
   {
@@ -255,7 +239,7 @@ export const products: Product[] = [
     profile: "Project-specific support configuration", hardware: "Selected by application",
     character: "Privacy and flow, planned together.",
     description: "Changing room cubicles coordinated around privacy, circulation and the project layout.",
-    mounting: "Project-specific", detail: "Final dimensions, material and hardware are confirmed through the approved project detail.", related: ["custom"],
+    mounting: "Project-specific", detail: "Final dimensions, material and hardware are confirmed through the approved project detail. A custom configuration can be reviewed for the project.", related: ["shower-cubicles"],
     image: approved("changing-room-cubicles/changingroom-cubicle-main.jpg"), imageAlt: "Changing room cubicle product visual from the approved Cubiclepro asset set",
   },
 ];

@@ -1,54 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { PageHero, QuoteBand, Eyebrow } from "@/components/ui";
-import { applications } from "@/data/products";
+import { industries } from "@/data/site-content";
 import { metadata, PageSchema } from "@/lib/seo";
-export const generateMetadata = () =>
-  metadata(
-    "Commercial Washroom Application Environments",
-    "Explore washroom system applications for offices, education, healthcare, hospitality, retail, public facilities, industry and fit-outs.",
-    "/applications/",
-  );
-export default function Applications() {
-  return (
-    <>
-      <PageSchema
-        name="Application environments"
-        path="/applications/"
-        type="CollectionPage"
-      />
-      <PageHero
-        eyebrow="Applications"
-        title="Spaces work differently. So do their requirements."
-        text="Application, user needs, site interfaces and mounting inform the final system. Explore environments for which Cubiclepro solutions can be specified."
-        path="/applications/"
-      />
-      <section className="section container">
-        <div className="application-grid">
-          {applications.map(([n, t], i) => (
-            <article className="application-card reveal" key={n}>
-              <span className="application-number">0{i + 1}</span>
-              <Eyebrow>Application environment</Eyebrow>
-              <h2>{n}</h2>
-              <p>{t}</p>
-              <Link
-                className="text-link"
-                href={`/contact/?brief=${encodeURIComponent(`Application: ${n}`)}`}
-              >
-                Discuss this requirement ↗
-              </Link>
-            </article>
-          ))}
-        </div>
-        <div className="notice">
-          <h3>Access and inclusion</h3>
-          <p>
-            Accessible configurations can be discussed against the applicable
-            project requirements. Final dimensions, door clearances and support
-            details follow the approved layout.
-          </p>
-        </div>
-      </section>
-      <QuoteBand />
-    </>
-  );
-}
+export const generateMetadata=()=>metadata("Commercial Washroom Applications","Explore original CubiclePro planning guidance for offices, education, healthcare, hospitality, airports, industry, retail and sports facilities.","/applications/");
+export default function Applications(){return <><PageSchema name="Application environments" path="/applications/" type="CollectionPage"/><header className="page-hero"><div className="container"><p className="cp-kicker">Applications</p><h1>Built around how the space works.</h1><p className="lede">Each environment brings different users, circulation, cleaning, privacy and coordination requirements.</p></div></header><section className="cp-section cp-section-dark"><div className="container cp-industry-grid">{industries.map((industry)=><Link className="cp-industry-card" href={`/industries/${industry.slug}/`} key={industry.slug}><div><Image src={industry.image} alt={`${industry.name} washroom application visual`} fill sizes="(max-width:700px) 88vw,32vw"/></div><span>{industry.kicker}</span><h2>{industry.name}</h2><p>{industry.description}</p><b>Explore application ↗</b></Link>)}</div></section><section className="cp-final-cta"><div className="container"><div><h2>Discuss your application.</h2><p>Final access, dimensions, hardware and configuration follow the approved project layout.</p></div><Link className="cp-button cp-button-accent" href="/contact/">Request a quote ↗</Link></div></section></>;}

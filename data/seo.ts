@@ -4,15 +4,15 @@ export const pageSeo: Record<
   { title: string; description: string; h1: string }
 > = {
   "/": {
-    title: "Toilet Cubicles & Washroom Solutions India | Cubiclepro",
+    title: "Toilet Cubicles & Commercial Washroom Solutions India | Cubiclepro",
     description:
       "Explore Cubiclepro toilet cubicles, partitions, modesty panels, HPL lockers and coordinated commercial washroom solutions for projects across India.",
-    h1: "Architectural washroom systems, specified for the project.",
+    h1: "Complete washroom solutions.",
   },
   "/products/": {
     title: "Toilet & Washroom Cubicle Systems | Cubiclepro India",
     description:
-      "Compare aluminium, stainless, box-up, floating, ceiling-hung, junior and custom washroom cubicle systems by profile, hardware and mounting.",
+      "Compare aluminium, stainless, box-up, floating and ceiling-hung restroom cubicle systems by profile, hardware and mounting.",
     h1: "Toilet and washroom cubicle systems",
   },
   "/products/titan-black/": {
@@ -70,10 +70,10 @@ export const pageSeo: Record<
     h1: "Pro Doors for washroom partitions",
   },
   "/products/junior-series/": {
-    title: "Junior Toilet Cubicle Systems | Cubiclepro",
+    title: "Junior Cubicles by Age Group | Cubiclepro",
     description:
-      "Explore child-friendly Junior Nova, Junior Supernova, Junior Base Box, Junior Titan Black and Junior Custom configurations.",
-    h1: "Junior toilet cubicle systems",
+      "Explore Junior Cubicles organised by approved age-group records, with verified dimensions published only for the exact age band.",
+    h1: "Junior Cubicles by age group",
   },
   "/products/modesty-panels/": {
     title: "Compact HPL Modesty & Urinal Privacy Panels | Cubiclepro",
@@ -86,12 +86,6 @@ export const pageSeo: Record<
     description:
       "Explore coordinated HPL lockers in single-tier, multi-tier and custom-bank layouts for changing, workplace and institutional spaces.",
     h1: "HPL lockers for commercial spaces",
-  },
-  "/products/custom/": {
-    title: "Customized Washroom Cubicle Systems | Cubiclepro",
-    description:
-      "Discuss a site-led customized washroom system developed around intended use, site conditions and the approved project detail.",
-    h1: "Customized washroom systems",
   },
   "/products/shower-cubicles/": {
     title: "Commercial Shower Cubicles | Cubiclepro India",
@@ -149,8 +143,8 @@ export const pageSeo: Record<
   "/about/": {
     title: "About Cubiclepro Washroom Solutions | Cubiclepro",
     description:
-      "Learn how new firm Cubiclepro combines clear specification, site-aware detailing, responsive coordination and practical installation understanding.",
-    h1: "New firm. Practical experience.",
+      "Learn how Cubiclepro combines clear specification, site-aware detailing, responsive coordination and practical installation understanding.",
+    h1: "Clear specification. Responsible execution.",
   },
   "/warranty/": {
     title: "Cubiclepro Warranty & Assurance | Cubiclepro",
@@ -161,7 +155,7 @@ export const pageSeo: Record<
   "/contact/": {
     title: "Request a Toilet Cubicle Quote | Cubiclepro",
     description:
-      "Share your commercial washroom requirement with Cubiclepro. Call or WhatsApp +91 84011 18340 or email sales@cubiclepro.in.",
+      "Share your commercial washroom requirement with Cubiclepro. Call or WhatsApp +91 84011 18340 or email info@cubiclepro.in.",
     h1: "Request a quote for your washroom project.",
   },
 };

@@ -5,7 +5,7 @@ import { metadata, PageSchema } from "@/lib/seo";
 export const generateMetadata = () =>
   metadata(
     "Request a Toilet Cubicle Quote",
-    "Share your commercial washroom requirement. Call or WhatsApp +91 84011 18340 or email sales@cubiclepro.in.",
+    "Share your commercial washroom requirement. Call or WhatsApp +91 84011 18340 or email info@cubiclepro.in.",
     "/contact/",
   );
 export default function Contact() {
@@ -28,7 +28,13 @@ export default function Contact() {
           <a className="contact-phone" href={`tel:${site.tel}`}>
             {site.phone}
           </a>
+          <span className="micro">Sales / WhatsApp</span>
+          <a className="contact-phone" href={`tel:${site.technicalTel}`}>
+            {site.technicalPhone}
+          </a>
+          <span className="micro">Technical enquiries</span>
           <a href={`mailto:${site.email}`}>{site.email}</a>
+          <a href={`mailto:${site.salesEmail}`}>{site.salesEmail}</a>
           <a
             href={whatsapp()}
             className="button"

@@ -4,7 +4,10 @@ export const site = {
   url: "https://www.cubiclepro.in",
   phone: "+91 84011 18340",
   tel: "+918401118340",
-  email: "sales@cubiclepro.in",
+  email: "info@cubiclepro.in",
+  salesEmail: "sales@cubiclepro.in",
+  technicalPhone: "+91 99247 31671",
+  technicalTel: "+919924731671",
   address:
     "Shop No. 02, Hasnain Complex, In Mohammedi Park, Behind Canal, Fatehwadi, Ahmedabad – 380055, Gujarat, India.",
   tagline: "Smart spaces. Solid solutions.",

@@ -80,8 +80,68 @@ export const schemaTypes = [
     name: "siteSettings", title: "Site settings", type: "document", fields: [
       defineField({ name: "title", title: "Settings name", type: "string", initialValue: "Cubiclepro website" }),
       defineField({ name: "primaryPhone", title: "Primary sales phone", type: "string", initialValue: "+91 84011 18340" }),
-      defineField({ name: "primaryEmail", title: "Primary sales email", type: "string", initialValue: "sales@cubiclepro.in" }),
+      defineField({ name: "technicalPhone", title: "Technical enquiry phone", type: "string", initialValue: "+91 99247 31671" }),
+      defineField({ name: "primaryEmail", title: "Primary email", type: "string", initialValue: "info@cubiclepro.in" }),
+      defineField({ name: "salesEmail", title: "Sales email", type: "string", initialValue: "sales@cubiclepro.in" }),
       defineField({ name: "announcement", title: "Announcement", type: "string", validation: (r) => r.custom(safePublicCopy) }),
+    ],
+  }),
+  defineType({
+    name: "homepage", title: "Homepage", type: "document", fields: [
+      defineField({ name: "title", title: "Record name", type: "string", initialValue: "Homepage" }),
+      defineField({ name: "heroHeading", title: "Hero heading", type: "string", validation: (r) => r.custom(safePublicCopy) }),
+      defineField({ name: "heroSummary", title: "Hero summary", type: "text", validation: (r) => r.custom(safePublicCopy) }),
+      defineField({ name: "featuredProducts", title: "Featured products", type: "array", of: [{ type: "reference", to: [{ type: "product" }] }] }),
+      defineField({ name: "featuredArticles", title: "Featured articles", type: "array", of: [{ type: "reference", to: [{ type: "article" }] }] }),
+      ...publishFields,
+    ],
+  }),
+  defineType({
+    name: "article", title: "Articles / blog", type: "document", fields: [
+      defineField({ name: "title", title: "Title", type: "string", validation: (r) => r.required().custom(safePublicCopy) }),
+      defineField({ name: "slug", title: "URL slug", type: "slug", options: { source: "title" }, validation: (r) => r.required() }),
+      defineField({ name: "category", title: "Category", type: "string" }),
+      defineField({ name: "summary", title: "Summary", type: "text", validation: (r) => r.required().custom(safePublicCopy) }),
+      defineField({ name: "body", title: "Article body", type: "array", of: [{ type: "block" }], validation: (r) => r.required().custom((v) => safePublicCopy(JSON.stringify(v || ""))) }),
+      defineField({ name: "relatedProducts", title: "Related products", type: "array", of: [{ type: "reference", to: [{ type: "product" }] }] }),
+      ...seoFields, ...publishFields,
+    ],
+  }),
+  defineType({
+    name: "faq", title: "Questions & answers", type: "document", fields: [
+      defineField({ name: "question", title: "Question", type: "string", validation: (r) => r.required().custom(safePublicCopy) }),
+      defineField({ name: "answer", title: "Answer", type: "text", rows: 5, validation: (r) => r.required().custom(safePublicCopy) }),
+      defineField({ name: "category", title: "Category", type: "string" }),
+      defineField({ name: "order", title: "Display order", type: "number" }),
+      ...publishFields,
+    ],
+  }),
+  defineType({
+    name: "industry", title: "Application sectors", type: "document", fields: [
+      defineField({ name: "name", title: "Sector name", type: "string", validation: (r) => r.required().custom(safePublicCopy) }),
+      defineField({ name: "slug", title: "URL slug", type: "slug", options: { source: "name" }, validation: (r) => r.required() }),
+      defineField({ name: "summary", title: "Original sector guidance", type: "text", validation: (r) => r.required().custom(safePublicCopy) }),
+      defineField({ name: "approvedImagePath", title: "Approved image path", type: "string" }),
+      defineField({ name: "planningPoints", title: "Planning points", type: "array", of: [{ type: "string" }] }),
+      ...seoFields, ...publishFields,
+    ],
+  }),
+  defineType({
+    name: "subrecord", title: "Product subrecords", type: "document", fields: [
+      defineField({ name: "name", title: "Name", type: "string", validation: (r) => r.required().custom(safePublicCopy) }),
+      defineField({ name: "parent", title: "Parent product", type: "reference", to: [{ type: "product" }], validation: (r) => r.required() }),
+      defineField({ name: "recordType", title: "Record type", type: "string", options: { list: ["age-group", "locker-tier", "ump-shape", "custom-option"] } }),
+      defineField({ name: "dimensions", title: "Verified dimensions", type: "array", of: [{ type: "object", fields: [defineField({ name: "label", title: "Label", type: "string" }), defineField({ name: "value", title: "Value", type: "string" })] }] }),
+      defineField({ name: "verificationStatus", title: "Verification status", type: "string", options: { list: ["verified", "not-verified-do-not-publish"] }, initialValue: "not-verified-do-not-publish" }),
+      defineField({ name: "approvedImagePath", title: "Approved image path", type: "string" }),
+      ...seoFields, ...publishFields,
+    ],
+  }),
+  defineType({
+    name: "redirect", title: "Redirects", type: "document", fields: [
+      defineField({ name: "from", title: "From path", type: "string", validation: (r) => r.required() }),
+      defineField({ name: "to", title: "Destination path", type: "string", validation: (r) => r.required() }),
+      defineField({ name: "permanent", title: "Permanent redirect", type: "boolean", initialValue: true }),
     ],
   }),
 ];

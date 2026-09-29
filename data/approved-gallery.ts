@@ -1,8 +1,8 @@
 const root = "/images/approved/";
 export const profileGroups = [
-  { name: "Anodised aluminium", folder: "profiles/anodised-aluminium", prefix: "anodised-aluminium", files: ["u-channel-profile", "door-stopper-channel", "f-channel-profile", "top-rail-profile"] },
-  { name: "Black powder-coated aluminium", folder: "profiles/black-powder-coated-aluminium", prefix: "black-powder-coated", files: ["u-channel-profile", "door-stopper-channel", "f-channel-profile", "top-rail-profile"] },
-  { name: "Stainless steel", folder: "profiles/stainless-steel", prefix: "ss", files: ["u-channel-profile", "door-stopper-channel", "f-channel-profile", "top-rail-profile"] },
+  { name: "Anodised aluminium", folder: "accessories/profiles/anodised-aluminium", prefix: "anodised-aluminium", files: ["u-channel-profile", "door-stopper-channel", "f-channel-profile", "top-rail-profile"] },
+  { name: "Black powder-coated aluminium", folder: "accessories/profiles/black-powder-coated-aluminium", prefix: "black-powder-coated", files: ["u-channel-profile", "door-stopper-channel", "f-channel-profile", "top-rail-profile"] },
+  { name: "Stainless steel", folder: "accessories/profiles/stainless-steel", prefix: "ss", files: ["u-channel-profile", "door-stopper-channel", "f-channel-profile", "top-rail-profile"] },
 ];
 const profileTitle: Record<string, string> = { "u-channel-profile": "U Channel", "door-stopper-channel": "Door Stopper Channel", "f-channel-profile": "F Channel", "top-rail-profile": "Top Rail" };
 export const profiles = profileGroups.flatMap((group) => group.files.map((file) => ({
@@ -11,18 +11,18 @@ export const profiles = profileGroups.flatMap((group) => group.files.map((file) 
   alt: `${profileTitle[file]} profile visual in ${group.name}`,
 })));
 export const hardwareGroups = [
-  { name: "Black Nylon", folder: "hardware/black-nylon", items: [
+  { name: "Black Nylon", folder: "accessories/hardware/black-nylon", items: [
     ["Lockset with Indicator", "black-nylon-lockset-with-indicator.jpg"], ["Door Knob", "black-nylon-door-knob.jpg"], ["Hinges", "black-nylon-hinge.jpg"], ["Legs", "black-nylon-leg.jpg"], ["Coat Hook", "black-nylon-coat-hook.png"],
   ] },
-  { name: "Stainless-Steel Hardware", folder: "hardware/stainless-steel", items: [
+  { name: "Stainless-Steel Hardware", folder: "accessories/hardware/stainless-steel", items: [
     ["Lock Set with Indicator — Side 1", "ss-lock-set-with-indicator-side-1.jpg"], ["Lock Set with Indicator — Side 2", "ss-lock-set-with-indicator-side-2.jpg"], ["Door Knob", "ss-door-knob.jpg"], ["Hinges", "ss-hinge.jpg"], ["Legs", "ss-leg.jpg"], ["Coat Hook", "ss-coat-hook.jpg"],
   ] },
 ];
 export const supportComponents = [
-  { title: "H Type Top Rail", src: `${root}components/h-type-top-rail.jpg`, alt: "H Type Top Rail component visual" },
-  { title: "MS Bracket", src: `${root}components/ms-bracket.jpg`, alt: "MS Bracket component visual" },
-  { title: "SS Shoe Box", src: `${root}components/ss-shoe-box.png`, alt: "Stainless-steel shoe-box support component visual" },
-  { title: "Floor Anchor", src: `${root}components/floor-anchor.png`, alt: "Floor anchor component visual; grade is project-specified" },
+  { title: "H Type Top Rail", src: `${root}accessories/components/h-type-top-rail.jpg`, alt: "H Type Top Rail component visual" },
+  { title: "MS Bracket", src: `${root}accessories/components/ms-bracket.jpg`, alt: "MS Bracket component visual" },
+  { title: "SS Shoe Box", src: `${root}accessories/components/ss-shoe-box.png`, alt: "Stainless-steel shoe-box support component visual" },
+  { title: "Floor Anchor", src: `${root}accessories/components/floor-anchor.png`, alt: "Floor anchor component visual; grade is project-specified" },
 ];
 export const systemComponents: Record<string, { profile: string; hardware: string }> = {
   "titan-black": { profile: "cubicle-systems/titan-black/titan-black-black-powder-coated-profile-overview.jpg", hardware: "cubicle-systems/titan-black/titan-black-black-nylon-hardware-overview.jpg" },

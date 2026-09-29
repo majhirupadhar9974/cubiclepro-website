@@ -32,6 +32,11 @@ const config: NextConfig = {
               destination: "/contact/",
               permanent: true,
             },
+            {
+              source: "/products/custom",
+              destination: "/contact/?system=Custom%20configuration",
+              permanent: true,
+            },
           ];
         },
         async headers() {

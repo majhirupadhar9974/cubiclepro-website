@@ -6,7 +6,7 @@ import { site } from "@/config/site";
 export const generateMetadata = () =>
   metadata(
     "Toilet & Washroom Cubicle Systems",
-    "Compare aluminium, stainless, box-up, floating, ceiling-hung, junior and custom washroom systems by profile, hardware and mounting.",
+    "Compare aluminium, stainless, box-up, floating and ceiling-hung restroom cubicle systems by profile, hardware and mounting.",
     "/products/",
   );
 export default async function Products() {

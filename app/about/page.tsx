@@ -10,7 +10,7 @@ import { metadata, PageSchema } from "@/lib/seo";
 export const generateMetadata = () =>
   metadata(
     "About Cubiclepro Washroom Solutions",
-    "A new firm built around clear specification, site-aware detailing, responsive coordination and practical installation understanding.",
+    "CubiclePro brings clear specification, site-aware detailing, responsive coordination and practical installation understanding to commercial washroom projects.",
     "/about/",
   );
 export default function About() {
@@ -19,8 +19,8 @@ export default function About() {
       <PageSchema name="About Cubiclepro" path="/about/" type="AboutPage" />
       <PageHero
         eyebrow="About Cubiclepro"
-        title="New firm. Practical experience."
-        text="Built around clear specification and careful execution. Focused on dependable washroom systems and responsive coordination."
+        title="Clear specification. Responsible execution."
+        text="Focused on dependable washroom systems, site-aware detailing and responsive coordination."
         path="/about/"
       />
       <section className="section container split">
@@ -37,13 +37,8 @@ export default function About() {
             From the start.
           </h2>
           <p className="lede">
-            Cubiclepro Washroom Solutions is a new firm with hands-on fitting
-            and installation understanding.
-          </p>
-          <p>
-            Our team brings prior fitting exposure across established modular
-            cubicle systems. Work completed before Cubiclepro was formed is not
-            represented as the firm’s project portfolio.
+            CubiclePro Washroom Solutions brings hands-on fitting and
+            installation understanding to every project conversation.
           </p>
           <p>
             We coordinate cubicles, partitions, lockers, cladding, doors,
