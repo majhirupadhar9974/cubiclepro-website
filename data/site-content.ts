@@ -184,12 +184,12 @@ export const faqs = [
   },
   {
     q: "What UMP shapes are available?",
-    a: "The approved Urinal Modesty Panel shapes are CP AERO, CP TAPER, CP WAVE, CP SLANT, CP SOFT, CP LEAN, CP FLOW, CP SWEEP and CP DOME. The reference size is 1200 mm by 450 mm; custom sizes and shapes can be discussed.",
+    a: "The approved Urinal Modesty Panel shapes are CP AERO, CP TAPER, CP WAVE, CP SLANT, CP SOFT, CP LEAN, CP FLOW, CP SWEEP and CP DOME. The reference size is approximately 900 mm height by 450 mm width; final sizes and custom shapes are confirmed project-wise.",
     tags: ["ump"],
   },
   {
     q: "Which HPL locker configurations are listed?",
-    a: "The approved records are Tier 1, Tier 2, Tier 3, Tier 4, Tier 5 and Z-Type. Each configuration uses its own approved image. Thickness and dimensions remain project- or configuration-specific until verified.",
+    a: "The listed configurations are Tier 1 through Tier 5 and Z-Type. Tier 1 is a 1-door module, Tier 2 is a 2-door module and the same pattern continues through Tier 5. Z-Type is an interlocking module. Final dimensions are confirmed against the locker schedule.",
     tags: ["lockers"],
   },
   {
@@ -286,7 +286,7 @@ export const articles: Article[] = [
     related: ["modesty-panels"],
     sections: [
       { heading: "Start with the nine approved shapes", body: "CP AERO, CP TAPER, CP WAVE, CP SLANT, CP SOFT, CP LEAN, CP FLOW, CP SWEEP and CP DOME are maintained as item-level records." },
-      { heading: "Use the reference dimension correctly", body: "The approved reference is 1200 mm by 450 mm. Final sizes and custom shapes are confirmed against the requirement." },
+      { heading: "Use the reference dimension correctly", body: "The reference size is approximately 900 mm height by 450 mm width. Final sizes and custom shapes are confirmed against the requirement." },
       { heading: "Keep the fixing description accurate", body: "The approved public material expression is HPL with stainless-steel clamps. A clamp grade is not published unless verified." },
     ],
   },
@@ -301,6 +301,58 @@ export const articles: Article[] = [
       { heading: "Different support conditions", body: "Flot is a wall-to-wall floating system. Sky Hung coordinates support from the ceiling and keeps the floor free of legs. The visual result may be similar at floor level, but the interfaces are not interchangeable." },
       { heading: "Site feasibility matters", body: "Wall and ceiling conditions, spans, services and access must be reviewed before a suspended system is approved." },
       { heading: "Keep the enquiry specific", body: "Share dimensions and drawings so the support approach can be discussed against the actual site rather than a generic assumption." },
+    ],
+  },
+  {
+    slug: "site-measurement-checklist-for-toilet-cubicles",
+    title: "Site-measurement checklist for toilet cubicles",
+    summary: "The essential opening, floor, wall, ceiling and access information to collect before a cubicle system is detailed.",
+    category: "Site coordination",
+    readTime: "7 min read",
+    related: ["titan-black", "nova", "supernova", "supernova-plus", "base-box", "base-box-pro", "float", "sky-hung"],
+    sections: [
+      { heading: "Record the complete room", body: "Measure the room width, depth, finished floor level, wall build-up, door swing constraints and any service zones. A single overall dimension rarely describes all the interfaces that affect a cubicle layout." },
+      { heading: "Check levels and fixing zones", body: "Note floor variation, skirting, wall finishes, ceiling levels and the location of concealed services. Suspended and wall-supported systems require the relevant support condition to be reviewed before approval." },
+      { heading: "Share drawings with context", body: "Mark the intended cubicle count, accessible requirements, entrance position and any cleaning or circulation constraint. Final manufacture should follow the approved drawing and specification, not an informal site note." },
+    ],
+  },
+  {
+    slug: "planning-hpl-lockers-for-schools-workplaces-and-gyms",
+    title: "Planning HPL lockers for schools, workplaces and gyms",
+    summary: "How user needs, compartment count, locking, circulation and room layout shape a practical locker schedule.",
+    category: "Lockers",
+    readTime: "7 min read",
+    related: ["hpl-lockers"],
+    sections: [
+      { heading: "Match the module to what users store", body: "A 1-door module offers the greatest vertical space in each column, while 2-door through 5-door modules increase the compartment count. Z-Type uses an interlocking arrangement for a different balance of hanging and compact storage." },
+      { heading: "Plan access before capacity", body: "Confirm aisle width, bench position, door opening, accessible reach and the way users enter or leave the room. A high locker count is not useful if circulation and access are compromised." },
+      { heading: "Confirm the schedule", body: "Record the module, quantity, bank dimensions, locking option, base condition and internal arrangement. Final dimensions and construction are confirmed against the approved locker schedule." },
+    ],
+  },
+  {
+    slug: "aluminium-vs-stainless-steel-cubicle-profiles",
+    title: "Aluminium vs stainless-steel cubicle profiles",
+    summary: "A specification-led comparison of architectural expression, system family and hardware coordination.",
+    category: "Profiles & hardware",
+    readTime: "6 min read",
+    related: ["titan-black", "nova", "supernova", "supernova-plus"],
+    sections: [
+      { heading: "Keep appearance and grade separate", body: "Black powder-coated aluminium, anodised aluminium, SS 304 and SS 316 each belong to a defined CubiclePro system. The visual direction does not replace the need to record the actual profile and support specification." },
+      { heading: "Coordinate the full system", body: "Profile or support material, hardware grade, panel selection and mounting arrangement must be read together. A property or grade from one product family should not be assumed for another." },
+      { heading: "Use the application as the filter", body: "Consider user load, cleaning routine, wet-area exposure, architectural intent and the approved project requirement before selecting a system family." },
+    ],
+  },
+  {
+    slug: "commercial-washroom-rfq-information-guide",
+    title: "What to include in a commercial washroom RFQ",
+    summary: "A concise RFQ guide for contractors, architects, procurement teams and project owners.",
+    category: "Quotation guide",
+    readTime: "5 min read",
+    related: ["pro-doors", "shower-cubicles", "changing-room-cubicles", "junior-series", "modesty-panels", "hpl-lockers"],
+    sections: [
+      { heading: "Describe the project", body: "Share the project city, building type, current stage, approximate quantity and intended programme. State whether the enquiry is for supply only or includes installation coordination." },
+      { heading: "Attach usable information", body: "A dimensioned layout, BOQ, elevation or marked photograph helps clarify the requirement. Sensitive documents should be shared only through the approved private enquiry route." },
+      { heading: "Separate preferences from approvals", body: "List preferred products, material and hardware where known, but identify items that still need technical review. The final grade, thickness, configuration and finish are confirmed in the approved project specification." },
     ],
   },
 ];

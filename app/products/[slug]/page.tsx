@@ -24,6 +24,8 @@ import { metadata, JsonLd } from "@/lib/seo";
 import { specification, thickness, site, whatsapp } from "@/config/site";
 import { juniorAgeBands, lockerTiers, modestyShapeImage, systemComponents } from "@/data/approved-gallery";
 import { getCatalogProduct } from "@/lib/cms";
+import ImageLightbox from "@/components/image-lightbox";
+import { articles, industries } from "@/data/site-content";
 export const dynamicParams = false;
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -52,6 +54,25 @@ export default async function ProductPage({
   const { slug } = await params;
   const p = await getCatalogProduct(slug);
   if (!p) notFound();
+  const productFaqs = [
+    {
+      q: `Where is ${p.name} most useful?`,
+      a: `${p.name} is considered where its ${p.mounting.toLowerCase()} configuration and ${p.character.toLowerCase()} direction suit the intended users, cleaning plan and site interfaces. Final suitability is confirmed against the project requirement.`,
+    },
+    {
+      q: `Which profile and hardware are used for ${p.name}?`,
+      a: `${p.name} uses ${p.profile} with ${p.hardware}. Components are not transferred from another system unless they are included in the approved project specification.`,
+    },
+    {
+      q: `Can ${p.name} be customised?`,
+      a: `Custom dimensions and configuration can be reviewed for ${p.name}, subject to site conditions, technical feasibility and the approved project specification. Colours and finishes are finalized project-wise.`,
+    },
+    {
+      q: `What should I share for a ${p.name} quotation?`,
+      a: `Share the project city, application, approximate quantity, available layout or BOQ, preferred material and any known mounting constraints. Final material grade, thickness, hardware and configuration are then confirmed against the approved specification.`,
+    },
+  ];
+  const relatedArticles = articles.filter((article) => article.related.includes(slug));
   return (
     <>
       <header className="product-hero">
@@ -83,12 +104,13 @@ export default async function ProductPage({
             </div>
           </div>
         </div>
-        <Visual
+        <ImageLightbox
           src={imageFor(slug)}
           alt={imageAltFor(slug)}
           priority
           className="product-hero-image"
           sizes="100vw"
+          caption={`${p.name} · Product Visual`}
         />
       </header>
       <section className="container">
@@ -159,7 +181,13 @@ export default async function ProductPage({
             {slug !== "hpl-lockers" && <div className="variant-list">
               {p.variants.map((v) => (
                 <Link
-                  href={slug === "hpl-lockers" ? `/products/hpl-lockers/${v.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-$/, "")}/` : `/contact/?system=${encodeURIComponent(v)}`}
+                  href={slug === "junior-series"
+                    ? v.toLowerCase().startsWith("custom")
+                      ? `/contact/?system=${encodeURIComponent("Custom Junior Cubicle configuration")}`
+                      : `/products/junior-series/${v.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-$/, "")}/`
+                    : slug === "modesty-panels"
+                      ? `/products/modesty-panels/${v.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-$/, "")}/`
+                      : `/contact/?system=${encodeURIComponent(v)}`}
                   key={v}
                 >
                   {v}
@@ -169,7 +197,7 @@ export default async function ProductPage({
             </div>}
             <p className="fine-print">
               {slug === "modesty-panels"
-                ? "Reference size: approx. 1200 mm height × 450 mm width. Final dimensions are project-specific."
+                ? "Reference size: approx. 900 mm height × 450 mm width. Final dimensions are project-specific."
                 : slug === "junior-series"
                   ? "Final panel height and profile arrangement are confirmed for the intended age group and site."
                   : "Layouts, locking options and internal arrangements are confirmed against the approved locker schedule."}
@@ -177,8 +205,8 @@ export default async function ProductPage({
           </div>
         </section>
       )}
-      {slug === "junior-series" && <section className="section surface"><div className="container"><SectionHeading eyebrow="Junior Cubicle records" title="Scaled for the intended age band." text="Use only the image and dimensions for the selected age group. The 15 years and above dimensions remain unverified and are intentionally withheld."/><div className="variant-visual-grid">{juniorAgeBands.map((band) => <article className="variant-visual" key={band.age}><div className="component-image"><Image src={band.src} alt={`${band.name} Junior Cubicle product visual`} fill sizes="(max-width: 640px) 100vw, 50vw" /></div><div className="variant-visual-copy"><h3>{band.name}</h3>{band.measurements ? <dl>{band.measurements.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl> : <p className="fine-print">Dimensions: NOT VERIFIED — confirm from approved source before publishing.</p>}<Link className="text-link" href={`/products/junior-series/${band.age}/`}>View this age-band record ↗</Link></div></article>)}</div><p className="fine-print">Junior Cubicles are organised by age group, not by adult product-series names. Custom dimensions and configurations may be reviewed subject to the approved project specification.</p></div></section>}
-      {slug === "hpl-lockers" && <section className="section surface"><div className="container"><SectionHeading eyebrow="Locker configurations" title="Six layout references." text="Each locker record uses its own approved visual. Dimensions, material thickness, locking and construction remain subject to approved schedule; none are assumed here."/><div className="variant-visual-grid">{lockerTiers.map(item => <article className="variant-visual" key={item.name}><div className="component-image"><Image src={item.src} alt={item.alt} fill sizes="(max-width: 640px) 100vw, 33vw" /></div><div className="variant-visual-copy"><h3>{item.name}</h3><p>Custom dimensions and internal configuration to approved locker schedule.</p><Link className="text-link" href={`/contact/?system=${encodeURIComponent(`HPL Locker ${item.name}`)}`}>Enquire about {item.name} ↗</Link></div></article>)}</div></div></section>}
+      {slug === "junior-series" && <section className="section surface"><div className="container"><SectionHeading eyebrow="Junior Cubicle records" title="Scaled for the intended age band." text="Open an age-group record to see the full product visual, approved dimensions, application guidance and enquiry route."/><div className="variant-visual-grid">{juniorAgeBands.map((band) => <Link className="variant-visual" href={`/products/junior-series/${band.age}/`} key={band.age}><div className="component-image"><Image src={band.src} alt={`${band.name} Junior Cubicle product visual`} fill sizes="(max-width: 640px) 100vw, 50vw" /></div><div className="variant-visual-copy"><span className="variant-label">Age-group record</span><h3>{band.name}</h3><p>{band.summary}</p>{band.measurements ? <dl>{band.measurements.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl> : <p className="fine-print">Dimensions are confirmed during enquiry against the approved project schedule.</p>}<b>Open full record →</b></div></Link>)}</div><p className="fine-print">Junior Cubicles are organised by age group, not by adult product-series names. Custom dimensions and configurations may be reviewed subject to the approved project specification.</p></div></section>}
+      {slug === "hpl-lockers" && <><section className="section surface"><div className="container"><SectionHeading eyebrow="Locker configurations" title="One to five doors, plus Z-Type." text="Open a configuration to understand its module arrangement, useful applications and the information needed for final measurement."/><div className="variant-visual-grid">{lockerTiers.map(item => <Link className="variant-visual" href={`/products/hpl-lockers/${item.slug}/`} key={item.name}><div className="component-image"><Image src={item.src} alt={item.alt} fill sizes="(max-width: 640px) 100vw, 50vw" /></div><div className="variant-visual-copy"><span className="variant-label">{item.module}</span><h3>{item.name}</h3><p className="variant-arrangement">{item.arrangement}</p><p>{item.usefulFor}</p><b>Open configuration →</b></div></Link>)}</div></div></section><section className="section container locker-system-details"><SectionHeading eyebrow="Locker system" title="Construction choices, clearly coordinated." text="The final panel grade, thickness, dimensions and component selection remain subject to the approved locker schedule."/><div className="locker-detail-grid"><article><h3>Doors, walls & partitions</h3><p>Solid phenolic HPL can be used for locker doors, walls and partitions. Shelf thickness, partition build-up and moisture suitability are confirmed for the selected specification.</p></article><article><h3>Base</h3><p>Compact-laminate skirting or a coordinated concrete base may be considered according to the room and approved locker schedule.</p></article><article><h3>Locking mechanism</h3><p>Options can include customer padlock provision, an inbuilt key lock or a keyless numeric lock, subject to the selected hardware and project requirement.</p></article><article><h3>Channels & construct</h3><p>Integrated frames, connectors and screw-fixed assembly support a modular installation approach. Internal shelves and outer channels are coordinated for the selected module.</p></article><article><h3>Hinges</h3><p>Locker hinges are selected for the approved door construction and intended use. Opening angle, closing action and fixing detail follow the selected hardware specification.</p></article></div></section></>}
       <section
         className="section container"
         aria-labelledby="configuration-heading"
@@ -225,21 +253,14 @@ export default async function ProductPage({
               Explore applications ↗
             </Link>
           </div>
-          <div className="detail-list">
+          {slug === "hpl-lockers" ? <div className="locker-application-grid">{industries.map((industry) => <Link href={`/industries/${industry.slug}/`} key={industry.slug}><span className="locker-application-image"><Image src={industry.image} alt={`${industry.name} locker application context`} fill sizes="(max-width:640px) 45vw, 16vw" /></span><strong>{industry.name}</strong><small>{industry.kicker}</small></Link>)}</div> : <div className="detail-list">
             {(slug === "junior-series"
               ? ["Education", "Public Facilities"]
-              : slug === "hpl-lockers"
-                ? [
-                    "Education",
-                    "Corporate Offices",
-                    "Hospitality",
-                    "Industrial",
-                  ]
-                : applications.map(([name]) => name)
+              : applications.map(([name]) => name)
             ).map((name) => (
               <span key={name}>{name}</span>
             ))}
-          </div>
+          </div>}
         </div>
       </section>
       <section className="section container">
@@ -301,6 +322,11 @@ export default async function ProductPage({
           </div>
         </div>
       </section>
+      <section className="section container product-faqs">
+        <SectionHeading eyebrow={`${p.name} questions`} title="Answers before you enquire." text="Product-specific guidance for selection, customisation and quotation preparation." />
+        <div className="cp-accordion">{productFaqs.map((item, index) => <details key={item.q} open={index === 0}><summary><span>{String(index + 1).padStart(2, "0")}</span>{item.q}<b aria-hidden="true">+</b></summary><p>{item.a}</p></details>)}</div>
+      </section>
+      <section className="section surface"><div className="container"><SectionHeading eyebrow="Related reading" title="Practical specification guidance." href="/resources/" link="All guides"/><div className="product-guide-grid">{(relatedArticles.length ? relatedArticles : articles.slice(0, 2)).slice(0, 2).map((article) => <Link href={`/blog/${article.slug}/`} key={article.slug}><span>{article.category} · {article.readTime}</span><h3>{article.title}</h3><p>{article.summary}</p><b>Read guide →</b></Link>)}</div></div></section>
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -339,6 +365,7 @@ export default async function ProductPage({
               }),
         }}
       />
+      <JsonLd data={{"@context":"https://schema.org","@type":"FAQPage",mainEntity:productFaqs.map((item)=>({"@type":"Question",name:item.q,acceptedAnswer:{"@type":"Answer",text:item.a}}))}} />
       <QuoteBand product={p.name} />
     </>
   );

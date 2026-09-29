@@ -193,7 +193,7 @@ export const products: Product[] = [
       "Compact HPL urinal privacy panels with stainless-steel wall clamps, multiple reference shapes and custom profiles where required.",
     mounting: "Wall-mounted",
     detail:
-      "Reference size: approximately 1200 mm height × 450 mm width. Final dimensions and fixing details are confirmed project-wise.",
+      "Reference size: approximately 900 mm height × 450 mm width. Final dimensions and fixing details are confirmed project-wise.",
     related: ["junior-series"],
     variants: [
       "CP AERO",

@@ -93,12 +93,13 @@ export default function About() {
           eyebrow="Our workflow"
           title="From requirement to handover."
         />
-        <div className="workflow">
+        <div className="cp-process" role="region" aria-label="CubiclePro project process" tabIndex={0}>
           {workflow.map(([n, t], i) => (
             <article key={n}>
-              <span className="step-number">0{i + 1}</span>
+              <i aria-hidden="true">{["◎", "⌁", "▤", "▣", "◇"][i]}</i>
               <h3>{n}</h3>
               <p>{t}</p>
+              {i < workflow.length - 1 && <span className="cp-process-arrow" aria-hidden="true">→</span>}
             </article>
           ))}
         </div>

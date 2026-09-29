@@ -3,6 +3,7 @@ import AxeBuilder from "@axe-core/playwright";
 import { mkdir, writeFile } from "node:fs/promises";
 import { products } from "../data/products.ts";
 import { articles, industries, locations } from "../data/site-content.ts";
+import { juniorAgeBands, lockerTiers, modestyShapes } from "../data/approved-gallery.ts";
 
 const base=process.env.QA_BASE_URL||"http://127.0.0.1:3000";
 const browser=await chromium.launch({headless:true,channel:"msedge"});
@@ -11,7 +12,7 @@ const page=await context.newPage();
 const issues=[]; const errors=[];
 page.on("pageerror",(error)=>errors.push(error.message));
 page.on("response",(response)=>{if(response.status()>=400&&!response.url().includes("/_vercel/")&&["script","stylesheet","image"].includes(response.request().resourceType()))errors.push(`Asset ${response.status()}: ${response.url()}`);});
-const routes=["/","/products/","/materials/","/hardware/","/applications/","/resources/","/faq/","/about/","/warranty/","/contact/","/technical-enquiry/","/locations/",...products.map((x)=>`/products/${x.slug}/`),...articles.map((x)=>`/blog/${x.slug}/`),...industries.map((x)=>`/industries/${x.slug}/`),...locations.filter((x)=>x.indexable).map((x)=>`/locations/${x.slug}/`)];
+const routes=["/","/products/","/materials/","/hardware/","/applications/","/resources/","/faq/","/about/","/warranty/","/contact/","/technical-enquiry/","/locations/",...products.map((x)=>`/products/${x.slug}/`),...juniorAgeBands.map((x)=>`/products/junior-series/${x.age}/`),...lockerTiers.map((x)=>`/products/hpl-lockers/${x.slug}/`),...modestyShapes.map((x)=>`/products/modesty-panels/${x.slug}/`),...articles.map((x)=>`/blog/${x.slug}/`),...industries.map((x)=>`/industries/${x.slug}/`),...locations.filter((x)=>x.indexable).map((x)=>`/locations/${x.slug}/`)];
 await mkdir("qa-results",{recursive:true});
 for(const route of routes){
   const response=await page.goto(base+route,{waitUntil:"networkidle"});
@@ -27,7 +28,7 @@ for(const route of routes){
 }
 for(const [name,width,height] of [["desktop",1440,1000],["tablet",768,1024],["mobile",390,844],["small-mobile",360,800]]){
   await page.setViewportSize({width,height});
-  for(const route of ["/","/products/","/applications/","/products/titan-black/","/contact/"]){
+  for(const route of ["/","/products/","/applications/","/products/titan-black/","/products/junior-series/","/products/hpl-lockers/","/products/hpl-lockers/z-type/","/products/modesty-panels/","/contact/"]){
     await page.goto(base+route,{waitUntil:"networkidle"});
     await page.evaluate(async()=>{for(let y=0;y<document.body.scrollHeight;y+=700){scrollTo(0,y);await new Promise((resolve)=>setTimeout(resolve,40))}scrollTo(0,0)});
     await page.waitForTimeout(800);
@@ -37,6 +38,17 @@ for(const [name,width,height] of [["desktop",1440,1000],["tablet",768,1024],["mo
   }
 }
 await page.setViewportSize({width:1440,height:1000});
+await page.goto(base+"/products/hpl-lockers/");
+await page.locator("a.variant-visual").first().click();
+await page.waitForLoadState("networkidle");
+if(!page.url().includes("/products/hpl-lockers/tier-1/"))issues.push("Locker card did not open its detail page");
+await page.getByRole("button",{name:/Open full image/}).click();
+if(!(await page.locator("dialog.image-lightbox").evaluate((dialog)=>dialog.open)))issues.push("Full-image lightbox did not open");
+await page.getByRole("button",{name:"Close full image"}).click();
+await page.goto(base+"/products/junior-series/");
+await page.locator("a.variant-visual").first().click();
+await page.waitForLoadState("networkidle");
+if(!page.url().includes("/products/junior-series/below-5-years/"))issues.push("Junior card did not open its detail page");
 await page.goto(base);
 await page.getByRole("button",{name:/Products/}).click();
 if(!(await page.getByRole("link",{name:/Titan Black/}).first().isVisible()))issues.push("Desktop product menu failed");
