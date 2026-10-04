@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import HeroCarousel from "@/components/hero-carousel";
-import { products, workflow } from "@/data/products";
-import { articles, faqs, industries, locations, mainCategories } from "@/data/site-content";
+import { workflow } from "@/data/products";
+import { industries, locations, mainCategories } from "@/data/site-content";
+import { articles, faqs } from "@/data/content-library";
 import { metadata, PageSchema } from "@/lib/seo";
 import { specification, thickness } from "@/config/site";
 import HorizontalRail from "@/components/horizontal-rail";
+import { TechnicalWhatsAppAction } from "@/components/ui";
+import { getCatalog } from "@/lib/cms";
 
 export const generateMetadata = () => metadata("Toilet Cubicles & Commercial Washroom Solutions India", "Explore CubiclePro restroom cubicles, urinal modesty panels, Junior Cubicles, HPL lockers, shower and changing-room solutions for commercial projects in India.", "/");
 
@@ -16,7 +19,8 @@ const choices = [
   ["Mounting", "Review floor, wall, top-rail and ceiling interfaces.", "/products/", "/images/approved/accessories/components/floor-anchor.png"],
 ];
 
-export default function Home() {
+export default async function Home() {
+  const catalog = await getCatalog();
   return <>
     <PageSchema name="Commercial washroom solutions" path="/" />
     <HeroCarousel />
@@ -24,16 +28,16 @@ export default function Home() {
     <section className="cp-intro-strip"><div className="container"><p>Solutions shaped around the requirement.</p><span>Restroom cubicles · UMP · Junior · Lockers · Shower · Changing room · Accessories</span></div></section>
 
     <section className="cp-section" id="solutions"><div className="container">
-      <header className="cp-section-head"><div><p className="cp-kicker">Complete solution scope</p><h2>One category at a time.<br /><span>One coordinated system.</span></h2></div><p>Explore the exact public portfolio. Categories with approved visuals use only the supplied image bundle; cladding and washbasin storage remains intentionally text-led.</p></header>
+      <header className="cp-section-head"><div><p className="cp-kicker">Complete solution scope</p><h2>One category at a time.<br /><span>One coordinated system.</span></h2></div><p>Explore the public portfolio through approved product and reference visuals. Final dimensions and custom configurations are confirmed project-wise.</p></header>
       <HorizontalRail className="cp-card-rail cp-category-rail" label="Main solution categories">{mainCategories.map((category, index) => <Link className={`cp-tilt-card ${!category.image ? "is-text-card" : ""}`} href={category.href} key={category.slug}>
         {category.image ? <div className="cp-card-media"><Image src={category.image} alt={category.alt || ""} fill sizes="(max-width: 700px) 82vw, 32vw" /></div> : <div className="cp-line-art" aria-hidden="true"><i /><i /><i /><i /></div>}
         <div className="cp-card-copy"><span>0{index + 1}</span><h3>{category.name}</h3><p>{category.description}</p><b aria-hidden="true">↗</b></div>
-      </Link>)}</HorizontalRail>
+      </Link>)}<Link className="cp-tilt-card is-text-card" href="/contact/?system=Custom%20configuration"><div className="cp-line-art" aria-hidden="true"><i /><i /><i /><i /></div><div className="cp-card-copy"><span>09</span><h3>Custom Configuration</h3><p>Yes—custom dimensions and configurations can be reviewed for every applicable category.</p><b aria-hidden="true">↗</b></div></Link></HorizontalRail>
     </div></section>
 
     <section className="cp-section cp-section-dark"><div className="container">
-      <header className="cp-section-head"><div><p className="cp-kicker">Restroom cubicle systems</p><h2>Eight system directions.<br /><span>Clearly separated.</span></h2></div><Link href="/products/">Compare all systems ↗</Link></header>
-      <HorizontalRail className="cp-card-rail cp-product-rail" label="Restroom cubicle systems">{products.slice(0, 8).map((product, index) => <Link className="cp-tilt-card" href={`/products/${product.slug}/`} key={product.slug}><div className="cp-card-media"><Image src={product.image} alt={product.imageAlt} fill sizes="(max-width: 700px) 82vw, 34vw" /></div><div className="cp-card-copy"><span>{String(index + 1).padStart(2, "0")} · {product.family}</span><h3>{product.name}</h3><p>{product.character}</p><b aria-hidden="true">↗</b></div></Link>)}</HorizontalRail>
+      <header className="cp-section-head"><div><p className="cp-kicker">Restroom cubicle systems</p><h2>Nine system directions.<br /><span>Clearly separated.</span></h2></div><Link href="/products/">Compare all systems ↗</Link></header>
+      <HorizontalRail className="cp-card-rail cp-product-rail" label="Restroom cubicle systems">{catalog.slice(0, 9).map((product, index) => <Link className="cp-tilt-card" href={`/products/${product.slug}/`} key={product.slug}><div className="cp-card-media"><Image src={product.image} alt={product.imageAlt} fill sizes="(max-width: 700px) 82vw, 34vw" /></div><div className="cp-card-copy"><span>{String(index + 1).padStart(2, "0")} · {product.family}</span><h3>{product.name}</h3><p>{product.character}</p><b aria-hidden="true">↗</b></div></Link>)}<Link className="cp-tilt-card is-text-card" href="/contact/?system=Custom%20restroom%20cubicle"><div className="cp-line-art" aria-hidden="true"><i /><i /><i /><i /></div><div className="cp-card-copy"><span>10 · Project-specific</span><h3>Custom Cubicle</h3><p>Custom dimensions, panel, profiles and configuration can be reviewed against the project requirement.</p><b aria-hidden="true">↗</b></div></Link></HorizontalRail>
     </div></section>
 
     <section className="cp-section"><div className="container">
@@ -56,8 +60,8 @@ export default function Home() {
 
     <section className="cp-section cp-section-dark"><div className="container"><header className="cp-section-head"><div><p className="cp-kicker">Knowledge centre</p><h2>Practical project guides.</h2></div><Link href="/resources/">View all resources ↗</Link></header><div className="cp-article-grid">{articles.slice(0, 3).map((article, index) => <Link href={`/blog/${article.slug}/`} key={article.slug}><span>{article.category} · {article.readTime}</span><h3>{article.title}</h3><p>{article.summary}</p><b>{String(index + 1).padStart(2, "0")} ↗</b></Link>)}</div></div></section>
 
-    <section className="cp-section"><div className="container cp-location-panel"><div><p className="cp-kicker">India enquiry network</p><h2>Project conversations across key cities.</h2><p>City pages are published only when they contain useful, differentiated guidance. Thin location pages remain outside search indexing.</p></div><div>{locations.filter((item) => item.indexable).map((item) => <Link href={`/locations/${item.slug}/`} key={item.slug}>{item.city}<span>↗</span></Link>)}</div></div></section>
+    <section className="cp-section"><div className="container cp-location-panel"><div><p className="cp-kicker">India enquiry network</p><h2>Project conversations across 47 cities.</h2><p>Explore city-specific guidance for toilet partitions, restroom cubicles, washroom partitions, privacy panels, lockers and project enquiries.</p></div><div>{locations.map((item) => <Link href={`/locations/${item.slug}/`} key={item.slug}>{item.city}<span>↗</span></Link>)}</div></div></section>
 
-    <section className="cp-final-cta"><div className="container"><div><p className="cp-kicker">Start with the requirement</p><h2>Let’s discuss your project.</h2><p>Share the application, project city, approximate quantity and any available drawing or BOQ.</p></div><div><Link className="cp-button cp-button-accent" href="/contact/">Request a quote ↗</Link><Link className="cp-button cp-button-ghost" href="/technical-enquiry/">Technical enquiry ↗</Link></div></div></section>
+    <section className="cp-final-cta"><div className="container"><div><p className="cp-kicker">Start with the requirement</p><h2>Let’s discuss your project.</h2><p>Share the application, project city, approximate quantity and any available drawing or BOQ.</p></div><div className="cp-enquiry-actions"><Link className="cp-button cp-button-accent" href="/contact/">Request a quote ↗</Link><TechnicalWhatsAppAction subject="a technical washroom requirement" /></div></div></section>
   </>;
 }

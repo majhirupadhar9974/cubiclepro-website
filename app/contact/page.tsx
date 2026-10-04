@@ -1,6 +1,6 @@
 import { PageHero, Eyebrow, Arrow } from "@/components/ui";
 import QuoteForm from "@/components/quote-form";
-import { site, whatsapp } from "@/config/site";
+import { site, technicalWhatsapp, whatsapp } from "@/config/site";
 import { metadata, PageSchema } from "@/lib/seo";
 export const generateMetadata = () =>
   metadata(
@@ -42,6 +42,14 @@ export default function Contact() {
             rel="noopener noreferrer"
           >
             WhatsApp us <Arrow diagonal />
+          </a>
+          <a
+            href={technicalWhatsapp("a technical washroom requirement")}
+            className="button button-outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Technical WhatsApp <Arrow diagonal />
           </a>
           <div className="address-block">
             <p className="micro">Find us</p>

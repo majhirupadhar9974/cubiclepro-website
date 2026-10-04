@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --hostname 127.0.0.1",
     "build": "next build && node scripts/audit.mjs",
+    "cms:seed": "sanity exec scripts/seed-sanity.ts --with-user-token",
     "start": "next start --hostname 127.0.0.1",
     "typecheck": "tsc --noEmit",
     "audit:public": "node scripts/audit.mjs",

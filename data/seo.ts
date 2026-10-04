@@ -52,10 +52,10 @@ export const pageSeo: Record<
     h1: "Base Box Pro cubicle system",
   },
   "/products/float/": {
-    title: "Flot Wall-to-Wall Floating Toilet Cubicle | Cubiclepro",
+    title: "Float Wall-to-Wall Floating Toilet Cubicle | Cubiclepro",
     description:
-      "Explore Flot, a wall-to-wall floating toilet cubicle system with anodised aluminium, H Type Top Rail, MS Bracket and SS 316 hardware.",
-    h1: "Flot wall-to-wall floating cubicle",
+      "Explore Float, a wall-to-wall floating toilet cubicle system with powder-coated aluminium, H-Type Top Rail, wall support and SS 316 hardware.",
+    h1: "Float wall-to-wall floating cubicle",
   },
   "/products/sky-hung/": {
     title: "Sky Hung Ceiling-Hung Toilet Cubicle | Cubiclepro",

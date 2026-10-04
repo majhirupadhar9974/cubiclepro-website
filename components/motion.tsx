@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { site, whatsapp } from "@/config/site";
+import { technicalWhatsapp, whatsapp } from "@/config/site";
 export function Motion() {
   const pathname = usePathname();
   useEffect(() => {
@@ -123,9 +123,11 @@ export function MobileActions() {
       style={hidden ? { display: "none" } : undefined}
     >
       <a href={whatsapp()} target="_blank" rel="noopener noreferrer">
-        WhatsApp ↗
+        Sales WhatsApp ↗
       </a>
-      <a href={`tel:${site.tel}`}>Call now ↗</a>
+      <a href={technicalWhatsapp("a technical washroom requirement")} target="_blank" rel="noopener noreferrer">
+        Technical WhatsApp ↗
+      </a>
       {pathname !== "/contact/" && (
         <Link href="/contact/">Request quote ↗</Link>
       )}

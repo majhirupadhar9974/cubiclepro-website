@@ -6,7 +6,7 @@ import { products } from "@/data/products";
 import { hardwareGroups, profiles, supportComponents } from "@/data/approved-gallery";
 export const generateMetadata = () => metadata(
   "Toilet Cubicle Hardware & Profiles",
-  "Explore Cubiclepro-approved nylon and stainless hardware, aluminium and stainless profiles, shoe-box supports and rail components.",
+  "Explore Cubiclepro stainless-steel hardware, aluminium and stainless profiles, shoe-box supports and rail components.",
   "/hardware/",
 );
 function Gallery({ title, src, alt }: { title: string; src: string; alt: string }) {
@@ -31,11 +31,11 @@ export default function Hardware() {
       {(["Anodised aluminium", "Black powder-coated aluminium", "Stainless steel"] as const).map(group => <div className="component-family" key={group}><h3>{group}</h3><div className="component-grid four">{profiles.filter(p => p.group === group).map(p => <Gallery key={p.src} title={p.title} src={p.src} alt={p.alt} />)}</div></div>)}
     </div></section>
     <section className="section container"><SectionHeading eyebrow="Hardware families" title="Privacy, grip and movement." text="Where shown, the indicator lock and door knob are distinct components. Internal convenience components are not presented as exterior fittings." />
-      {hardwareGroups.map(group => <div className="component-family" key={group.name}><h3>{group.name}</h3><div className="component-grid">{group.items.map(([title, file]) => <Gallery key={file} title={title} src={`/images/approved/${group.folder}/${file}`} alt={`${title} in ${group.name}`} />)}</div></div>)}
+      {hardwareGroups.filter((group) => group.name === "Stainless-Steel Hardware").map(group => <div className="component-family" key={group.name}><h3>{group.name}</h3><div className="component-grid">{group.items.map(([title, file]) => <Gallery key={file} title={title} src={`/images/approved/${group.folder}/${file}`} alt={`${title} in ${group.name}`} />)}</div></div>)}
     </section>
     <section className="section surface"><div className="container"><SectionHeading eyebrow="Support components" title="Mounting and support elements." text="Exact fixing, material grade and suitability are confirmed against the selected system and site conditions." /><div className="component-grid four">{supportComponents.map(item => <Gallery key={item.src} {...item} />)}</div>
       <p className="fine-print">H Type Top Rail and MS Bracket are shown as separate components. Material selection and corresponding component imagery must match the approved configuration. Floor anchor grade is project-specified.</p></div></section>
-    <section className="section container"><Eyebrow>System mapping</Eyebrow><h2>Profiles and hardware, clearly stated.</h2><div className="hardware-matrix">{products.slice(0, 8).map(p => <Link href={`/products/${p.slug}/`} key={p.slug}><h3>{p.name}</h3><div><span className="micro">Profile / support</span><p>{p.profile}</p></div><div><span className="micro">Hardware</span><p>{p.hardware}</p></div><span>↗</span></Link>)}</div></section>
+    <section className="section container"><Eyebrow>System mapping</Eyebrow><h2>Profiles and hardware, clearly stated.</h2><div className="hardware-matrix">{products.slice(0, 9).map(p => <Link href={`/products/${p.slug}/`} key={p.slug}><h3>{p.name}</h3><div><span className="micro">Profile / support</span><p>{p.profile}</p></div><div><span className="micro">Hardware</span><p>{p.hardware}</p></div><span>↗</span></Link>)}</div></section>
     <QuoteBand />
   </>;
 }

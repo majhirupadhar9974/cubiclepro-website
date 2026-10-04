@@ -26,6 +26,10 @@ export default async function Products() {
       />
       <section className="container section">
         <ProductFilter products={products} />
+        <article className="custom-catalog-card cp-soft-card">
+          <div><span className="micro">PROJECT-SPECIFIC OPTION</span><h2>Custom Configuration</h2><p>Yes—custom dimensions, panels, profiles, hardware and support configurations can be reviewed for every applicable category, subject to site conditions, technical feasibility and the approved project specification.</p></div>
+          <a className="button" href="/contact/?system=Custom%20configuration">Discuss a custom requirement ↗</a>
+        </article>
       </section>
       <JsonLd
         data={{

@@ -1,4 +1,4 @@
-import { faqs } from "@/data/site-content";
+import { faqs } from "@/data/content-library";
 import { JsonLd, metadata } from "@/lib/seo";
 export const generateMetadata = () => metadata("Washroom Cubicle Questions & Answers", "Answers about CubiclePro washroom systems, custom configurations, Junior Cubicles, UMP shapes, HPL lockers, warranty and quotations.", "/faq/");
 export default function FAQPage() { return <><JsonLd data={{"@context":"https://schema.org","@type":"FAQPage",mainEntity:faqs.map((item)=>({"@type":"Question",name:item.q,acceptedAnswer:{"@type":"Answer",text:item.a}}))}}/><header className="page-hero"><div className="container"><p className="cp-kicker">Questions & answers</p><h1>Clear answers for project decisions.</h1><p className="lede">Specification-controlled guidance. Final details remain subject to the approved project requirement.</p></div></header><section className="cp-section cp-faq-section"><div className="container cp-accordion">{faqs.map((item,index)=><details key={item.q} open={index===0}><summary><span>{String(index+1).padStart(2,"0")}</span>{item.q}<b>+</b></summary><p>{item.a}</p></details>)}</div></section></>; }

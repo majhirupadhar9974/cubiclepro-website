@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import type { FormEvent } from "react";
 import { products, applications } from "@/data/products";
-import { site, whatsapp } from "@/config/site";
+import { site, technicalWhatsapp, whatsapp } from "@/config/site";
 import { Arrow } from "./ui";
 export default function QuoteForm() {
   const [message, setMessage] = useState(""), [interest, setInterest] = useState(""), [sending, setSending] = useState(false), [notice, setNotice] = useState("");
@@ -42,7 +42,7 @@ export default function QuoteForm() {
       <label className="full file-field">Drawing / BOQ (optional)<input name="drawing" type="file" accept=".pdf,.jpg,.jpeg,.png,.webp,.docx,.xlsx,.dwg,.dxf" /><span>One file, up to 5 MB. PDF, JPG, PNG, WebP, DOCX, XLSX, DWG or DXF. Stored privately for enquiry handling.</span></label>
     </div>
     <label className="consent"><input type="checkbox" name="consent" required value="yes" /><span>I agree to be contacted about this enquiry and have read the <a href="#privacy">enquiry privacy notice</a>.</span></label>
-    <div className="form-actions"><button className="button" type="submit" disabled={sending}>{sending ? "Sending…" : "Send enquiry"} <Arrow /></button><a href={whatsapp(interest || undefined)} target="_blank" rel="noopener noreferrer" className="text-link">Prefer WhatsApp? <Arrow diagonal /></a></div>
+    <div className="form-actions"><button className="button" type="submit" disabled={sending}>{sending ? "Sending…" : "Send enquiry"} <Arrow /></button><a href={whatsapp(interest || undefined)} target="_blank" rel="noopener noreferrer" className="text-link">Sales WhatsApp <Arrow diagonal /></a><a href={technicalWhatsapp(interest ? `${interest} technical details` : "a technical washroom requirement")} target="_blank" rel="noopener noreferrer" className="text-link">Technical WhatsApp <Arrow diagonal /></a></div>
     {notice && <p role={notice.startsWith("Enquiry sent") ? "status" : "alert"} className={notice.startsWith("Enquiry sent") ? "submission-notice" : "form-error"}>{notice}</p>}
     <p className="fine-print">For immediate assistance, WhatsApp or call <a href={`tel:${site.tel}`}>{site.phone}</a>. Your drawing remains private and is used only to review this enquiry.</p>
   </form>;

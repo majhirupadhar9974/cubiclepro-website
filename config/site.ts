@@ -23,3 +23,9 @@ export function whatsapp(product?: string) {
     : "Hello Cubiclepro, I would like to discuss a commercial washroom requirement.";
   return `https://wa.me/918401118340?text=${encodeURIComponent(message)}`;
 }
+export function technicalWhatsapp(subject?: string) {
+  const message = subject
+    ? `Hello Cubiclepro technical team, I would like to discuss ${subject}.`
+    : "Hello Cubiclepro technical team, I would like to discuss drawings, profiles, hardware or a site-interface requirement.";
+  return `https://wa.me/919924731671?text=${encodeURIComponent(message)}`;
+}

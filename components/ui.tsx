@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { finishes, site, whatsapp } from "@/config/site";
+import { finishes, site, technicalWhatsapp, whatsapp } from "@/config/site";
 import { imageFor, imageAltFor, type Product } from "@/data/products";
 import { pageSeo } from "@/data/seo";
 import { JsonLd } from "@/lib/seo";
@@ -230,10 +230,39 @@ export function QuoteBand({ product }: { product?: string }) {
           >
             WhatsApp us <Arrow />
           </a>
+          <a
+            className="technical-whatsapp-link"
+            href={technicalWhatsapp(product ? `${product} technical details` : "a technical washroom requirement")}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Technical WhatsApp <Arrow diagonal />
+          </a>
           <a href={`tel:${site.tel}`}>{site.phone}</a>
         </div>
       </div>
     </section>
+  );
+}
+
+export function TechnicalWhatsAppAction({
+  subject,
+  className = "cp-button cp-button-technical",
+  label = "Technical WhatsApp",
+}: {
+  subject?: string;
+  className?: string;
+  label?: string;
+}) {
+  return (
+    <a
+      className={className}
+      href={technicalWhatsapp(subject)}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {label} <Arrow diagonal />
+    </a>
   );
 }
 export function WarrantyCard() {

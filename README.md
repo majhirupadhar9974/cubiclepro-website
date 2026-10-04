@@ -23,7 +23,9 @@ pnpm qa
 
 ## CMS
 
-Sanity Studio is mounted at `/studio`. The schemas cover systems, content pages, approved-asset records, location pages and site settings. The Studio remains inactive until a Sanity project and dataset are configured on the existing Vercel project. The approved local seed catalogue remains the fallback until CMS content is connected and reviewed. Do not make an unreviewed item indexable.
+The CubiclePro administration area is mounted at `/admin`; the former `/studio` route redirects there. The schemas cover systems, content pages, approved-asset records, location pages, applications, articles, FAQs and settings. The free Sanity dataset contains public website content only; customer enquiries and uploaded drawings remain outside it. The Studio remains inactive until the project is configured on the existing Vercel project and mandatory MFA has been verified. The approved local seed catalogue remains the fallback until CMS content is connected and reviewed. Do not make an unreviewed item indexable.
+
+`ADMIN_MFA_ENFORCED=1` is a deployment safety gate, not an MFA implementation by itself. Set it only after the chosen Google/GitHub identity provider or SAML SSO policy actually requires MFA for every invited user. Standard Sanity authentication delegates MFA to the identity provider; organization-wide enforcement should use a managed identity policy/SSO where possible.
 
 ## RFQ activation — required before accepting launch enquiries
 

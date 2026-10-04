@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import localFont from "next/font/local";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
-import { Motion, MobileActions } from "@/components/motion";
-import { JsonLd } from "@/lib/seo";
+import SiteShell from "@/components/site-shell";
 import { site } from "@/config/site";
 import "./globals.css";
 const bodyFont = localFont({
@@ -45,48 +40,7 @@ export default function RootLayout({
       className={`${bodyFont.variable} ${displayFont.variable}`}
     >
       <body>
-        <a className="skip-link" href="#main-content">
-          Skip to content
-        </a>
-        <Header />
-        <main id="main-content">{children}</main>
-        <Footer />
-        <MobileActions />
-        <Motion />
-        <Analytics />
-        <SpeedInsights />
-        <JsonLd
-          data={{
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "Organization",
-                "@id": `${site.url}/#organization`,
-                name: site.name,
-                url: site.url,
-                logo: `${site.url}/images/brand/logo.png`,
-                telephone: site.tel,
-                email: site.email,
-                address: {
-                  "@type": "PostalAddress",
-                  streetAddress:
-                    "Shop No. 02, Hasnain Complex, In Mohammedi Park, Behind Canal, Fatehwadi",
-                  addressLocality: "Ahmedabad",
-                  addressRegion: "Gujarat",
-                  postalCode: "380055",
-                  addressCountry: "IN",
-                },
-              },
-              {
-                "@type": "WebSite",
-                "@id": `${site.url}/#website`,
-                name: site.name,
-                url: site.url,
-                publisher: { "@id": `${site.url}/#organization` },
-              },
-            ],
-          }}
-        />
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );

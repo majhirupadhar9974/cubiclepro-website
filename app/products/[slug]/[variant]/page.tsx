@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { juniorAgeBands, lockerTiers, modestyShapes } from "@/data/approved-gallery";
-import { Breadcrumbs, Eyebrow, QuoteBand, SectionHeading } from "@/components/ui";
+import { Breadcrumbs, Eyebrow, QuoteBand, SectionHeading, TechnicalWhatsAppAction } from "@/components/ui";
 import ImageLightbox from "@/components/image-lightbox";
 import { site } from "@/config/site";
 import { metadata, JsonLd, PageSchema } from "@/lib/seo";
@@ -70,13 +70,14 @@ export default async function VariantPage({ params }: { params: Promise<{ slug: 
     <header className="variant-page-header"><div className="container"><Breadcrumbs items={[{ name: family, href: parentPath }, { name: item.name }]} /><Eyebrow>{family}</Eyebrow><h1>{name}</h1><p>{description}</p></div></header>
     <section className="section container variant-detail-layout">
       <ImageLightbox src={src} alt={alt} className={`variant-hero-image ${ump ? "variant-shape-image" : ""}`} sizes="(max-width:760px) 100vw, 58vw" caption={ump ? "Shape Reference" : "Product Visual"} />
-      <div className="variant-detail-copy"><Eyebrow>{junior ? "Age-group record" : locker ? locker.module : "Shape record"}</Eyebrow><h2>{junior ? "Dimensions and use" : locker ? locker.arrangement : "Compact HPL privacy profile"}</h2>
+      <div className="variant-detail-copy"><Eyebrow>{junior ? junior.ageLabel : locker ? locker.module : "Shape record"}</Eyebrow><h2>{junior ? junior.subtitle : locker ? locker.arrangement : "Compact HPL privacy profile"}</h2>
+        {junior ? <><p>{junior.introduction}</p><h3>Profile & hardware</h3><p>{junior.profileSystem}</p><ul className="variant-feature-list">{junior.features.map((feature)=><li key={feature}>{feature}</li>)}</ul></> : null}
         {junior && junior.measurements ? <dl className="variant-measurements">{junior.measurements.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl> : null}
         {junior && !junior.measurements ? <p>Exact dimensions are confirmed during enquiry against the approved project schedule.</p> : null}
-        {locker ? <><p>{locker.usefulFor}</p><h3>Measurement enquiry</h3><p>{locker.planning}</p></> : null}
+        {locker ? <><p>{locker.subtitle}</p><p>{locker.usefulFor}</p><h3>Configuration features</h3><ul className="variant-feature-list">{locker.features.map((feature)=><li key={feature}>{feature}</li>)}</ul><h3>Construction specification</h3><dl className="variant-measurements">{locker.specifications.map(([label,value])=><div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl><h3>Suitable applications</h3><div className="cp-compact-card-grid cp-compact-card-grid-small">{locker.applications.map((application,index)=><article className="cp-compact-card" key={application}><span>{String(index+1).padStart(2,"0")}</span><strong>{application}</strong></article>)}</div><h3>Measurement enquiry</h3><p>{locker.planning}</p></> : null}
         {ump ? <><dl className="variant-measurements"><div><dt>Reference height</dt><dd>Approx. 900 mm</dd></div><div><dt>Reference width</dt><dd>Approx. 450 mm</dd></div><div><dt>Panel</dt><dd>Compact HPL</dd></div><div><dt>Mounting</dt><dd>SS wall clamps</dd></div></dl><p>Final dimensions and fixing details are project-specific.</p></> : null}
-        <p className="fine-print">Final material grade, panel thickness, hardware and configuration are confirmed against the approved project specification.</p>
-        <Link className="button" href={`/contact/?system=${encodeURIComponent(name)}`}>Enquire about this item →</Link>
+        <p className="custom-option-note"><strong>Custom option: Yes.</strong> Final material grade, panel thickness, dimensions, hardware and configuration are confirmed against the approved project specification.</p>
+        <div className="cp-enquiry-actions"><Link className="button" href={`/contact/?system=${encodeURIComponent(name)}`}>Enquire about this item →</Link><TechnicalWhatsAppAction subject={`${name} technical details`} className="button button-outline" /></div>
       </div>
     </section>
     <section className="section surface"><div className="container product-faqs"><SectionHeading eyebrow="Questions & answers" title={`About ${item.name}.`} text="Useful item-specific guidance before measurement and quotation."/><div className="cp-accordion">{faqs.map((faq, index) => <details key={faq.q} open={index === 0}><summary><span>{String(index + 1).padStart(2, "0")}</span>{faq.q}<b aria-hidden="true">+</b></summary><p>{faq.a}</p></details>)}</div></div></section>

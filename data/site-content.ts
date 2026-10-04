@@ -69,8 +69,10 @@ export const mainCategories: MainCategory[] = [
     slug: "cladding-washbasin-storage",
     name: "Cladding & Washbasin Storage",
     shortName: "Cladding & Storage",
-    description: "A project-led, text-first scope until approved product imagery is available.",
-    href: "/solutions/washroom-cladding/",
+    description: "Cladding, washbasin counters and storage coordinated to the room, services and approved material schedule.",
+    href: "/solutions/washbasin-counters-storage/",
+    image: approved("cladding-washbasin-storage/washbasin-storage-reference.png"),
+    alt: "Washbasin counter, storage and wall-cladding reference visual",
   },
   {
     slug: "accessories",
@@ -90,7 +92,7 @@ export type Industry = {
   name: string;
   kicker: string;
   description: string;
-  considerations: string[];
+  considerations: { title: string; body: string }[];
   image: string;
 };
 
@@ -100,7 +102,11 @@ export const industries: Industry[] = [
     name: "Corporate Offices",
     kicker: "Workplace washrooms",
     description: "Coordinate privacy, finish intent, cleaning access and daily user flow without over-specifying the system before the site is understood.",
-    considerations: ["Visitor and staff usage", "Fit-out interfaces", "Maintenance access"],
+    considerations: [
+      { title: "Visitor and staff usage", body: "Estimate peak occupancy, staff strength and visitor movement so cubicle quantity, privacy and circulation are appropriate for the workplace." },
+      { title: "Fit-out interfaces", body: "Coordinate finished floor levels, wall finishes, ceiling services, plumbing points and door clearances with the interior fit-out programme." },
+      { title: "Maintenance access", body: "Keep cleaning routes, replaceable hardware and service access practical for the facility team without compromising the architectural finish." },
+    ],
     image: approved("cubicle-systems/nova/nova-main.jpg"),
   },
   {
@@ -108,7 +114,11 @@ export const industries: Industry[] = [
     name: "Education",
     kicker: "Schools and campuses",
     description: "Match cubicle scale, privacy and hardware to the intended age group, while keeping adult and junior records clearly separated.",
-    considerations: ["Age-group dimensions", "Supervision and privacy", "Locker planning"],
+    considerations: [
+      { title: "Age-group dimensions", body: "Select the LittleSteps, Explorer, Horizon or Youth record by intended age group; do not scale an adult cubicle by assumption." },
+      { title: "Supervision and privacy", body: "Balance privacy with the supervision policy of the school, and review door height, divider height, gap and hardware accordingly." },
+      { title: "Locker planning", body: "Confirm student count, bag size, timetable pattern and available wall length before choosing the locker module and bank arrangement." },
+    ],
     image: approved("junior-series/junior-5-10-years-main.jpg"),
   },
   {
@@ -116,7 +126,11 @@ export const industries: Industry[] = [
     name: "Healthcare",
     kicker: "Care environments",
     description: "Review access, circulation, cleaning routines and approved material requirements before confirming a cubicle or partition system.",
-    considerations: ["Access requirements", "Cleaning workflow", "Site coordination"],
+    considerations: [
+      { title: "Access requirements", body: "Review accessible layouts, door operation, circulation and assistance needs with the project consultant and applicable local requirements." },
+      { title: "Cleaning workflow", body: "Choose details that support frequent cleaning, clear floor access and practical replacement of high-contact hardware." },
+      { title: "Site coordination", body: "Coordinate clinical services, plumbing, wall backing, floor levels and infection-control requirements before final approval." },
+    ],
     image: approved("cubicle-systems/supernova/supernova-main.jpg"),
   },
   {
@@ -124,7 +138,11 @@ export const industries: Industry[] = [
     name: "Hospitality",
     kicker: "Guest-facing spaces",
     description: "Balance architectural expression with practical maintenance, wet-area interfaces and a consistent hardware schedule.",
-    considerations: ["Guest experience", "Wet-area detailing", "Finish coordination"],
+    considerations: [
+      { title: "Guest experience", body: "Align privacy, door operation, sight-line control and finish quality with the service level expected in the property." },
+      { title: "Wet-area detailing", body: "Coordinate shower zones, floor slopes, waterproofing interfaces, ventilation and cleaning access before finalising supports." },
+      { title: "Finish coordination", body: "Confirm panel, profile and hardware finishes against the approved interior palette instead of relying on screen colours." },
+    ],
     image: approved("shower-cubicles/shower-cubicle-main.jpg"),
   },
   {
@@ -132,7 +150,11 @@ export const industries: Industry[] = [
     name: "Airports & Transit",
     kicker: "High-use public facilities",
     description: "Plan for clear circulation, maintainable components and project-approved systems suited to sustained public use.",
-    considerations: ["High-use planning", "Maintenance access", "Wayfinding interfaces"],
+    considerations: [
+      { title: "High-use planning", body: "Use passenger footfall, peak-hour demand and cleaning cycles to plan quantity, circulation and maintainable cubicle configurations." },
+      { title: "Maintenance access", body: "Plan replaceable components and service access so individual repairs can be handled with minimal disruption to the facility." },
+      { title: "Wayfinding interfaces", body: "Coordinate accessible cubicles, family facilities, signage and entrance sight lines with the terminal planning team." },
+    ],
     image: approved("cubicle-systems/base-box-pro/base-box-pro-main.jpg"),
   },
   {
@@ -140,7 +162,11 @@ export const industries: Industry[] = [
     name: "Industrial Facilities",
     kicker: "Factories and workplaces",
     description: "Coordinate practical partitions, changing-room cubicles and locker configurations around shift patterns and site conditions.",
-    considerations: ["Changing-room flow", "Locker configuration", "Installation interfaces"],
+    considerations: [
+      { title: "Changing-room flow", body: "Map shift change, clean and dirty routes, showers and changing privacy so workforce movement remains practical." },
+      { title: "Locker configuration", body: "Select locker capacity from uniform, PPE, bag and personal-storage needs rather than door count alone." },
+      { title: "Installation interfaces", body: "Check floor condition, wall backing, drainage, ventilation and work permits before approving the installation sequence." },
+    ],
     image: approved("hpl-lockers/locker-tier-4-main.jpg"),
   },
   {
@@ -148,7 +174,11 @@ export const industries: Industry[] = [
     name: "Retail & Public Spaces",
     kicker: "Customer facilities",
     description: "Select a system after reviewing user mix, cleaning access, privacy and the architectural direction of the public space.",
-    considerations: ["User mix", "Privacy planning", "Durable interfaces"],
+    considerations: [
+      { title: "User mix", body: "Plan for customers, staff, children, older users and accessible needs according to the actual facility profile." },
+      { title: "Privacy planning", body: "Review entrances, sight lines, urinal screening and door clearances so public circulation does not reduce privacy." },
+      { title: "Durable interfaces", body: "Coordinate supports and high-contact hardware for the expected usage while retaining easy cleaning and replacement access." },
+    ],
     image: approved("cubicle-systems/titan-black/titan-black-main.jpg"),
   },
   {
@@ -156,7 +186,11 @@ export const industries: Industry[] = [
     name: "Sports & Wellness",
     kicker: "Gyms, clubs and recreation",
     description: "Bring shower cubicles, changing-room privacy and lockers into one coordinated requirement rather than treating them as isolated items.",
-    considerations: ["Wet and dry zones", "Changing privacy", "Storage capacity"],
+    considerations: [
+      { title: "Wet and dry zones", body: "Separate shower traffic from dry changing and storage areas, with floor drainage and ventilation coordinated early." },
+      { title: "Changing privacy", body: "Match cubicle type, door operation and sight-line protection to the club, pool, gym or stadium user journey." },
+      { title: "Storage capacity", body: "Confirm member volume, peak sessions, garment size and dwell time before selecting locker tiers or Z-Type modules." },
+    ],
     image: approved("changing-room-cubicles/changingroom-cubicle-main.jpg"),
   },
 ];
@@ -298,7 +332,7 @@ export const articles: Article[] = [
     readTime: "5 min read",
     related: ["float", "sky-hung"],
     sections: [
-      { heading: "Different support conditions", body: "Flot is a wall-to-wall floating system. Sky Hung coordinates support from the ceiling and keeps the floor free of legs. The visual result may be similar at floor level, but the interfaces are not interchangeable." },
+      { heading: "Different support conditions", body: "Float is a wall-to-wall floating system. Sky Hung coordinates support from the ceiling and keeps the floor free of legs. The visual result may be similar at floor level, but the interfaces are not interchangeable." },
       { heading: "Site feasibility matters", body: "Wall and ceiling conditions, spans, services and access must be reviewed before a suspended system is approved." },
       { heading: "Keep the enquiry specific", body: "Share dimensions and drawings so the support approach can be discussed against the actual site rather than a generic assumption." },
     ],
@@ -357,38 +391,70 @@ export const articles: Article[] = [
   },
 ];
 
-const locationGroups = {
-  Gujarat: ["Ahmedabad", "Gandhinagar", "Sanand", "Changodar", "Bavla", "Vadodara", "Surat", "Vapi", "Valsad", "Navsari", "Bharuch", "Ankleshwar", "Dahej", "Rajkot", "Morbi", "Jamnagar", "Bhavnagar", "Anand", "Nadiad", "Mehsana", "Kalol", "Gandhidham", "Kandla", "Mundra", "Junagadh"],
-  Maharashtra: ["Pune", "Mumbai", "Navi Mumbai", "Thane", "Nashik", "Nagpur", "Chhatrapati Sambhajinagar", "Kolhapur"],
-  "South India": ["Hyderabad", "Bengaluru", "Chennai"],
-  Rajasthan: ["Jaipur", "Udaipur", "Jodhpur", "Kota", "Bhiwadi"],
-  "Madhya Pradesh": ["Indore", "Bhopal", "Jabalpur", "Gwalior"],
-  Other: ["Delhi NCR", "Goa"],
-} as const;
-
-const indexable = new Set(["Ahmedabad", "Hyderabad", "Bengaluru", "Chennai", "Mumbai", "Pune", "Delhi NCR", "Surat", "Vadodara"]);
 const slugify = (value: string) => value.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
-export const locations = Object.entries(locationGroups).flatMap(([region, cities]) =>
-  cities.map((city) => ({
-    city,
-    slug: slugify(city),
-    region,
-    indexable: indexable.has(city),
-    focus:
-      city === "Hyderabad"
-        ? "A priority South India enquiry market for offices, education, healthcare, hospitality and large fit-out requirements."
-        : city === "Ahmedabad"
-          ? "The home-market enquiry route for commercial, institutional, industrial and fit-out washroom requirements."
-          : city === "Mumbai" || city === "Delhi NCR"
-            ? "A major urban enquiry market where project scale, access, programme and site interfaces should be shared early."
-            : city === "Bengaluru" || city === "Chennai" || city === "Pune"
-              ? "A priority commercial and institutional enquiry market with emphasis on clear specification and site coordination."
-              : city === "Surat" || city === "Vadodara"
-                ? "A priority Gujarat enquiry market for commercial, industrial, education and hospitality requirements."
-                : "A roadmap location. Publication remains noindex until differentiated local content and service relevance are approved.",
-  })),
-);
+type LocationSeed = {
+  city: string;
+  region: string;
+  focus: string;
+  sectors: readonly string[];
+};
+
+const locationSeeds: readonly LocationSeed[] = [
+  { city: "Ahmedabad", region: "Gujarat", focus: "Commercial, institutional, industrial and fit-out washroom requirements can be reviewed with the site scope and project programme.", sectors: ["Corporate offices and fit-outs", "Education and institutions", "Healthcare facilities", "Industrial workplaces"] },
+  { city: "Gandhinagar", region: "Gujarat", focus: "Public, institutional, education and office projects can compare cubicle, partition, privacy and storage requirements through one enquiry route.", sectors: ["Government and public buildings", "Education campuses", "Corporate offices", "Healthcare facilities"] },
+  { city: "Sanand", region: "Gujarat", focus: "Industrial and workplace washroom requirements can be coordinated around shifts, changing facilities, lockers and practical maintenance access.", sectors: ["Automotive and manufacturing", "Industrial workplaces", "Staff changing facilities", "Warehousing and logistics"] },
+  { city: "Changodar", region: "Gujarat", focus: "Factory, warehouse and workplace projects can combine restroom cubicles, changing privacy, showers and locker planning in one defined scope.", sectors: ["Factories and production units", "Warehouses", "Staff facilities", "Commercial workplaces"] },
+  { city: "Bavla", region: "Gujarat", focus: "Industrial, logistics and institutional projects can begin with quantity, site conditions and the intended washroom or changing-room use.", sectors: ["Industrial facilities", "Logistics workplaces", "Education facilities", "Healthcare and public use"] },
+  { city: "Vadodara", region: "Gujarat", focus: "Industrial, corporate, education and healthcare projects can compare system construction, mounting and maintenance requirements.", sectors: ["Industrial facilities", "Corporate offices", "Education campuses", "Healthcare facilities"] },
+  { city: "Surat", region: "Gujarat", focus: "Commercial, textile, hospitality and institutional washrooms can be planned around user flow, finish intent and maintainable components.", sectors: ["Textile and commercial facilities", "Corporate offices", "Hospitality and retail", "Education and healthcare"] },
+  { city: "Vapi", region: "Gujarat", focus: "Industrial and workforce facilities can coordinate toilet cubicles, showers, changing rooms and lockers around operational use.", sectors: ["Industrial workplaces", "Manufacturing facilities", "Staff changing rooms", "Commercial support spaces"] },
+  { city: "Valsad", region: "Gujarat", focus: "Institutional, healthcare, hospitality and industrial washroom enquiries can be reviewed against the site layout and approved specification.", sectors: ["Education", "Healthcare", "Hospitality", "Industrial facilities"] },
+  { city: "Navsari", region: "Gujarat", focus: "Education, healthcare, retail and hospitality projects can compare restroom cubicle and partition options without assuming one standard configuration.", sectors: ["Education facilities", "Healthcare facilities", "Retail spaces", "Hospitality projects"] },
+  { city: "Bharuch", region: "Gujarat", focus: "Industrial and commercial projects can plan high-use washrooms, staff changing areas and locker capacity from verified site information.", sectors: ["Industrial facilities", "Staff amenities", "Corporate offices", "Healthcare and education"] },
+  { city: "Ankleshwar", region: "Gujarat", focus: "Workforce washrooms and changing facilities can be coordinated around shifts, storage, cleaning access and durable interfaces.", sectors: ["Industrial workplaces", "Changing-room facilities", "HPL locker areas", "Commercial support buildings"] },
+  { city: "Dahej", region: "Gujarat", focus: "Large industrial and workforce requirements can bring cubicles, showers, changing privacy and lockers into one project-specific schedule.", sectors: ["Industrial sites", "Workforce amenities", "Changing and shower areas", "Storage and lockers"] },
+  { city: "Rajkot", region: "Gujarat", focus: "Manufacturing, commercial, education and healthcare projects can select cubicle systems according to user load and site interfaces.", sectors: ["Manufacturing facilities", "Commercial offices", "Education", "Healthcare"] },
+  { city: "Morbi", region: "Gujarat", focus: "Manufacturing and commercial facilities can plan practical washroom partitions, staff amenities and coordinated locker requirements.", sectors: ["Manufacturing facilities", "Industrial workplaces", "Commercial offices", "Hospitality and retail"] },
+  { city: "Jamnagar", region: "Gujarat", focus: "Industrial, commercial and institutional requirements can be reviewed for cubicles, privacy panels, changing rooms and storage.", sectors: ["Industrial facilities", "Commercial projects", "Education", "Hospitality"] },
+  { city: "Bhavnagar", region: "Gujarat", focus: "Industrial, education, healthcare and public-facility washrooms can be specified around real users and maintenance routines.", sectors: ["Industrial facilities", "Education", "Healthcare", "Public buildings"] },
+  { city: "Anand", region: "Gujarat", focus: "Education, healthcare, commercial and hospitality projects can compare age-aware, accessible and general washroom requirements.", sectors: ["Education campuses", "Healthcare", "Commercial spaces", "Hospitality"] },
+  { city: "Nadiad", region: "Gujarat", focus: "Institutional and public-facing projects can coordinate restroom cubicles, UMPs, lockers and accessible layout requirements.", sectors: ["Education", "Healthcare", "Commercial buildings", "Public facilities"] },
+  { city: "Mehsana", region: "Gujarat", focus: "Industrial, education, healthcare and commercial projects can define material, mounting and installation requirements early.", sectors: ["Industrial facilities", "Education", "Healthcare", "Commercial projects"] },
+  { city: "Kalol", region: "Gujarat", focus: "Industrial and institutional enquiries can be developed around staff use, site conditions, cleaning and project-specific dimensions.", sectors: ["Industrial workplaces", "Staff facilities", "Education", "Public-use buildings"] },
+  { city: "Gandhidham", region: "Gujarat", focus: "Logistics, industrial, hospitality and commercial facilities can coordinate high-use washrooms, changing areas and lockers.", sectors: ["Logistics facilities", "Industrial workplaces", "Hospitality", "Commercial buildings"] },
+  { city: "Kandla", region: "Gujarat", focus: "Port-linked, logistics and industrial workplaces can plan staff washrooms, changing privacy, showers and locker storage.", sectors: ["Port and logistics facilities", "Industrial workplaces", "Staff amenities", "Transit support spaces"] },
+  { city: "Mundra", region: "Gujarat", focus: "Port, logistics and industrial projects can define commercial washroom and workforce amenity requirements from the operating context.", sectors: ["Port facilities", "Logistics workplaces", "Industrial sites", "Staff changing areas"] },
+  { city: "Junagadh", region: "Gujarat", focus: "Education, healthcare, hospitality and public-building washroom requirements can be reviewed through a clear project enquiry.", sectors: ["Education", "Healthcare", "Hospitality", "Public facilities"] },
+  { city: "Pune", region: "Maharashtra", focus: "Corporate, technology, education and industrial projects can compare cubicle systems with clear site and programme information.", sectors: ["Corporate and technology offices", "Education campuses", "Industrial facilities", "Healthcare and hospitality"] },
+  { city: "Mumbai", region: "Maharashtra", focus: "Dense commercial, hospitality, retail and transit projects should share access, phasing and site-interface constraints early.", sectors: ["Corporate offices", "Hospitality and retail", "Healthcare", "Airports and transit"] },
+  { city: "Navi Mumbai", region: "Maharashtra", focus: "Corporate, industrial, logistics and healthcare facilities can coordinate cubicles, partitions and storage around project scale.", sectors: ["Corporate campuses", "Industrial facilities", "Logistics workplaces", "Healthcare"] },
+  { city: "Thane", region: "Maharashtra", focus: "Corporate, retail, education and healthcare projects can compare practical washroom systems and custom configurations.", sectors: ["Corporate offices", "Retail and public spaces", "Education", "Healthcare"] },
+  { city: "Nashik", region: "Maharashtra", focus: "Industrial, education, healthcare and hospitality requirements can be specified according to use, cleaning and site conditions.", sectors: ["Industrial facilities", "Education", "Healthcare", "Hospitality"] },
+  { city: "Nagpur", region: "Maharashtra", focus: "Commercial, public, transit, education and healthcare projects can define high-use washroom requirements without generic assumptions.", sectors: ["Commercial buildings", "Public and transit facilities", "Education", "Healthcare"] },
+  { city: "Chhatrapati Sambhajinagar", region: "Maharashtra", focus: "Industrial, hospitality, education and healthcare projects can coordinate restroom, changing and locker requirements.", sectors: ["Industrial facilities", "Hospitality", "Education", "Healthcare"] },
+  { city: "Kolhapur", region: "Maharashtra", focus: "Industrial, education, healthcare and hospitality facilities can compare cubicle systems and supporting washroom scope.", sectors: ["Industrial workplaces", "Education", "Healthcare", "Hospitality"] },
+  { city: "Hyderabad", region: "South India", focus: "Corporate, technology, healthcare, pharma and hospitality projects can define system, material and installation requirements early.", sectors: ["Corporate and technology campuses", "Healthcare and pharma", "Education", "Hospitality and fit-outs"] },
+  { city: "Bengaluru", region: "South India", focus: "Technology, corporate, education and healthcare facilities can coordinate commercial washroom systems around daily use and fit-out interfaces.", sectors: ["Technology and corporate offices", "Education campuses", "Healthcare", "Hospitality and wellness"] },
+  { city: "Chennai", region: "South India", focus: "Industrial, corporate, healthcare and education projects can compare material, mounting and maintenance requirements.", sectors: ["Industrial facilities", "Corporate and technology offices", "Healthcare", "Education"] },
+  { city: "Jaipur", region: "Rajasthan", focus: "Hospitality, retail, corporate and education projects can balance architectural expression with practical maintenance.", sectors: ["Hospitality", "Retail and public spaces", "Corporate offices", "Education"] },
+  { city: "Udaipur", region: "Rajasthan", focus: "Hospitality, education and healthcare washrooms can coordinate privacy, wet-area interfaces and maintainable details.", sectors: ["Hotels and hospitality", "Education", "Healthcare", "Public-facing facilities"] },
+  { city: "Jodhpur", region: "Rajasthan", focus: "Hospitality, public, education and healthcare projects can compare cubicle, privacy and storage requirements.", sectors: ["Hospitality", "Public buildings", "Education", "Healthcare"] },
+  { city: "Kota", region: "Rajasthan", focus: "Education, hostel, healthcare and public-facility requirements can include age-aware cubicles, showers and lockers.", sectors: ["Education campuses", "Hostels", "Healthcare", "Public facilities"] },
+  { city: "Bhiwadi", region: "Rajasthan", focus: "Industrial, logistics and workforce facilities can coordinate restroom cubicles, changing areas, showers and locker capacity.", sectors: ["Industrial facilities", "Logistics workplaces", "Staff changing areas", "Corporate support spaces"] },
+  { city: "Indore", region: "Madhya Pradesh", focus: "Corporate, commercial, education and healthcare projects can define washroom systems around users, access and maintenance.", sectors: ["Corporate and commercial buildings", "Education", "Healthcare", "Hospitality"] },
+  { city: "Bhopal", region: "Madhya Pradesh", focus: "Government, public, education and healthcare projects can coordinate accessible, high-use and staff washroom requirements.", sectors: ["Government and public buildings", "Education", "Healthcare", "Corporate offices"] },
+  { city: "Jabalpur", region: "Madhya Pradesh", focus: "Public, education, healthcare and commercial facilities can plan cubicles, privacy panels and lockers from verified site details.", sectors: ["Public facilities", "Education", "Healthcare", "Commercial buildings"] },
+  { city: "Gwalior", region: "Madhya Pradesh", focus: "Education, healthcare, hospitality and public-building requirements can compare suitable commercial washroom systems.", sectors: ["Education", "Healthcare", "Hospitality", "Public buildings"] },
+  { city: "Delhi NCR", region: "Other", focus: "Large corporate, public, hospitality and transit projects should share scale, access, phasing and site-interface requirements early.", sectors: ["Corporate offices", "Government and public buildings", "Hospitality and retail", "Airports and transit"] },
+  { city: "Goa", region: "Other", focus: "Hospitality, leisure, retail and public-facing projects can coordinate cubicles, showers, changing privacy and lockers.", sectors: ["Hotels and resorts", "Leisure and wellness", "Retail and restaurants", "Public-facing facilities"] },
+] as const;
+
+export const locations = locationSeeds.map((item) => ({
+  ...item,
+  slug: slugify(item.city),
+  indexable: true,
+}));
 
 export const locationBySlug = (slug: string) => locations.find((location) => location.slug === slug);
 

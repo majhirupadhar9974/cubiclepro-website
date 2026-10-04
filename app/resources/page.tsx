@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { articles, faqs } from "@/data/site-content";
+import { articles, faqs } from "@/data/content-library";
 import { metadata } from "@/lib/seo";
 
 export const generateMetadata = () => metadata("Commercial Washroom Resources", "Original CubiclePro guides covering restroom cubicles, Junior Cubicles, lockers, UMP, suspended systems and project specification.", "/resources/");
