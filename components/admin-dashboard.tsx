@@ -15,7 +15,7 @@ type DashboardData = {
 const emptyData: DashboardData = { publishedProducts: 0, drafts: 0, locations: 0, articles: 0, recent: [] };
 
 const sections = [
-  ["Homepage", "Hero, featured content and CTAs", "/admin/structure/homepage"],
+  ["Homepage", "Hero, featured content and CTAs", "/admin/structure/homepage;homepage"],
   ["Products", "Systems, specifications and order", "/admin/structure/product"],
   ["Applications", "Industry guidance and images", "/admin/structure/industry"],
   ["Locations", "City content and SEO", "/admin/structure/locationPage"],
@@ -65,7 +65,7 @@ export default function AdminDashboard() {
           <p>Manage products, content and SEO without changing code.</p>
         </div>
         <div className={styles.topActions}>
-          <a className={styles.secondaryButton} href="/" target="_blank" rel="noreferrer">Preview website ↗</a>
+          <a className={styles.secondaryButton} href="https://www.cubiclepro.in/">Preview website ↗</a>
           <a className={styles.primaryButton} href="/admin/structure">Review content</a>
         </div>
       </header>
