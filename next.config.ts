@@ -5,7 +5,11 @@ const config: NextConfig = {
   output: isStatic ? "export" : undefined,
   trailingSlash: true,
   poweredByHeader: false,
-  images: { formats: ["image/avif", "image/webp"], unoptimized: isStatic },
+  images: {
+    formats: ["image/avif", "image/webp"],
+    unoptimized: isStatic,
+    remotePatterns: [{ protocol: "https", hostname: "cdn.sanity.io" }],
+  },
   ...(isStatic
     ? {}
     : {

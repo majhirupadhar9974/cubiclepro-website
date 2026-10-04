@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { heroCategories } from "@/data/site-content";
 import { technicalWhatsapp } from "@/config/site";
 
-export default function HeroCarousel() {
+export default function HeroCarousel({ kicker = "Complete commercial washroom systems · India", title = "CubiclePro washroom solutions." }: { kicker?: string; title?: string }) {
   const [active, setActive] = useState(0);
   const touchStart = useRef<number | null>(null);
   const move = useCallback((direction: number) => {
@@ -28,8 +28,8 @@ export default function HeroCarousel() {
         <div className="cp-hero-overlay" />
       </div>
       <div className="cp-hero-copy container">
-        <p className="cp-kicker">Complete commercial washroom systems · India</p>
-        <h1>CubiclePro<br /><span>washroom solutions.</span></h1>
+        <p className="cp-kicker">{kicker}</p>
+        <h1>{title.toLowerCase().startsWith("cubiclepro ") ? <>{title.split(/\s+/)[0]}<br /><span>{title.split(/\s+/).slice(1).join(" ")}</span></> : title}</h1>
         <p>Specified clearly. Detailed responsibly. Built for real spaces.</p>
         <div className="cp-actions"><Link className="cp-button cp-button-accent" href="/products/">Explore systems <span aria-hidden="true">↗</span></Link><Link className="cp-button cp-button-ghost" href="/contact/">Request a quote <span aria-hidden="true">↗</span></Link><a className="cp-button cp-button-ghost cp-hero-technical" href={technicalWhatsapp("a technical washroom requirement")} target="_blank" rel="noopener noreferrer">Technical WhatsApp <span aria-hidden="true">↗</span></a></div>
       </div>

@@ -4,8 +4,6 @@ import { notFound } from "next/navigation";
 import {
   products,
   productBySlug,
-  imageFor,
-  imageAltFor,
 } from "@/data/products";
 import { pageSeo } from "@/data/seo";
 import {
@@ -28,7 +26,7 @@ import { getCatalogProduct } from "@/lib/cms";
 import ImageLightbox from "@/components/image-lightbox";
 import { industries } from "@/data/site-content";
 import { articles, faqsForProduct } from "@/data/content-library";
-export const dynamicParams = false;
+export const dynamicParams = true;
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
 }
@@ -39,14 +37,12 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const p = await getCatalogProduct(slug);
-  return p
-    ? metadata(
-        `${p.name} ${slug === "hpl-lockers" ? "Commercial Storage" : slug === "modesty-panels" ? "Urinal Privacy Panels" : "Washroom Cubicle System"}`,
-        p.description,
-        `/products/${slug}/`,
-        imageFor(slug),
-      )
-    : {};
+  if (!p) return {};
+  const path = p.canonicalPath || `/products/${slug}/`;
+  const title = p.seoTitle || `${p.name} ${slug === "hpl-lockers" ? "Commercial Storage" : slug === "modesty-panels" ? "Urinal Privacy Panels" : "Washroom Cubicle System"}`;
+  const description = p.metaDescription || p.description;
+  const base = metadata(title, description, path, p.image.startsWith("http") ? undefined : p.image);
+  return { ...base, title: p.seoTitle ? { absolute: p.seoTitle } : base.title, description, robots: { index: p.indexable !== false, follow: true }, alternates: { canonical: `${site.url}${path}` } };
 }
 export default async function ProductPage({
   params,
@@ -92,7 +88,7 @@ export default async function ProductPage({
           <div className="product-intro">
             <div>
               <Eyebrow>{p.family}</Eyebrow>
-              <h1>{pageSeo[`/products/${slug}/`].h1}</h1>
+              <h1>{pageSeo[`/products/${slug}/`]?.h1 || p.name}</h1>
               <p className="product-character">{p.character}</p>
             </div>
             <div>
@@ -115,8 +111,8 @@ export default async function ProductPage({
           </div>
         </div>
         <ImageLightbox
-          src={imageFor(slug)}
-          alt={imageAltFor(slug)}
+          src={p.image}
+          alt={p.imageAlt}
           priority
           className="product-hero-image"
           sizes="100vw"
@@ -382,7 +378,7 @@ export default async function ProductPage({
           name: p.name,
           description: p.description,
           url: `${site.url}/products/${slug}/`,
-          image: `${site.url}${imageFor(slug)}`,
+          image: p.image.startsWith("http") ? p.image : `${site.url}${p.image}`,
           ...(slug === "custom"
             ? { provider: { "@id": `${site.url}/#organization` } }
             : {

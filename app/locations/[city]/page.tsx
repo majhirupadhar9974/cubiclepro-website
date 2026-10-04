@@ -5,8 +5,11 @@ import { locations, locationBySlug } from "@/data/site-content";
 import { site } from "@/config/site";
 import { JsonLd } from "@/lib/seo";
 import { TechnicalWhatsAppAction } from "@/components/ui";
+import { getPublishedLocation, type PortableBlock } from "@/lib/cms";
 
-export const dynamicParams = false;
+export const dynamicParams = true;
+
+const blockText = (block?: PortableBlock) => block?.children?.map((child) => child.text || "").join("").trim() || "";
 
 export function generateStaticParams() {
   return locations.map(({ slug }) => ({ city: slug }));
@@ -18,17 +21,19 @@ export async function generateMetadata({
   params: Promise<{ city: string }>;
 }): Promise<Metadata> {
   const { city } = await params;
+  const cms = await getPublishedLocation(city);
   const item = locationBySlug(city);
-  if (!item) return {};
+  if (!cms && !item) return {};
 
-  const title = `Toilet Partitions & Restroom Cubicles in ${item.city}`;
-  const description = `Looking for toilet partitions or restroom cubicles in ${item.city}? Discuss CubiclePro washroom cubicles, UMPs, HPL lockers and project-specific solutions.`;
+  const cityName = cms?.city || item!.city;
+  const title = cms?.seoTitle || `Toilet Partitions & Restroom Cubicles in ${cityName}`;
+  const description = cms?.metaDescription || `Looking for toilet partitions or restroom cubicles in ${cityName}? Discuss CubiclePro washroom cubicles, UMPs, HPL lockers and project-specific solutions.`;
 
   return {
     title,
     description,
     robots: { index: true, follow: true },
-    alternates: { canonical: `/locations/${city}/` },
+    alternates: { canonical: cms?.canonicalPath || `/locations/${city}/` },
     openGraph: {
       title,
       description,
@@ -44,8 +49,18 @@ export default async function CityPage({
   params: Promise<{ city: string }>;
 }) {
   const { city } = await params;
-  const item = locationBySlug(city);
-  if (!item) notFound();
+  const cms = await getPublishedLocation(city);
+  const fallback = locationBySlug(city);
+  if (!cms && !fallback) notFound();
+  const cmsFocus = blockText(cms?.uniqueContent?.find((entry) => entry.style !== "h2"));
+  const cmsSectors = blockText(cms?.uniqueContent?.find((entry, index) => index > 0 && entry.style !== "h2")).split("·").map((entry) => entry.trim()).filter(Boolean);
+  const item = {
+    city: cms?.city || fallback!.city,
+    slug: cms?.slug.current || fallback!.slug,
+    region: fallback?.region || "India",
+    focus: cmsFocus || fallback?.focus || "Commercial washroom requirements can be reviewed against the project scope and approved specification.",
+    sectors: cmsSectors.length ? cmsSectors : fallback?.sectors || ["Commercial projects", "Institutional facilities", "Public washrooms"],
+  };
 
   const faqs = [
     {

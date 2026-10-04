@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { locations } from "@/data/site-content";
 import { metadata } from "@/lib/seo";
+import { getPublishedLocations } from "@/lib/cms";
 
 export const generateMetadata = () =>
   metadata(
@@ -9,8 +10,10 @@ export const generateMetadata = () =>
     "/locations/",
   );
 
-export default function Locations() {
-  const regions = [...new Set(locations.map((item) => item.region))];
+export default async function Locations() {
+  const cms=await getPublishedLocations();
+  const items=cms.length?cms.map((item)=>{const fallback=locations.find((entry)=>entry.slug===item.slug.current);return{city:item.city,slug:item.slug.current,region:fallback?.region||"Other"};}):locations;
+  const regions = [...new Set(items.map((item) => item.region))];
 
   return (
     <>
@@ -19,7 +22,7 @@ export default function Locations() {
           <p className="cp-kicker">India project enquiries</p>
           <h1>Toilet partitions and restroom cubicles across India.</h1>
           <p className="lede">
-            Explore 47 city-specific enquiry pages for commercial washroom
+            Explore {items.length} city-specific enquiry pages for commercial washroom
             cubicles, partitions, privacy panels and lockers.
           </p>
         </div>
@@ -30,7 +33,7 @@ export default function Locations() {
             <section key={region} className="location-group">
               <h2>{region}</h2>
               <div className="city-list">
-                {locations
+                {items
                   .filter((item) => item.region === region)
                   .map((item) => (
                     <Link href={`/locations/${item.slug}/`} key={item.slug}>

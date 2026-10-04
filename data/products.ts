@@ -12,6 +12,12 @@ export type Product = {
   variants?: string[];
   image: string;
   imageAlt: string;
+  displayOrder?: number;
+  featured?: boolean;
+  seoTitle?: string;
+  metaDescription?: string;
+  canonicalPath?: string;
+  indexable?: boolean;
 };
 const approved = (path: string) => `/images/approved/${path}`;
 export const products: Product[] = [
