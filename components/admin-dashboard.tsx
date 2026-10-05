@@ -66,6 +66,7 @@ export default function AdminDashboard() {
         </div>
         <div className={styles.topActions}>
           <a className={styles.secondaryButton} href="https://www.cubiclepro.in/">Preview website ↗</a>
+          <a className={styles.secondaryButton} href="/admin/account">Account &amp; logout</a>
           <a className={styles.primaryButton} href="/admin/structure">Review content</a>
         </div>
       </header>

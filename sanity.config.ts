@@ -2,6 +2,7 @@ import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { schemaTypes } from "./sanity/schemas";
 import AdminDashboard from "./components/admin-dashboard";
+import AdminAccount from "./components/admin-account";
 import { websiteStructure } from "./sanity/structure";
 
 export default defineConfig({
@@ -19,6 +20,12 @@ export default defineConfig({
       controlsDocumentTitle: true,
     },
     ...previous,
+    {
+      name: "account",
+      title: "Account",
+      component: AdminAccount,
+      controlsDocumentTitle: true,
+    },
   ],
   schema: { types: schemaTypes },
 });
