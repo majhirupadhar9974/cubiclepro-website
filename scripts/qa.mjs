@@ -18,7 +18,7 @@ const articleSlugs=["BLOG_LIBRARY_PART_1.md","BLOG_LIBRARY_PART_2.md"].flatMap((
 const routes=["/","/products/","/materials/","/hardware/","/applications/","/resources/","/faq/","/about/","/warranty/","/contact/","/technical-enquiry/","/locations/",...solutions.map((x)=>`/solutions/${x.slug}/`),...products.map((x)=>`/products/${x.slug}/`),...juniorAgeBands.map((x)=>`/products/junior-series/${x.age}/`),...lockerTiers.map((x)=>`/products/hpl-lockers/${x.slug}/`),...modestyShapes.map((x)=>`/products/modesty-panels/${x.slug}/`),...articleSlugs.map((slug)=>`/blog/${slug}/`),...industries.map((x)=>`/industries/${x.slug}/`),...locations.filter((x)=>x.indexable).map((x)=>`/locations/${x.slug}/`)];
 await mkdir("qa-results",{recursive:true});
 for(const route of routes){
-  const response=await page.goto(base+route,{waitUntil:"networkidle"});
+  const response=await page.goto(base+route,{waitUntil:"load"});
   if(!response||response.status()!==200)issues.push(`${route}: HTTP ${response?.status()||"no response"}`);
   if(await page.locator("h1").count()!==1)issues.push(`${route}: expected one H1`);
   const canonicalLocator=page.locator('link[rel="canonical"]');
@@ -34,7 +34,7 @@ for(const route of routes){
 for(const [name,width,height] of [["desktop",1440,1000],["tablet",768,1024],["mobile",390,844],["small-mobile",360,800]]){
   await page.setViewportSize({width,height});
   for(const route of ["/","/products/","/applications/","/industries/corporate-offices/","/products/titan-black/","/products/junior-series/","/products/hpl-lockers/","/products/hpl-lockers/z-type/","/products/modesty-panels/","/warranty/","/technical-enquiry/","/contact/"]){
-    await page.goto(base+route,{waitUntil:"networkidle"});
+    await page.goto(base+route,{waitUntil:"load"});
     await page.evaluate(async()=>{for(let y=0;y<document.body.scrollHeight;y+=700){scrollTo(0,y);await new Promise((resolve)=>setTimeout(resolve,40))}scrollTo(0,0)});
     await page.waitForTimeout(800);
     if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1))issues.push(`${name} ${route}: horizontal overflow`);
@@ -57,14 +57,14 @@ const technicalWhatsApp=await page.getByRole("link",{name:/WhatsApp technical en
 if(!technicalWhatsApp?.startsWith("https://wa.me/919924731671?text="))issues.push("Technical WhatsApp target failed");
 await page.goto(base+"/products/hpl-lockers/");
 await page.locator("a.variant-visual").first().click();
-await page.waitForLoadState("networkidle");
+await page.waitForURL("**/products/hpl-lockers/tier-1/");
 if(!page.url().includes("/products/hpl-lockers/tier-1/"))issues.push("Locker card did not open its detail page");
-await page.getByRole("button",{name:/Open full image/}).click();
+await page.getByRole("button",{name:/Open full image/}).first().click();
 if(!(await page.locator("dialog.image-lightbox").evaluate((dialog)=>dialog.open)))issues.push("Full-image lightbox did not open");
 await page.getByRole("button",{name:"Close full image"}).click();
 await page.goto(base+"/products/junior-series/");
 await page.locator("a.variant-visual").first().click();
-await page.waitForLoadState("networkidle");
+await page.waitForURL("**/products/junior-series/below-5-years/");
 if(!page.url().includes("/products/junior-series/below-5-years/"))issues.push("Junior card did not open its detail page");
 await page.goto(base);
 await page.getByRole("button",{name:/Products/}).click();
