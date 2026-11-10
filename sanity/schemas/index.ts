@@ -99,6 +99,8 @@ export const schemaTypes = [
       defineField({ name: "technicalPhone", title: "Technical enquiry phone", type: "string", initialValue: "+91 99247 31671" }),
       defineField({ name: "primaryEmail", title: "Primary email", type: "string", initialValue: "info@cubiclepro.in" }),
       defineField({ name: "salesEmail", title: "Sales email", type: "string", initialValue: "sales@cubiclepro.in" }),
+      defineField({ name: "gstin", title: "GSTIN", type: "string", initialValue: "24AAXFC1344A1ZS" }),
+      defineField({ name: "msmeNumber", title: "MSME / Udyam registration number", type: "string", initialValue: "UDYAM-GJ-01-0703239" }),
       defineField({ name: "announcement", title: "Announcement", type: "string", validation: (r) => r.custom(safePublicCopy) }),
     ],
   }),

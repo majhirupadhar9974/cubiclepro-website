@@ -6,6 +6,8 @@ export const site = {
   tel: "+918401118340",
   email: "info@cubiclepro.in",
   salesEmail: "sales@cubiclepro.in",
+  gstin: "24AAXFC1344A1ZS",
+  msmeNumber: "UDYAM-GJ-01-0703239",
   technicalPhone: "+91 99247 31671",
   technicalTel: "+919924731671",
   address:

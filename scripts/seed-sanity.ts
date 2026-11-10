@@ -360,6 +360,8 @@ async function main() {
     technicalPhone: "+91 99247 31671",
     primaryEmail: "info@cubiclepro.in",
     salesEmail: "sales@cubiclepro.in",
+    gstin: "24AAXFC1344A1ZS",
+    msmeNumber: "UDYAM-GJ-01-0703239",
   });
 
   await upsert({

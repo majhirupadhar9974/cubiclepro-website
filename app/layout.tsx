@@ -67,6 +67,19 @@ export default function RootLayout({
                 logo: `${site.url}/images/brand/logo.png`,
                 telephone: site.tel,
                 email: site.email,
+                taxID: site.gstin,
+                identifier: [
+                  {
+                    "@type": "PropertyValue",
+                    propertyID: "GSTIN",
+                    value: site.gstin,
+                  },
+                  {
+                    "@type": "PropertyValue",
+                    propertyID: "MSME / Udyam Registration",
+                    value: site.msmeNumber,
+                  },
+                ],
                 address: {
                   "@type": "PostalAddress",
                   streetAddress:

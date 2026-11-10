@@ -43,7 +43,7 @@ export type CmsLocation = {
   indexable?: boolean;
 };
 export type CmsHomepage = { heroHeading?: string; heroSummary?: string; featuredProductSlugs?: string[] };
-export type CmsSiteSettings = { primaryPhone?: string; technicalPhone?: string; primaryEmail?: string; salesEmail?: string; announcement?: string };
+export type CmsSiteSettings = { primaryPhone?: string; technicalPhone?: string; primaryEmail?: string; salesEmail?: string; gstin?: string; msmeNumber?: string; announcement?: string };
 
 type CmsProduct = {
   name?: string;
@@ -175,7 +175,7 @@ export async function getPublishedPage(slug: string) {
 }
 export async function getSiteSettings(): Promise<CmsSiteSettings | null> {
   if (!client) return null;
-  try { return await client.fetch('*[_type == "siteSettings"][0]{primaryPhone, technicalPhone, primaryEmail, salesEmail, announcement}', {}, { next: { revalidate: 300, tags: ["site-settings"] } }); }
+  try { return await client.fetch('*[_type == "siteSettings"][0]{primaryPhone, technicalPhone, primaryEmail, salesEmail, gstin, msmeNumber, announcement}', {}, { next: { revalidate: 300, tags: ["site-settings"] } }); }
   catch { return null; }
 }
 
