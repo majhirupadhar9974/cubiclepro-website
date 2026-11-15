@@ -67,6 +67,7 @@ export default function RootLayout({
                 logo: `${site.url}/images/brand/logo.png`,
                 telephone: site.tel,
                 email: site.email,
+                geo: { "@type": "GeoCoordinates", latitude: site.latitude, longitude: site.longitude },
                 taxID: site.gstin,
                 identifier: [
                   {

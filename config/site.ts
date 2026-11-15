@@ -10,6 +10,9 @@ export const site = {
   msmeNumber: "UDYAM-GJ-01-0703239",
   technicalPhone: "+91 99247 31671",
   technicalTel: "+919924731671",
+  latitude: 22.972968,
+  longitude: 72.513561,
+  directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=22.972968%2C72.513561",
   address:
     "Shop No. 02, Hasnain Complex, In Mohammedi Park, Behind Canal, Fatehwadi, Ahmedabad – 380055, Gujarat, India.",
   tagline: "Smart spaces. Solid solutions.",

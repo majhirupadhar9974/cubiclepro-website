@@ -18,6 +18,7 @@ export default function AhmedabadGuidance() {
       <h2>Plan your washroom with our Ahmedabad team.</h2>
       <p>CubiclePro Washroom Solutions is based in Fatehwadi, Ahmedabad. Discuss toilet partitions, restroom cubicles, urinal privacy panels and HPL lockers with our sales and technical teams.</p>
       <address>{site.address}</address>
+      <p><a href={site.directionsUrl} target="_blank" rel="noopener noreferrer">Get directions to our Ahmedabad office ↗</a></p>
       <p>Call <a href={`tel:${site.tel}`}>{site.phone}</a> before visiting. Bring your layout or share drawings on WhatsApp so we can discuss the right configuration for your space.</p>
       <div className="cp-enquiry-actions">
         <a className="cp-button cp-button-accent" href={whatsapp("Ahmedabad washroom project")} target="_blank" rel="noopener noreferrer">Ahmedabad sales WhatsApp ↗</a>
