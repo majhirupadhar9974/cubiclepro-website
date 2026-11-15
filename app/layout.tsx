@@ -60,7 +60,7 @@ export default function RootLayout({
             "@context": "https://schema.org",
             "@graph": [
               {
-                "@type": "Organization",
+                "@type": "LocalBusiness",
                 "@id": `${site.url}/#organization`,
                 name: site.name,
                 url: site.url,

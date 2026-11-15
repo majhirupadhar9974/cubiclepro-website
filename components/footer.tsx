@@ -17,7 +17,7 @@ export default async function Footer() {
       <div><Link href="/" className="cp-wordmark">CUBICLE<span>PRO</span><small>WASHROOM SOLUTIONS</small></Link><p>Commercial washroom systems with clear specification, site-aware detailing and responsible execution.</p></div>
       <div><h2>Explore</h2>{[["Products","/products/"],["Materials","/materials/"],["Hardware & Profiles","/hardware/"],["Applications","/applications/"],["Resources","/resources/"],["Warranty","/warranty/"]].map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}</div>
       <div><h2>Enquiries</h2><a href={`tel:${salesTel}`}>{salesPhone} · Sales / WhatsApp</a><a href={`tel:${technicalTel}`}>{technicalPhone} · Technical</a><a href={`mailto:${settings?.primaryEmail||site.email}`}>{settings?.primaryEmail||site.email}</a><a href={`mailto:${settings?.salesEmail||site.salesEmail}`}>{settings?.salesEmail||site.salesEmail}</a><a href={salesWhatsApp} target="_blank" rel="noreferrer">Sales WhatsApp ↗</a><a href={technicalWhatsApp} target="_blank" rel="noreferrer">Technical WhatsApp ↗</a></div>
-      <div><h2>Visit</h2><address>{site.address}</address><Link href="/locations/">Service locations ↗</Link><Link href="/contact/">Request a quote ↗</Link></div>
+      <div><h2>Ahmedabad office</h2><address>{site.address}</address><Link href="/locations/ahmedabad/">Ahmedabad washroom projects ↗</Link><Link href="/locations/">Service locations ↗</Link><Link href="/contact/">Request a quote ↗</Link></div>
     </div>
     <div className="cp-footer-bottom"><span>© {new Date().getFullYear()} CubiclePro Washroom Solutions</span><span>GSTIN: {gstin}</span><span>MSME: {msmeNumber}</span><span>www.cubiclepro.in</span></div>
   </div></footer>;

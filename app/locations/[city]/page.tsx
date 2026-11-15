@@ -6,6 +6,7 @@ import { site } from "@/config/site";
 import { JsonLd } from "@/lib/seo";
 import { TechnicalWhatsAppAction } from "@/components/ui";
 import { getPublishedLocation, type PortableBlock } from "@/lib/cms";
+import AhmedabadGuidance, { ahmedabadFaqs } from "@/components/ahmedabad-guidance";
 
 export const dynamicParams = true;
 
@@ -30,7 +31,7 @@ export async function generateMetadata({
   const description = cms?.metaDescription || `Looking for toilet partitions or restroom cubicles in ${cityName}? Discuss CubiclePro washroom cubicles, UMPs, HPL lockers and project-specific solutions.`;
 
   return {
-    title,
+    title: /\|\s*cubiclepro\s*$/i.test(title) ? { absolute: title } : title,
     description,
     robots: { index: true, follow: true },
     alternates: { canonical: cms?.canonicalPath || `/locations/${city}/` },
@@ -62,7 +63,7 @@ export default async function CityPage({
     sectors: cmsSectors.length ? cmsSectors : fallback?.sectors || ["Commercial projects", "Institutional facilities", "Public washrooms"],
   };
 
-  const faqs = [
+  const faqs = city === "ahmedabad" ? ahmedabadFaqs : [
     {
       q: `Do you provide toilet partitions in ${item.city}?`,
       a: `CubiclePro accepts project enquiries for commercial toilet partitions, restroom cubicles and washroom partition systems in ${item.city}. Share the exact site location, application, approximate quantity and drawings where available.`,
@@ -122,7 +123,7 @@ export default async function CityPage({
         </div>
       </header>
 
-      <section className="cp-section">
+      {city === "ahmedabad" ? <AhmedabadGuidance /> : <section className="cp-section">
         <div className="container cp-two-col">
           <div>
             <p className="cp-kicker">Local project scope</p>
@@ -151,7 +152,7 @@ export default async function CityPage({
             ))}
           </div>
         </div>
-      </section>
+      </section>}
 
       <section className="cp-section cp-section-dark">
         <div className="container cp-two-col">
@@ -199,8 +200,8 @@ export default async function CityPage({
             <p className="cp-kicker">{item.city} questions</p>
             <h2>Useful answers before a quotation.</h2>
             <p>
-              City pages confirm the enquiry route, not an invented delivery
-              time, local office or completed-project claim.
+              Find out what to share for a quotation, how custom configurations
+              are selected and how to discuss your site with our team.
             </p>
           </div>
           <div className="cp-accordion">

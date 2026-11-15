@@ -1,0 +1,16 @@
+.guidance article a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #ffb18b;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.guidance :global(.cp-button-technical) {
+  color: #172024;
+  border-color: #884023;
+}
+.guidance :global(.cp-button-technical:hover),
+.guidance :global(.cp-button-technical:focus-visible) {
+  color: #fff;
+  background: #884023;
+}

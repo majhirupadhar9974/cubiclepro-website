@@ -6,10 +6,12 @@ import { site, technicalWhatsapp, whatsapp } from "@/config/site";
 import { Arrow } from "./ui";
 export default function QuoteForm() {
   const [message, setMessage] = useState(""), [interest, setInterest] = useState(""), [sending, setSending] = useState(false), [notice, setNotice] = useState("");
+  const [city, setCity] = useState("");
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     setInterest(params.get("system") || "");
     setMessage(params.get("brief") || "");
+    setCity((params.get("city") || "").slice(0, 120));
   }, []);
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault(); setNotice(""); setSending(true);
@@ -19,7 +21,7 @@ export default function QuoteForm() {
       const result = await response.json() as { ok?: boolean; error?: string };
       if (!response.ok || !result.ok) throw new Error(result.error || "We could not send this enquiry.");
       setNotice("Enquiry sent. Thank you — our team will follow up using the contact details you provided.");
-      form.reset(); setInterest(""); setMessage("");
+      form.reset(); setInterest(""); setMessage(""); setCity("");
     } catch (error) {
       setNotice(error instanceof Error ? error.message : "We could not send this enquiry. Please WhatsApp or call us.");
     } finally { setSending(false); }
@@ -32,7 +34,7 @@ export default function QuoteForm() {
       <label>Company / organization *<input name="company" required maxLength={160} autoComplete="organization" placeholder="Company / organization" /></label>
       <label>Mobile number *<input name="mobile" type="tel" required minLength={10} maxLength={20} pattern="[+0-9 ()\-]{10,20}" autoComplete="tel" placeholder="+91" /></label>
       <label>Email *<input name="email" type="email" required maxLength={254} autoComplete="email" placeholder="you@company.com" /></label>
-      <label>Project city *<input name="city" required maxLength={120} autoComplete="address-level2" placeholder="Project city" /></label>
+      <label>Project city *<input name="city" required maxLength={120} autoComplete="address-level2" placeholder="Project city" value={city} onChange={(event) => setCity(event.target.value)} /></label>
       <label>Site location *<input name="project_location" required maxLength={200} placeholder="Area / site location" /></label>
       <label>Project type *<select name="project_type" required defaultValue=""><option value="" disabled>Select application</option>{applications.map(([name]) => <option key={name}>{name}</option>)}<option>Other / Not sure</option></select></label>
       <label>Approximate cubicle quantity *<input type="number" name="quantity" required min="1" max="100000" placeholder="Enter approximate quantity" /></label>
