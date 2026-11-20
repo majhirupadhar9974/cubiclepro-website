@@ -62,10 +62,43 @@ export default async function Contact() {
           <div className="address-block">
             <p className="micro">Find us</p>
             <address>{site.address}</address>
+            <div className="address-actions">
+              <a href={site.mapsPlaceUrl} target="_blank" rel="noopener noreferrer">
+                View on Google Maps ↗
+              </a>
+              <a href={site.directionsUrl} target="_blank" rel="noopener noreferrer">
+                Get directions ↗
+              </a>
+            </div>
           </div>
           <p className="micro">Supply · Installation · Coordination</p>
         </aside>
         <QuoteForm />
+      </section>
+      <section className="container section-top-none contact-location" aria-labelledby="contact-location-heading">
+        <div className="contact-location-copy">
+          <Eyebrow>Ahmedabad location</Eyebrow>
+          <h2 id="contact-location-heading">Visit CubiclePro Washroom Solutions.</h2>
+          <address>{site.address}</address>
+          <p>For a product or project discussion, please call before visiting so the appropriate team member can be available.</p>
+          <div className="contact-location-actions">
+            <a className="button" href={site.directionsUrl} target="_blank" rel="noopener noreferrer">
+              Get directions <Arrow diagonal />
+            </a>
+            <a className="button button-outline" href={site.mapsPlaceUrl} target="_blank" rel="noopener noreferrer">
+              Open in Google Maps <Arrow diagonal />
+            </a>
+          </div>
+        </div>
+        <div className="contact-map-frame">
+          <iframe
+            src={site.mapsEmbedUrl}
+            title="Google Map showing CubiclePro Washroom Solutions in Fatehwadi, Ahmedabad"
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
+        </div>
       </section>
       <section id="privacy" className="container section-top-none privacy-note">
         <h2>Enquiry privacy</h2>

@@ -78,7 +78,7 @@ export const pageSeo: Record<
   "/products/modesty-panels/": {
     title: "Compact HPL Modesty & Urinal Privacy Panels | Cubiclepro",
     description:
-      "Explore Compact HPL modesty panels with stainless-steel wall clamps, nine reference shapes and project-specific dimensions.",
+      "Explore Compact HPL modesty panels with stainless-steel wall clamps, ten approved Type A-J reference shapes and project-specific dimensions.",
     h1: "Compact HPL modesty panels",
   },
   "/products/hpl-lockers/": {

@@ -218,7 +218,7 @@ export const faqs = [
   },
   {
     q: "What UMP shapes are available?",
-    a: "The approved Urinal Modesty Panel shapes are CP AERO, CP TAPER, CP WAVE, CP SLANT, CP SOFT, CP LEAN, CP FLOW, CP SWEEP and CP DOME. The reference size is approximately 900 mm height by 450 mm width; final sizes and custom shapes are confirmed project-wise.",
+    a: "The approved Urinal Modesty Panel shape library contains Type A through Type J. The reference size is approximately 900 mm height by 450 mm width; final sizes and custom shapes are confirmed project-wise.",
     tags: ["ump"],
   },
   {
@@ -319,7 +319,7 @@ export const articles: Article[] = [
     readTime: "4 min read",
     related: ["modesty-panels"],
     sections: [
-      { heading: "Start with the nine approved shapes", body: "CP AERO, CP TAPER, CP WAVE, CP SLANT, CP SOFT, CP LEAN, CP FLOW, CP SWEEP and CP DOME are maintained as item-level records." },
+      { heading: "Start with the ten approved shapes", body: "Type A through Type J are maintained as individual item-level records, each with its matching approved shape asset." },
       { heading: "Use the reference dimension correctly", body: "The reference size is approximately 900 mm height by 450 mm width. Final sizes and custom shapes are confirmed against the requirement." },
       { heading: "Keep the fixing description accurate", body: "The approved public material expression is HPL with stainless-steel clamps. A clamp grade is not published unless verified." },
     ],

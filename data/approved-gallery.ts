@@ -101,10 +101,10 @@ export const lockerTiers = [
   src: `${root}hpl-lockers/locker-${item.slug}-main.jpg`,
   alt: `${item.name} HPL locker ${item.module.toLowerCase()} product visual`,
 }));
-export const modestyShapeImage = `${root}urinal-modesty-panels/urinal-modesty-panel-shapes.png`;
-export const modestyShapes = ["CP AERO", "CP TAPER", "CP WAVE", "CP SLANT", "CP SOFT", "CP LEAN", "CP FLOW", "CP SWEEP", "CP DOME"].map((name) => ({
-  name,
-  slug: name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-$/, ""),
-  src: modestyShapeImage,
-  alt: `${name} Urinal Modesty Panel reference shape within the approved nine-shape library`,
+export const modestyShapeImage = `${root}urinal-modesty-panels/shapes/modesty-panel-shapes-overview.png`;
+export const modestyShapes = "ABCDEFGHIJ".split("").map((letter) => ({
+  name: `Type ${letter}`,
+  slug: `type-${letter.toLowerCase()}`,
+  src: `${root}urinal-modesty-panels/shapes/type-${letter.toLowerCase()}-shape.png`,
+  alt: `Type ${letter} Urinal Modesty Panel approved reference shape`,
 }));

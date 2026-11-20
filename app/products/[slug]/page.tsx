@@ -10,7 +10,6 @@ import {
   Breadcrumbs,
   Button,
   Eyebrow,
-  Visual,
   SectionHeading,
   ProductCard,
   QuoteBand,
@@ -20,7 +19,7 @@ import {
 } from "@/components/ui";
 import { metadata, JsonLd } from "@/lib/seo";
 import { specification, thickness, site, whatsapp } from "@/config/site";
-import { juniorAgeBands, lockerTiers, modestyShapeImage, systemComponents } from "@/data/approved-gallery";
+import { juniorAgeBands, lockerTiers, modestyShapes, systemComponents } from "@/data/approved-gallery";
 import { productDetails } from "@/data/product-details";
 import { getCatalogProduct } from "@/lib/cms";
 import ImageLightbox from "@/components/image-lightbox";
@@ -206,29 +205,27 @@ export default async function ProductPage({
               eyebrow="Explore the range"
               title={
                 slug === "modesty-panels"
-                  ? "Nine shapes. One clean system."
+                  ? "Ten shapes. One clean system."
                   : slug === "hpl-lockers"
                     ? "Storage, coordinated."
                     : "Child-friendly privacy, carefully shaped."
               }
             />
-            {slug === "modesty-panels" && (
-              <Visual
-                src={modestyShapeImage}
-                alt="Nine modesty panel reference outlines: Aero, Taper, Wave, Slant, Soft, Lean, Flow, Sweep and Dome"
-                className="shape-library"
-                label={false}
-                sizes="100vw"
-              />
-            )}
-            {slug === "modesty-panels" && <div className="variant-list">
-              {p.variants.map((v) => (
+            {slug === "modesty-panels" && <div className="modesty-shape-grid">
+              {modestyShapes.map((shape) => (
                 <Link
-                  href={`/products/modesty-panels/${v.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-$/, "")}/`}
-                  key={v}
+                  href={`/products/modesty-panels/${shape.slug}/`}
+                  key={shape.slug}
                 >
-                  {v}
-                  <span>↗</span>
+                  <span className="modesty-shape-visual">
+                    <Image
+                      src={shape.src}
+                      alt={shape.alt}
+                      fill
+                      sizes="(max-width: 640px) 45vw, (max-width: 1100px) 30vw, 18vw"
+                    />
+                  </span>
+                  <span className="modesty-shape-name"><strong>{shape.name}</strong><b aria-hidden="true">↗</b></span>
                 </Link>
               ))}
             </div>}

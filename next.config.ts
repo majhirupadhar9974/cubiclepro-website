@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 const isStatic = process.env.STATIC_EXPORT === "1";
+const distDir = process.env.NEXT_DIST_DIR?.trim() || (isStatic ? ".next-static" : ".next");
 const config: NextConfig = {
-  distDir: isStatic ? ".next-static" : ".next",
+  distDir,
   output: isStatic ? "export" : undefined,
   trailingSlash: true,
   poweredByHeader: false,
@@ -41,6 +42,15 @@ const config: NextConfig = {
               destination: "/contact/?system=Custom%20configuration",
               permanent: true,
             },
+            { source: "/products/modesty-panels/cp-aero", destination: "/products/modesty-panels/type-a/", permanent: true },
+            { source: "/products/modesty-panels/cp-taper", destination: "/products/modesty-panels/type-b/", permanent: true },
+            { source: "/products/modesty-panels/cp-wave", destination: "/products/modesty-panels/type-c/", permanent: true },
+            { source: "/products/modesty-panels/cp-slant", destination: "/products/modesty-panels/type-d/", permanent: true },
+            { source: "/products/modesty-panels/cp-soft", destination: "/products/modesty-panels/type-e/", permanent: true },
+            { source: "/products/modesty-panels/cp-lean", destination: "/products/modesty-panels/type-f/", permanent: true },
+            { source: "/products/modesty-panels/cp-flow", destination: "/products/modesty-panels/type-g/", permanent: true },
+            { source: "/products/modesty-panels/cp-sweep", destination: "/products/modesty-panels/type-h/", permanent: true },
+            { source: "/products/modesty-panels/cp-dome", destination: "/products/modesty-panels/type-i/", permanent: true },
           ];
         },
         async headers() {

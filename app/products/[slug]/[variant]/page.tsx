@@ -47,7 +47,7 @@ export default async function VariantPage({ params }: { params: Promise<{ slug: 
     ? junior.summary
     : locker
       ? `${locker.module}. ${locker.arrangement}. ${locker.usefulFor}`
-      : `${ump!.name} is one of nine Compact HPL Urinal Modesty Panel reference shapes. The final profile and dimensions are confirmed project-wise.`;
+      : `${ump!.name} is one of ten approved Compact HPL Urinal Modesty Panel reference shapes. The final profile and dimensions are confirmed project-wise.`;
   const src = item.src;
   const alt = junior ? `${junior.name} Junior Cubicle product visual` : locker ? locker.alt : ump!.alt;
   const faqs = [

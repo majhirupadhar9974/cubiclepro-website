@@ -65,7 +65,7 @@ Urinal Modesty Panels improve visual separation and user comfort in shared men's
 
 ### Nine reference shapes
 
-CubiclePro's approved shape library contains CP AERO, CP TAPER, CP WAVE, CP SLANT, CP SOFT, CP LEAN, CP FLOW, CP SWEEP and CP DOME. Each should be shown as its own selectable record rather than hidden inside one image-only page.
+CubiclePro's approved shape library contains Type A through Type J. Each is shown as its own selectable record with the matching approved shape asset.
 
 The shape names describe the panel outline. They do not change the need to confirm material, thickness, fixing and final dimensions.
 

@@ -292,7 +292,7 @@ Yes. Opening size and orientation can be coordinated project-wise while retainin
 
 ### 1. Which UMP shapes are available?
 
-The approved shapes are CP AERO, CP TAPER, CP WAVE, CP SLANT, CP SOFT, CP LEAN, CP FLOW, CP SWEEP and CP DOME.
+The approved shape library contains Type A through Type J.
 
 ### 2. What is the UMP reference size?
 
