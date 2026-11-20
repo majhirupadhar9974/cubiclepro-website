@@ -3466,10 +3466,10 @@ body { background: var(--cp-bg); color: var(--cp-text); }
 }
 .contact-location-actions { margin-top: 30px; }
 
-.cp-faq-section .cp-accordion summary {
+.cp-resources-faq .cp-accordion summary {
   grid-template-columns: minmax(0, 1fr) 30px;
 }
-.cp-faq-section .cp-accordion summary > span {
+.cp-resources-faq .cp-accordion summary > span {
   color: inherit;
   font-size: inherit;
 }

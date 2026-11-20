@@ -12,11 +12,12 @@ export const site = {
   technicalTel: "+919924731671",
   latitude: 22.9729829,
   longitude: 72.5135779,
-  directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=22.9729829%2C72.5135779",
+  directionsUrl:
+    "https://www.google.com/maps/dir/?api=1&destination=CubiclePro%20Washroom%20Solutions&destination_place_id=ChIJE4Yue52bXjkRj52MQ41v_U4",
   mapsPlaceUrl:
-    "https://www.google.com/maps/place/CubiclePro+Washroom+Solutions/@22.9729829,72.511003,17z/data=!3m1!4b1!4m6!3m5!1s0x395e9b9d7b2e8613:0x4efd6f8d438c9d8f!8m2!3d22.9729829!4d72.5135779!16s%2Fg%2F11z_jg0s57?entry=ttu&g_ep=EgoyMDI2MTExNy4wIKXMDSoASAFQAw%3D%3D",
+    "https://www.google.com/maps/search/?api=1&query=CubiclePro%20Washroom%20Solutions&query_place_id=ChIJE4Yue52bXjkRj52MQ41v_U4",
   mapsEmbedUrl:
-    "https://www.google.com/maps?q=CubiclePro%20Washroom%20Solutions%2C%20Ahmedabad&z=17&output=embed",
+    "https://maps.google.com/maps?cid=5691828156580535695&output=embed",
   address:
     "Shop No. 02, Hasnain Complex, In Mohammedi Park, Behind Canal, Fatehwadi, Ahmedabad – 380055, Gujarat, India.",
   tagline: "Smart spaces. Solid solutions.",

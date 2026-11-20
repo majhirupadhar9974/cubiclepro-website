@@ -89,7 +89,7 @@ export default async function ResourcesPage() {
         </div>
       </section>
 
-      <section className="cp-section cp-faq-section">
+      <section className="cp-section cp-faq-section cp-resources-faq">
         <div className="container">
           <header className="cp-section-head">
             <div>
