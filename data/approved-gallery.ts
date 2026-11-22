@@ -45,8 +45,8 @@ export const juniorAgeBands = [
     introduction: "LittleSteps by CubiclePro is designed for children up to 5 years of age. Its low-height configuration creates an approachable washroom environment while allowing practical adult supervision where required.",
     suitableFor: "Preschools, play schools, daycare centres, nursery sections, kindergarten washrooms, early-learning centres and junior school washrooms",
     profileSystem: "Box Up profile and hardware system",
-    features: ["Low-height junior configuration", "12 mm HPL compact panels", "890 mm door height", "1200 mm divider height", "150 mm bottom gap", "Child-scaled proportions", "Customisable to approved site requirements"],
-    measurements: [["Overall", "H 1500 × W 820 × D 1550 mm"], ["Door", "H 890 × W 750 mm"], ["Gap", "150 mm"], ["Divider", "H 1200 mm"]],
+    features: ["Low-height junior configuration", "12 mm HPL compact panels", "890 mm door height", "1200 mm divider height", "100 mm bottom gap", "Child-scaled proportions", "Customisable to approved site requirements"],
+    measurements: [["Overall", "H 1500 × W 850 × D 1400 mm"], ["Door", "H 890 × W 650 mm"], ["Gap", "100 mm"], ["Divider", "H 1200 mm"]],
   },
   {
     name: "Explorer",
@@ -59,7 +59,7 @@ export const juniorAgeBands = [
     suitableFor: "Primary schools, junior schools, educational campuses, activity centres, learning facilities and school washroom blocks",
     profileSystem: "Supernova profile and hardware system",
     features: ["Primary-school configuration", "12 mm HPL compact panels", "1300 mm door height", "1550 mm divider height", "150 mm bottom gap", "Balanced privacy and supervision", "Customisable to approved site requirements"],
-    measurements: [["Overall", "H 1980 × W 910 × D 1550 mm"], ["Door", "H 1300 × W 610 mm"], ["Gap", "150 mm"], ["Divider", "H 1550 mm"]],
+    measurements: [["Overall", "H 1980 × W 910 × D 1500 mm"], ["Door", "H 1300 × W 610 mm"], ["Gap", "150 mm"], ["Divider", "H 1550 mm"]],
   },
   {
     name: "Horizon",
@@ -71,8 +71,8 @@ export const juniorAgeBands = [
     introduction: "Horizon by CubiclePro is designed for children 11 to 14 years of age. Taller door and divider proportions create stronger privacy while retaining an age-appropriate junior format.",
     suitableFor: "Middle schools, junior secondary schools, educational campuses, institutional washroom blocks, learning centres and school activity facilities",
     profileSystem: "Same approved profile and hardware system as Explorer",
-    features: ["Higher-privacy junior configuration", "12 mm HPL compact panels", "1550 mm door height", "1550 mm divider height", "150 mm bottom gap", "Coordinated Junior range construction", "Customisable to approved site requirements"],
-    measurements: [["Overall", "H 1980 × W 910 × D 1550 mm"], ["Door", "H 1550 × W 610 mm"], ["Gap", "150 mm"], ["Divider", "H 1550 mm"]],
+    features: ["Higher-privacy junior configuration", "12 mm HPL compact panels", "1550 mm door height", "1550 mm divider height", "100-150 mm bottom gap", "Coordinated Junior range construction", "Customisable to approved site requirements"],
+    measurements: [["Overall", "H 1980 × W 910 × D 1200-1500 mm"], ["Door", "H 1550 × W 610 mm"], ["Gap", "100-150 mm"], ["Divider", "H 1550 mm"]],
   },
   {
     name: "Youth",
@@ -85,7 +85,7 @@ export const juniorAgeBands = [
     suitableFor: "Senior secondary schools, higher secondary schools, colleges, universities, education campuses and institutional washroom blocks",
     profileSystem: "Aluminium or stainless-steel profile option with SS 316 hardware",
     features: ["Full-privacy configuration", "12 mm HPL compact panels", "Aluminium profile option", "Stainless-steel profile option", "SS 316 hardware", "100-150 mm bottom clearance*", "Customisable to approved site requirements"],
-    measurements: [["Cubicle", "W 900 × D 1500-1800 mm*"], ["Door", "W 600 mm"], ["Height", "1995-2003 mm*"], ["Gap", "100-150 mm*"]],
+    measurements: [["Cubicle", "W 900 × D 1200-1500 mm*"], ["Door", "H 1790 × W 600 mm"], ["Overall height", "1990 mm*"], ["Gap", "100-150 mm*"]],
   },
 ];
 export const lockerTiers = [

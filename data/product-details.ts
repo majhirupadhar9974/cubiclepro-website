@@ -9,10 +9,10 @@ export type ProductDetail = {
 };
 
 const standardDimensions: [string, string, string][] = [
-  ["Cubicle width", "900 mm", "1500 mm accessible"],
+  ["Cubicle width", "1000 mm", "1500 mm accessible"],
   ["Door width", "600 mm", "900 mm accessible"],
-  ["Cubicle depth", "1500-1800 mm*", "1500-1800 mm* accessible"],
-  ["Total height from floor", "1995-2003 mm*", "1995-2003 mm* accessible"],
+  ["Cubicle depth", "1200-1500 mm*", "1200-1500 mm* accessible"],
+  ["Total height from floor", "1990 mm*", "1990 mm* accessible"],
   ["Bottom gap from floor", "100-150 mm*", "100-150 mm* accessible"],
 ];
 
@@ -26,7 +26,7 @@ export const productDetails: Record<string, ProductDetail> = {
       "Nylon Polyamide Grade 6 hardware and black powder-coated aluminium profiles combine durable everyday performance with a distinctive architectural expression for high-traffic washrooms.",
     ],
     features: ["Floor-mounted cubicle system", "12 mm and 18 mm compact-panel options", "Black powder-coated aluminium profiles", "Nylon Polyamide Grade 6 hardware", "Adjustable floor-mounted legs", "100-150 mm bottom clearance*", "Lightweight and easy to maintain", "Impact-resistant nylon components", "Project-wise colours, textures and patterns", "Customisable to site and project requirements"],
-    dimensions: standardDimensions,
+    dimensions: standardDimensions.map((row) => row[0] === "Total height from floor" ? [row[0], "2000 mm*", "2000 mm* accessible"] : row),
     sections: [
       { heading: "HPL compact panels", body: compactPanel },
       { heading: "Doors and pilasters", body: "Doors use the selected compact-panel specification and Titan Black hardware. Pilasters use the same panel construction with a thumb-turn lock and occupancy indicator. A black powder-coated aluminium door-stopper profile with anti-noise rubber lining provides the closing surface, while adjustable Nylon PA-6 legs provide support and clearance." },
@@ -92,7 +92,7 @@ export const productDetails: Record<string, ProductDetail> = {
       "The approved Base Box configuration has no top rail. SS 304 shoe-box and profile components combine with SS 316 hardware for a clean, floor-supported architectural expression.",
     ],
     features: ["Premium floor-mounted system", "SS 304 shoe-box support beneath pilasters", "No separate legs", "No top rail", "12 mm and 18 mm compact-panel options", "SS 304 profile system", "SS 316 hardware", "100-150 mm bottom clearance*", "Project-wise colours, textures and patterns", "Customisable to site and project requirements"],
-    dimensions: standardDimensions.map((row) => row[0] === "Total height from floor" ? [row[0], "1840 mm", "1840 mm accessible"] : row),
+    dimensions: standardDimensions,
     sections: [
       { heading: "HPL compact panels", body: compactPanel },
       { heading: "Doors and pilasters", body: "Doors use the selected compact-panel specification with SS 316 hardware. Pilasters use the same panel construction and the characteristic SS 304 box-type floor-support arrangement, giving Base Box its structural and visual identity." },
@@ -109,7 +109,7 @@ export const productDetails: Record<string, ProductDetail> = {
       "SS 304 profiles, SS 316 hardware and the shoe-box floor-support arrangement create a stable system for premium commercial and institutional environments.",
     ],
     features: ["Premium floor-mounted system", "Box-type support beneath pilasters", "Square stainless-steel top rail", "12 mm and 18 mm compact-panel options", "SS 304 profiles", "SS 316 hardware", "100-150 mm bottom clearance*", "Clean structured appearance", "Project-wise colours, textures and patterns", "Customisable to site and project requirements"],
-    dimensions: standardDimensions.map((row) => row[0] === "Total height from floor" ? [row[0], "1840 mm", "1840 mm accessible"] : row),
+    dimensions: standardDimensions,
     sections: [
       { heading: "HPL compact panels", body: compactPanel },
       { heading: "Doors and pilasters", body: "Doors use the selected compact-panel specification with SS 316 hardware. Pilasters use the same panel construction and are supported by the characteristic box-type floor-support arrangement." },
@@ -143,7 +143,7 @@ export const productDetails: Record<string, ProductDetail> = {
       "The system uses 12 mm or 18 mm HPL compact panels, SS 304 profiles, SS 316 hardware, ceiling-mounted SS shoe-box support and an aluminium H-Type top rail where required by the approved configuration.",
     ],
     features: ["Ceiling-hung restroom cubicle system", "Leg-free floor", "12 mm and 18 mm compact-panel options", "SS 304 profiles", "SS 316 hardware", "Ceiling-mounted SS shoe-box support", "Anchor fixing to approved structural support", "Aluminium H-Type top rail where required", "Project-wise colours, textures and patterns", "Customisable to project requirements"],
-    dimensions: [["Cubicle width", "900 mm", "1500 mm accessible"], ["Door width", "600 mm", "900 mm accessible"], ["Cubicle depth", "1500-1800 mm*", "1500-1800 mm* accessible"], ["Total height from floor", "2400 mm", "2400 mm accessible"], ["Bottom clearance", "100-150 mm*", "100-150 mm* accessible"]],
+    dimensions: [["Cubicle width", "1000 mm", "1500 mm accessible"], ["Door width", "600 mm", "900 mm accessible"], ["Cubicle depth", "1200-1500 mm*", "1200-1500 mm* accessible"], ["Total height from floor", "1990 mm*", "1990 mm* accessible"], ["Bottom clearance", "100-150 mm*", "100-150 mm* accessible"]],
     sections: [
       { heading: "HPL compact panels", body: compactPanel },
       { heading: "Suspended construction", body: "Doors use the selected compact-panel specification with SS 316 hardware. Pilasters are supported through an SS shoe-box and anchor-fixing arrangement at the ceiling or structural support. Dividers connect through stainless-steel profiles against the approved layout." },

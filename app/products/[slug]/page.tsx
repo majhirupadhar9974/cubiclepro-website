@@ -193,7 +193,7 @@ export default async function ProductPage({
         <section className="section container technical-reference-section">
           <SectionHeading eyebrow="Planning references" title="Layout and component coordination." text="These drawings are reference guides. Final dimensions, support conditions, door handing and component selection follow the approved project drawing." />
           <div className="technical-reference-grid">
-            <ImageLightbox src="/images/approved/technical-guides/accessible-standard-cubicle-layout.jpg" alt="Reference plan showing an accessible cubicle and two standard cubicles with door clearances and dimensions" sizes="(max-width:760px) 100vw, 50vw" caption="Planning Reference" />
+            <ImageLightbox src="/images/approved/technical-guides/accessible-standard-cubicle-layout.png" alt="Reference plan showing an accessible cubicle and two standard cubicles with door clearances and dimensions" sizes="(max-width:760px) 100vw, 50vw" caption="Planning Reference" />
             <ImageLightbox src="/images/approved/technical-guides/cubicle-components-reference.jpg" alt="Reference visual identifying cubicle door, divider, pilaster, top rail, leg, knob, occupancy indicator and internally mounted hinge and coat hook" sizes="(max-width:760px) 100vw, 50vw" caption="Component Reference" />
           </div>
         </section>
