@@ -40,16 +40,16 @@ export const productDetails: Record<string, ProductDetail> = {
   nova: {
     introduction: [
       "Nova by CubiclePro is a floor-mounted restroom cubicle system for commercial washrooms that require a clean appearance, dependable performance and practical value. Its anodised aluminium top rail and adjustable legs provide 100-150 mm bottom clearance for a stable, refined installation.",
-      "SS 316 grade hardware and anodised aluminium profiles support everyday use in high-traffic commercial washrooms while retaining a light, coordinated architectural expression.",
+      "SS 316 adjustable legs, SS 304 hinges, knob, coat hook and indicator lock, together with anodised aluminium profiles, support everyday use in high-traffic commercial washrooms. A complete SS 316 hardware upgrade is available on request.",
     ],
-    features: ["Floor-mounted cubicle system", "12 mm and 18 mm compact-panel options", "Anodised aluminium profile system", "SS 316 grade hardware", "Adjustable floor-mounted legs", "100-150 mm bottom clearance*", "Project-wise colours, textures and patterns", "Suitable for high-traffic commercial washrooms", "Customisable to site and project requirements"],
+    features: ["Floor-mounted cubicle system", "12 mm and 18 mm compact-panel options", "Anodised aluminium profile system", "SS 316 adjustable legs", "SS 304 hinges, knob, coat hook and indicator lock", "Complete SS 316 hardware upgrade available on request", "100-150 mm bottom clearance*", "Project-wise colours, textures and patterns", "Suitable for high-traffic commercial washrooms", "Customisable to site and project requirements"],
     dimensions: standardDimensions,
     sections: [
       { heading: "HPL compact panels", body: compactPanel },
-      { heading: "Doors and pilasters", body: "Doors use the selected compact-panel specification with SS 316 hardware. Pilasters use the same panel construction with a thumb-turn lock and occupancy indicator. An anodised aluminium door-stopper profile with rubber lining reduces closing noise, while adjustable legs provide support and clearance." },
+      { heading: "Doors and pilasters", body: "Doors use the selected compact-panel specification with SS 304 hinges, knob, coat hook and indicator lock. Pilasters use the same panel construction. An anodised aluminium door-stopper profile with rubber lining reduces closing noise, while SS 316 adjustable legs provide support and clearance." },
       { heading: "Dividers", body: "Intermediate dividers use the same compact-panel specification and are connected with anodised aluminium profiles. Panel sizes can be customised against the approved layout and drawings." },
       { heading: "Anodised aluminium profiles", body: "Nova uses anodised aluminium throughout its approved profile family.", items: ["Top Rail Profile", "F-Channel", "U-Channel", "Door Stopper Profile"] },
-      { heading: "SS 316 hardware", body: "The door and support hardware is coordinated for the selected Nova configuration.", items: ["Adjustable legs", "Hinges", "Internal coat hook", "Door knob", "Thumb-turn lock with occupancy indicator"] },
+      { heading: "Standard stainless-steel hardware", body: "The standard Nova configuration uses SS 316 adjustable legs with SS 304 functional hardware. Complete SS 316 hardware is available on request; final component grades, compatibility, pricing and lead time are confirmed in the approved quotation.", items: ["SS 316 adjustable legs", "SS 304 hinges", "SS 304 internal coat hook", "SS 304 door knob", "SS 304 thumb-turn lock with occupancy indicator"] },
     ],
     applications: commonApplications,
     cta: "Share your layout and project requirements for a customised Nova cubicle proposal.",
@@ -57,15 +57,15 @@ export const productDetails: Record<string, ProductDetail> = {
   supernova: {
     introduction: [
       "Supernova by CubiclePro is a premium floor-mounted restroom cubicle system for projects where refined aesthetics, smooth functionality and durable construction are equally important. A rectangular stainless-steel top rail and adjustable legs provide 100-150 mm bottom clearance.",
-      "Its flush-aligned door design creates a seamless front elevation. SS 304 profiles and SS 316 hardware are kept clearly distinguished in the approved specification.",
+      "Its flush-aligned door design creates a seamless front elevation. The standard system combines SS 304 profiles and functional hardware with SS 316 adjustable legs; a complete SS 316 hardware upgrade is available on request.",
     ],
-    features: ["Premium floor-mounted system", "Flush-aligned door design", "12 mm and 18 mm HPL compact-panel options", "SS 304 profiles", "SS 316 hardware", "Adjustable floor-mounted legs", "100-150 mm bottom clearance*", "Easy-to-maintain surfaces", "Project-wise colours, textures and patterns", "Customisable to project requirements"],
+    features: ["Premium floor-mounted system", "Flush-aligned door design", "12 mm and 18 mm HPL compact-panel options", "SS 304 profiles", "SS 316 adjustable legs", "SS 304 hinges, knob, coat hook and indicator lock", "Complete SS 316 hardware upgrade available on request", "100-150 mm bottom clearance*", "Easy-to-maintain surfaces", "Project-wise colours, textures and patterns", "Customisable to project requirements"],
     dimensions: standardDimensions,
     sections: [
       { heading: "HPL compact panels", body: compactPanel },
-      { heading: "Doors, pilasters and dividers", body: "Doors follow the selected compact-panel thickness and a flush-aligned closing configuration. Pilasters use the same panel construction with SS 316 locking and support hardware. Adjustable stainless-steel pedestal legs provide floor support. Dividers are connected through SS 304 profiles and can be customised to the approved layout." },
+      { heading: "Doors, pilasters and dividers", body: "Doors follow the selected compact-panel thickness and a flush-aligned closing configuration. Pilasters use the same panel construction with SS 304 locking and functional hardware. SS 316 adjustable pedestal legs provide floor support. Dividers connect through SS 304 profiles and can be customised to the approved layout." },
       { heading: "SS 304 profiles", body: "Supernova uses SS 304 profile components for its stainless-steel structural expression.", items: ["Rectangular Top Rail", "F-Channel", "U-Channel", "Door Stopper Profile"] },
-      { heading: "SS 316 hardware", body: "The hardware schedule remains exclusive to Supernova.", items: ["Adjustable pedestal legs", "Spring-loaded hinges", "Internal coat hook", "Door knob", "Thumb-turn lock with occupancy indicator", "Anti-noise rubber lining", "SS 304 screws", "Nylon PA-6 expandable wall plugs"] },
+      { heading: "Standard stainless-steel hardware", body: "The standard Supernova configuration uses SS 316 adjustable pedestal legs with SS 304 functional hardware. Complete SS 316 hardware is available on request; final component grades, compatibility, pricing and lead time are confirmed in the approved quotation.", items: ["SS 316 adjustable pedestal legs", "SS 304 spring-loaded hinges", "SS 304 internal coat hook", "SS 304 door knob", "SS 304 thumb-turn lock with occupancy indicator", "Anti-noise rubber lining", "SS 304 screws", "Nylon PA-6 expandable wall plugs"] },
     ],
     applications: commonApplications,
     cta: "Share your layout, interior direction and project requirements for a customised Supernova proposal.",
@@ -89,16 +89,16 @@ export const productDetails: Record<string, ProductDetail> = {
   "base-box": {
     introduction: [
       "Base Box by CubiclePro is a premium floor-mounted restroom cubicle system with a distinctive box-type support beneath the pilasters. The shoe-box base gives the elevation a strong, visually ordered lower line without separate legs.",
-      "The approved Base Box configuration has no top rail. SS 304 shoe-box and profile components combine with SS 316 hardware for a clean, floor-supported architectural expression.",
+      "The approved Base Box configuration has no top rail. SS 304 shoe-box, profile components and functional hardware create a clean floor-supported expression. Complete SS 316 hardware is available on request.",
     ],
-    features: ["Premium floor-mounted system", "SS 304 shoe-box support beneath pilasters", "No separate legs", "No top rail", "12 mm and 18 mm compact-panel options", "SS 304 profile system", "SS 316 hardware", "100-150 mm bottom clearance*", "Project-wise colours, textures and patterns", "Customisable to site and project requirements"],
+    features: ["Premium floor-mounted system", "SS 304 shoe-box support beneath pilasters", "No separate legs", "No top rail", "12 mm and 18 mm compact-panel options", "SS 304 profile system", "SS 304 functional hardware", "Complete SS 316 hardware upgrade available on request", "100-150 mm bottom clearance*", "Project-wise colours, textures and patterns", "Customisable to site and project requirements"],
     dimensions: standardDimensions,
     sections: [
       { heading: "HPL compact panels", body: compactPanel },
-      { heading: "Doors and pilasters", body: "Doors use the selected compact-panel specification with SS 316 hardware. Pilasters use the same panel construction and the characteristic SS 304 box-type floor-support arrangement, giving Base Box its structural and visual identity." },
+      { heading: "Doors and pilasters", body: "Doors use the selected compact-panel specification with SS 304 hinges, knob, coat hook and indicator lock. Pilasters use the same panel construction and the characteristic SS 304 box-type floor-support arrangement, giving Base Box its structural and visual identity." },
       { heading: "Dividers", body: "Intermediate dividers use the same compact-panel specification and connect through stainless-steel U-Channels. Dimensions are customised against the approved layout and drawings." },
       { heading: "SS 304 profiles and support", body: "Base Box uses a shoe-box floor support without separate legs or a top rail.", items: ["SS 304 shoe-box support", "F-Channel", "U-Channel"] },
-      { heading: "SS 316 hardware", body: "Hardware is coordinated to the selected Base Box configuration.", items: ["Box-type floor-support components", "Hinges", "Internal coat hook", "Door knob", "Thumb-turn lock with occupancy indicator", "Anti-noise rubber lining", "Stainless-steel screws", "Nylon PA-6 expandable wall plugs"] },
+      { heading: "Standard stainless-steel hardware", body: "Base Box uses SS 304 functional hardware as standard. Complete SS 316 hardware is available on request; final component grades, compatibility, pricing and lead time are confirmed in the approved quotation.", items: ["SS 304 box-type floor-support components", "SS 304 hinges", "SS 304 internal coat hook", "SS 304 door knob", "SS 304 thumb-turn lock with occupancy indicator", "Anti-noise rubber lining", "Stainless-steel screws", "Nylon PA-6 expandable wall plugs"] },
     ],
     applications: commonApplications,
     cta: "Share your washroom layout and project requirements for a customised Base Box proposal.",
@@ -106,16 +106,16 @@ export const productDetails: Record<string, ProductDetail> = {
   "base-box-pro": {
     introduction: [
       "Base Box Pro by CubiclePro is a premium floor-mounted restroom cubicle system for projects requiring strong base support, clean detailing and a defined architectural finish. Its box-type support beneath the pilasters is combined with a square stainless-steel top rail.",
-      "SS 304 profiles, SS 316 hardware and the shoe-box floor-support arrangement create a stable system for premium commercial and institutional environments.",
+      "SS 304 profiles, SS 304 functional hardware and the shoe-box floor-support arrangement create a stable system for premium commercial and institutional environments. Complete SS 316 hardware is available on request.",
     ],
-    features: ["Premium floor-mounted system", "Box-type support beneath pilasters", "Square stainless-steel top rail", "12 mm and 18 mm compact-panel options", "SS 304 profiles", "SS 316 hardware", "100-150 mm bottom clearance*", "Clean structured appearance", "Project-wise colours, textures and patterns", "Customisable to site and project requirements"],
+    features: ["Premium floor-mounted system", "Box-type support beneath pilasters", "Square stainless-steel top rail", "12 mm and 18 mm compact-panel options", "SS 304 profiles", "SS 304 functional hardware", "Complete SS 316 hardware upgrade available on request", "100-150 mm bottom clearance*", "Clean structured appearance", "Project-wise colours, textures and patterns", "Customisable to site and project requirements"],
     dimensions: standardDimensions,
     sections: [
       { heading: "HPL compact panels", body: compactPanel },
-      { heading: "Doors and pilasters", body: "Doors use the selected compact-panel specification with SS 316 hardware. Pilasters use the same panel construction and are supported by the characteristic box-type floor-support arrangement." },
+      { heading: "Doors and pilasters", body: "Doors use the selected compact-panel specification with SS 304 hinges, knob, coat hook and indicator lock. Pilasters use the same panel construction and are supported by the characteristic box-type floor-support arrangement." },
       { heading: "Dividers", body: "Intermediate dividers use the same panel specification and connect through stainless-steel profiles. Dimensions are customised against the approved layout." },
       { heading: "SS 304 profiles and support", body: "The square top rail distinguishes Base Box Pro from Base Box.", items: ["Square Top Rail", "F-Channel", "U-Channel", "Box-type floor-support components"] },
-      { heading: "SS 316 hardware", body: "Hardware is coordinated to the approved Base Box Pro schedule.", items: ["Hinges", "Internal coat hook", "Door knob", "Thumb-turn lock with occupancy indicator", "Anti-noise rubber lining", "Stainless-steel screws", "Nylon PA-6 expandable wall plugs"] },
+      { heading: "Standard stainless-steel hardware", body: "Base Box Pro uses SS 304 functional hardware as standard. Complete SS 316 hardware is available on request; final component grades, compatibility, pricing and lead time are confirmed in the approved quotation.", items: ["SS 304 hinges", "SS 304 internal coat hook", "SS 304 door knob", "SS 304 thumb-turn lock with occupancy indicator", "Anti-noise rubber lining", "Stainless-steel screws", "Nylon PA-6 expandable wall plugs"] },
     ],
     applications: commonApplications,
     cta: "Share your washroom layout and design direction for a customised Base Box Pro proposal.",
@@ -123,15 +123,15 @@ export const productDetails: Record<string, ProductDetail> = {
   float: {
     introduction: [
       "Float by CubiclePro is a premium free-floor restroom cubicle system designed to create a clean, open and visually lightweight environment. Wall-supported construction keeps the floor free from cubicle hardware and creates the floating expression.",
-      "The system uses 12 mm or 18 mm HPL compact panels, powder-coated aluminium profiles, an H-Type top rail and SS 316 hardware. Suitability depends on verified structural wall support on both sides.",
+      "The system uses 12 mm or 18 mm HPL compact panels, powder-coated aluminium profiles, an H-Type top rail and SS 304 functional hardware. Complete SS 316 hardware is available on request. Suitability depends on verified structural wall support on both sides.",
     ],
-    features: ["Free-floor restroom cubicle system", "No cubicle hardware touching the floor", "12 mm and 18 mm compact-panel options", "Powder-coated aluminium profiles", "H-Type top rail", "SS 316 hardware", "Clear floor area", "Easier cleaning and maintenance", "Project-wise colours, textures and patterns", "Customisable to site and project requirements"],
+    features: ["Free-floor restroom cubicle system", "No cubicle hardware touching the floor", "12 mm and 18 mm compact-panel options", "Powder-coated aluminium profiles", "H-Type top rail", "SS 304 functional hardware", "Complete SS 316 hardware upgrade available on request", "Clear floor area", "Easier cleaning and maintenance", "Project-wise colours, textures and patterns", "Customisable to site and project requirements"],
     dimensions: standardDimensions,
     sections: [
       { heading: "HPL compact panels", body: compactPanel },
-      { heading: "Wall-supported construction", body: "Doors use the selected compact-panel specification with SS 316 hardware. Pilasters form part of the wall-supported free-floor system. Dividers connect to the support structure through the required profiles and are customised to the approved layout." },
+      { heading: "Wall-supported construction", body: "Doors use the selected compact-panel specification with SS 304 hinges, knob, coat hook and indicator lock. Pilasters form part of the wall-supported free-floor system. Dividers connect to the support structure through the required profiles and are customised to the approved layout." },
       { heading: "Powder-coated aluminium profiles", body: "The approved Float construction uses an H-Type top rail and coordinated aluminium profiles.", items: ["H-Type Top Rail", "F-Channel", "U-Channel", "Door Stopper Profile with anti-noise rubber lining"] },
-      { heading: "SS 316 hardware", body: "The hardware schedule supports daily movement and privacy.", items: ["Spring-loaded hinges", "Internal coat hook", "Door knob", "Thumb-turn lock with occupancy indicator", "Anti-noise rubber padding", "Stainless-steel screws", "Nylon PA-6 expandable wall plugs"] },
+      { heading: "Standard stainless-steel hardware", body: "Float uses SS 304 functional hardware as standard. Complete SS 316 hardware is available on request; final component grades, compatibility, pricing and lead time are confirmed in the approved quotation.", items: ["SS 304 spring-loaded hinges", "SS 304 internal coat hook", "SS 304 door knob", "SS 304 thumb-turn lock with occupancy indicator", "Anti-noise rubber padding", "Stainless-steel screws", "Nylon PA-6 expandable wall plugs"] },
     ],
     applications: ["Premium corporate offices", "Hotels and hospitality projects", "Shopping malls", "Premium commercial buildings", "Airports and transport facilities", "Public washrooms", "Design-focused institutional projects", "Modern architectural interiors"],
     prerequisites: ["Suitable structural walls or support conditions on both sides", "Wall and fixing conditions verified before approval", "Final support arrangement coordinated to the actual site structure and layout"],
@@ -140,15 +140,15 @@ export const productDetails: Record<string, ProductDetail> = {
   "sky-hung": {
     introduction: [
       "Sky Hung by CubiclePro is a premium ceiling-hung restroom cubicle system for projects where open floor space, refined aesthetics and easier floor maintenance are important. The structure is suspended from the ceiling or approved structural support, keeping the floor free from cubicle hardware.",
-      "The system uses 12 mm or 18 mm HPL compact panels, SS 304 profiles, SS 316 hardware, ceiling-mounted SS shoe-box support and an aluminium H-Type top rail where required by the approved configuration.",
+      "The system uses 12 mm or 18 mm HPL compact panels, SS 304 profiles and functional hardware, ceiling-mounted SS shoe-box support and an aluminium H-Type top rail where required. Complete SS 316 hardware is available on request.",
     ],
-    features: ["Ceiling-hung restroom cubicle system", "Leg-free floor", "12 mm and 18 mm compact-panel options", "SS 304 profiles", "SS 316 hardware", "Ceiling-mounted SS shoe-box support", "Anchor fixing to approved structural support", "Aluminium H-Type top rail where required", "Project-wise colours, textures and patterns", "Customisable to project requirements"],
+    features: ["Ceiling-hung restroom cubicle system", "Leg-free floor", "12 mm and 18 mm compact-panel options", "SS 304 profiles", "SS 304 functional hardware", "Complete SS 316 hardware upgrade available on request", "Ceiling-mounted SS shoe-box support", "Anchor fixing to approved structural support", "Aluminium H-Type top rail where required", "Project-wise colours, textures and patterns", "Customisable to project requirements"],
     dimensions: [["Cubicle width", "1000 mm", "1500 mm accessible"], ["Door width", "600 mm", "900 mm accessible"], ["Cubicle depth", "1200-1500 mm*", "1200-1500 mm* accessible"], ["Total height from floor", "1990 mm*", "1990 mm* accessible"], ["Bottom clearance", "100-150 mm*", "100-150 mm* accessible"]],
     sections: [
       { heading: "HPL compact panels", body: compactPanel },
-      { heading: "Suspended construction", body: "Doors use the selected compact-panel specification with SS 316 hardware. Pilasters are supported through an SS shoe-box and anchor-fixing arrangement at the ceiling or structural support. Dividers connect through stainless-steel profiles against the approved layout." },
+      { heading: "Suspended construction", body: "Doors use the selected compact-panel specification with SS 304 hinges, knob, coat hook and indicator lock. Pilasters are supported through an SS shoe-box and anchor-fixing arrangement at the ceiling or structural support. Dividers connect through stainless-steel profiles against the approved layout." },
       { heading: "Profiles and ceiling support", body: "The exact fixing arrangement varies with ceiling height, structural support and layout.", items: ["SS 304 F-Channel", "SS 304 U-Channel", "SS 304 Door Stopper Profile", "Aluminium H-Type Top Rail where required", "SS Shoe Box support", "Ceiling anchor fixing"] },
-      { heading: "SS 316 hardware", body: "Hardware remains mapped to the approved Sky Hung configuration.", items: ["Spring-loaded hinges", "Internal coat hook", "Door knob", "Thumb-turn lock with occupancy indicator", "Required ceiling-support hardware", "Anti-noise rubber padding", "Stainless-steel screws", "Nylon PA-6 expandable wall plugs"] },
+      { heading: "Standard stainless-steel hardware", body: "Sky Hung uses SS 304 functional hardware as standard. Complete SS 316 hardware is available on request; final component grades, compatibility, pricing and lead time are confirmed in the approved quotation.", items: ["SS 304 spring-loaded hinges", "SS 304 internal coat hook", "SS 304 door knob", "SS 304 thumb-turn lock with occupancy indicator", "Required ceiling-support hardware", "Anti-noise rubber padding", "Stainless-steel screws", "Nylon PA-6 expandable wall plugs"] },
     ],
     applications: ["Premium corporate offices", "Hotels and hospitality projects", "Shopping malls", "Airports and transport facilities", "Premium commercial buildings", "Public washrooms", "Institutional projects", "High-traffic washroom environments"],
     prerequisites: ["Plan installation before the false ceiling is completed", "Provide suitable structural support above the cubicle system", "Verify support conditions on both sides", "Check ceiling and fixing conditions before installation", "Coordinate the final support arrangement to the actual structure and layout"],

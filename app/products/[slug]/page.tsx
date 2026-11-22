@@ -23,6 +23,8 @@ import { juniorAgeBands, lockerTiers, modestyShapes, systemComponents } from "@/
 import { productDetails } from "@/data/product-details";
 import { getCatalogProduct } from "@/lib/cms";
 import ImageLightbox from "@/components/image-lightbox";
+import HardwareGradeOverview from "@/components/hardware-grade-overview";
+import { hardwareGradeConfigs } from "@/data/hardware-grades";
 import { industries } from "@/data/site-content";
 import { articles, faqsForProduct } from "@/data/content-library";
 export const dynamicParams = true;
@@ -185,7 +187,9 @@ export default async function ProductPage({
           <SectionHeading eyebrow="Approved component views" title={`${p.name}: profile and hardware.`} text="The system image and component detail are shown separately. The final configuration is confirmed in the approved project specification." />
           <div className="component-grid two-columns">
             <figure className="component-card"><div className="component-image"><Image src={`/images/approved/${systemComponents[slug].profile}`} alt={`${p.name} profile and support overview`} fill sizes="(max-width: 640px) 100vw, 50vw" /></div><figcaption>Profile / support <span>Product Visual</span></figcaption></figure>
-            <figure className="component-card"><div className="component-image"><Image src={`/images/approved/${systemComponents[slug].hardware}`} alt={`${p.name} hardware overview`} fill sizes="(max-width: 640px) 100vw, 50vw" /></div><figcaption>Hardware <span>Product Visual</span></figcaption></figure>
+            {hardwareGradeConfigs[slug]
+              ? <HardwareGradeOverview slug={slug} name={p.name} />
+              : <figure className="component-card"><div className="component-image"><Image src={`/images/approved/${systemComponents[slug].hardware}`} alt={`${p.name} hardware overview`} fill sizes="(max-width: 640px) 100vw, 50vw" /></div><figcaption>Hardware <span>Product Visual</span></figcaption></figure>}
           </div>
         </div></section>
       )}

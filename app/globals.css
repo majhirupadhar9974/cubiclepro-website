@@ -2885,6 +2885,20 @@ button:hover .arrow {
 .component-grid.four { grid-template-columns:repeat(4,minmax(0,1fr)); }
 .component-family { margin-top:36px; }
 .component-card { margin:0; min-width:0; border:1px solid var(--line); background:#fff; }
+.hardware-grade-overview { display:flex; flex-direction:column; min-height:100%; overflow:hidden; color:#172a3c; }
+.hardware-grade-heading { padding:24px 24px 20px; background:linear-gradient(135deg,#eaf2f8,#f8fafb); border-bottom:1px solid #d7e0e5; }
+.hardware-grade-heading > span { display:block; margin-bottom:7px; color:#71321e; font-size:9px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+.section .hardware-grade-heading h3, .hardware-grade-heading h3 { margin:0 0 8px; color:#14263a; font:600 clamp(21px,2.3vw,29px)/1.15 var(--font-cp-display); }
+.section .hardware-grade-heading p, .hardware-grade-heading p { margin:0; color:#4a5e6b; font-size:12px; line-height:1.6; }
+.hardware-grade-overview dl { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); margin:0; padding:14px 24px 4px; }
+.hardware-grade-overview dl div { display:flex; align-items:baseline; justify-content:space-between; gap:12px; padding:11px 0; border-bottom:1px solid #e3e8eb; }
+.hardware-grade-overview dl div:nth-child(odd) { margin-right:16px; }
+.hardware-grade-overview dt { color:#536572; font-size:11px; }
+.hardware-grade-overview dd { margin:0; color:#14263a; font-size:12px; font-weight:700; white-space:nowrap; }
+.section .hardware-upgrade-note, .hardware-upgrade-note { margin:16px 24px 20px; padding:13px 15px; border-left:3px solid #854026; background:#f4f0ec; color:#3f515d; font-size:11px; line-height:1.65; }
+.hardware-upgrade-note strong { display:block; margin-bottom:2px; color:#71321e; font-size:9px; letter-spacing:.11em; text-transform:uppercase; }
+.hardware-grade-overview footer { display:flex; justify-content:space-between; gap:12px; margin-top:auto; padding:13px 15px; border-top:1px solid #d7e0e5; color:#172a3c; font-size:13px; font-weight:600; }
+.hardware-grade-overview footer span { color:#4d5d67; font-size:9px; font-weight:600; letter-spacing:.09em; text-transform:uppercase; white-space:nowrap; }
 .material-approved-visual { position:relative; margin:0; min-height:0; aspect-ratio:1.15; background:#f1f4f6; }
 .material-approved-visual img { object-fit:contain; }
 .material-approved-visual figcaption { position:absolute; left:12px; bottom:12px; z-index:1; padding:8px 10px; background:#fff; font-size:10px; text-transform:uppercase; letter-spacing:.1em; }
@@ -2940,6 +2954,10 @@ button:hover .arrow {
   .component-grid.four { grid-template-columns:1fr 1fr; }
   .component-image { aspect-ratio:1.25; }
   .component-card figcaption { font-size:11px; padding:11px 10px; }
+  .hardware-grade-overview dl { grid-template-columns:1fr; padding-inline:18px; }
+  .hardware-grade-overview dl div:nth-child(odd) { margin-right:0; }
+  .hardware-grade-heading { padding:20px 18px 17px; }
+  .section .hardware-upgrade-note, .hardware-upgrade-note { margin:14px 18px 18px; }
   .variant-visual-copy { padding:16px; }
 }
 /* Focused repair: retain the established layout and add restrained depth. */

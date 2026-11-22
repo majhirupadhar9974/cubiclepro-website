@@ -4,9 +4,11 @@ import { PageHero, SectionHeading, QuoteBand, Eyebrow } from "@/components/ui";
 import { metadata, PageSchema } from "@/lib/seo";
 import { products } from "@/data/products";
 import { hardwareGroups, profiles, supportComponents } from "@/data/approved-gallery";
+import HardwareGradeOverview from "@/components/hardware-grade-overview";
+import { hardwareGradeConfigs } from "@/data/hardware-grades";
 export const generateMetadata = () => metadata(
   "Toilet Cubicle Hardware & Profiles",
-  "Explore Cubiclepro stainless-steel hardware, aluminium and stainless profiles, shoe-box supports and rail components.",
+  "Compare Cubiclepro Nylon PA-6, SS 304 standard hardware, SS 316 adjustable legs and optional complete SS 316 upgrades with system-specific profiles.",
   "/hardware/",
 );
 function Gallery({ title, src, alt }: { title: string; src: string; alt: string }) {
@@ -21,8 +23,8 @@ export default function Hardware() {
       {products.filter(p => ["titan-black", "nova", "supernova", "supernova-plus", "base-box", "base-box-pro", "float", "sky-hung"].includes(p.slug)).map(p => {
         const parts = (requireSystemParts(p.slug));
         return <article className="system-component" key={p.slug}>
-          <div className="system-component-title"><div><Eyebrow>{p.family}</Eyebrow><h3>{p.name}</h3><p>{p.profile} <span aria-hidden="true">·</span> {p.hardware} hardware</p></div><Link className="text-link" href={`/products/${p.slug}/`}>System details ↗</Link></div>
-          <div className="component-grid"><Gallery title="Profile / support" src={parts.profile} alt={`${p.name} profile and support overview`} /><Gallery title="Hardware" src={parts.hardware} alt={`${p.name} hardware overview`} /></div>
+          <div className="system-component-title"><div><Eyebrow>{p.family}</Eyebrow><h3>{p.name}</h3><p>{p.profile} <span aria-hidden="true">·</span> {p.hardware}</p></div><Link className="text-link" href={`/products/${p.slug}/`}>System details ↗</Link></div>
+          <div className="component-grid"><Gallery title="Profile / support" src={parts.profile} alt={`${p.name} profile and support overview`} />{hardwareGradeConfigs[p.slug] ? <HardwareGradeOverview slug={p.slug} name={p.name} /> : <Gallery title="Hardware" src={parts.hardware} alt={`${p.name} hardware overview`} />}</div>
         </article>;
       })}
     </section>

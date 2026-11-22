@@ -70,7 +70,7 @@ type CmsProduct = {
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
 const client = projectId && dataset
-  ? createClient({ projectId: projectId.trim(), dataset: dataset.trim(), apiVersion: "2026-09-28", useCdn: true })
+  ? createClient({ projectId: projectId.trim(), dataset: dataset.trim(), apiVersion: "2026-09-28", useCdn: false })
   : null;
 
 function approvedPath(path?: string) {

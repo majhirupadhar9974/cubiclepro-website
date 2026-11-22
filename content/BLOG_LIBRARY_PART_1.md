@@ -22,7 +22,7 @@ A corporate office, school, hospital, airport, factory and hospitality property 
 
 ### Select a suitable system family
 
-CubiclePro offers aluminium, stainless-steel, box-up, floating and ceiling-hung system directions. Titan Black uses black powder-coated aluminium profiles with nylon hardware. Nova uses anodised aluminium profiles with SS 316 hardware. Supernova and Supernova+ provide stainless-steel system options. Base Box and Base Box Pro use a shoe-box support approach, while Float and Sky Hung create leg-free floor expressions through different support configurations.
+CubiclePro offers aluminium, stainless-steel, box-up, floating and ceiling-hung system directions. Titan Black uses black powder-coated aluminium profiles with Nylon PA-6 hardware. Nova uses anodised aluminium profiles, SS 316 adjustable legs and SS 304 functional hardware as standard. Supernova and Supernova+ provide distinct stainless-steel system options. Base Box and Base Box Pro use a shoe-box support approach, while Float and Sky Hung create leg-free floor expressions through different support configurations. Complete SS 316 hardware can be specified on request for applicable systems, with pricing confirmed in the approved quotation.
 
 The appearance of two systems may be similar, but their fixing and support conditions are not automatically interchangeable. The selected system must match the approved layout and the available floor, wall or ceiling interfaces.
 
@@ -118,15 +118,15 @@ Titan Black combines black powder-coated aluminium profiles with nylon hardware.
 
 ### For a clean aluminium system
 
-Nova uses anodised aluminium profiles and SS 316 hardware. It is a practical commercial direction for projects requiring a clean, dependable appearance with clearly specified metal hardware.
+Nova uses anodised aluminium profiles and SS 316 adjustable legs with SS 304 hinges, knob, internal coat hook and indicator lock as standard. Complete SS 316 hardware is available on request at revised pricing.
 
 ### For stainless-steel construction
 
-Supernova uses SS 304 profiles or supports with SS 316 hardware. Supernova+ uses SS 316 profiles or supports with SS 316 hardware. The two systems must remain separate in specifications, product tables and quotations.
+Supernova uses SS 304 profiles and functional hardware with SS 316 adjustable legs as standard. Supernova+ uses SS 316 profiles, supports and complete SS 316 hardware as standard. The two systems must remain separate in specifications, product tables and quotations.
 
 ### For a shoe-box base condition
 
-Base Box uses an SS 304 shoe-box support with SS 316 hardware, without separate legs and without a top rail. Base Box Pro adds the defined top-rail condition. These two products should not share the same mounting description.
+Base Box uses an SS 304 shoe-box support and SS 304 functional hardware, without separate legs or a top rail. Base Box Pro adds the defined top-rail condition. Complete SS 316 functional hardware is optional for both systems. These two products should not share the same mounting description.
 
 ### For a clear floor expression
 
@@ -152,10 +152,10 @@ Custom dimensions and configuration can be reviewed for every system, subject to
 
 **Slug:** `cubicle-hardware-profiles-explained`  
 **SEO title:** Toilet Cubicle Hardware and Profiles Explained  
-**Meta description:** Understand aluminium profiles, stainless-steel supports, nylon hardware and SS 316 cubicle hardware as coordinated system components.  
+**Meta description:** Understand aluminium profiles, stainless-steel supports, Nylon PA-6 hardware, standard SS 304 hardware and optional complete SS 316 upgrades.
 **H1:** Toilet Cubicle Hardware and Profiles Explained  
 **Primary keyword:** toilet cubicle hardware  
-**Related phrases:** cubicle profiles, SS 316 hardware, aluminium cubicle profile  
+**Related phrases:** cubicle profiles, SS 304 hardware, SS 316 hardware upgrade, aluminium cubicle profile
 **Internal links:** Hardware & Profiles, Titan Black, Nova, Supernova, Supernova+
 
 Hardware and profiles define how a toilet cubicle opens, closes, aligns and connects to the building. They also shape its visual character. Each CubiclePro product therefore carries its own approved combination; a material or grade from one system must not be silently applied to another.
@@ -178,7 +178,7 @@ Nylon hardware is part of the Titan Black configuration and the approved Pro Doo
 
 ### Stainless-steel hardware
 
-SS 316 hardware is used across several CubiclePro systems, including Nova, Supernova, Supernova+, Base Box, Base Box Pro, Float and Sky Hung. Profile or support grade may still differ between those products, so “stainless hardware” is not a complete system description.
+Nova and Supernova use SS 316 adjustable legs with SS 304 hinges, knob, internal coat hook and indicator lock as standard. Base Box, Base Box Pro, Float and Sky Hung use SS 304 functional hardware as standard. Complete SS 316 hardware can be provided on request for these applicable systems, with final compatibility, pricing and lead time confirmed in the approved quotation. Supernova+ remains the complete SS 316 system. Profile and support grades still differ between products, so “stainless hardware” alone is not a complete system description.
 
 ### What a hardware schedule should record
 

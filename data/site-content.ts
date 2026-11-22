@@ -208,7 +208,7 @@ export const faqs = [
   },
   {
     q: "What is the difference between Supernova and Supernova+?",
-    a: "Supernova uses SS 304 profiles or supports with SS 316 hardware. Supernova+ uses SS 316 profiles or supports with SS 316 hardware. Their images, specifications and metadata remain separate.",
+    a: "Supernova uses SS 304 profiles and functional hardware with SS 316 adjustable legs as standard; complete SS 316 hardware is available on request at revised pricing. Supernova+ uses SS 316 profiles, supports and complete SS 316 hardware as standard. Their images, specifications and metadata remain separate.",
     tags: ["restroom", "stainless"],
   },
   {

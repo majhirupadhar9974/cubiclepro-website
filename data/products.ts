@@ -20,6 +20,8 @@ export type Product = {
   indexable?: boolean;
 };
 const approved = (path: string) => `/images/approved/${path}`;
+const mixedStainlessHardware = "SS 316 adjustable legs + SS 304 functional hardware; full SS 316 optional";
+const ss304HardwareWithUpgrade = "SS 304 functional hardware; full SS 316 optional";
 export const products: Product[] = [
   {
     slug: "titan-black",
@@ -42,10 +44,10 @@ export const products: Product[] = [
     name: "Nova",
     family: "Main / Aluminium Series",
     profile: "Anodised aluminium",
-    hardware: "SS 316",
+    hardware: mixedStainlessHardware,
     character: "Clean lines. Dependable character.",
     description:
-      "A clean commercial cubicle system combining anodised aluminium profiles with SS 316 hardware.",
+      "A clean commercial cubicle system with anodised aluminium profiles, SS 316 adjustable legs and SS 304 functional hardware. A complete SS 316 upgrade is available on request.",
     mounting: "Confirmed against the approved layout",
     detail:
       "A restrained profile language supports coordinated commercial interiors. Final panel selection and site interfaces are reviewed with the project requirement.",
@@ -58,10 +60,10 @@ export const products: Product[] = [
     name: "Supernova",
     family: "Stainless Series",
     profile: "SS 304",
-    hardware: "SS 316",
+    hardware: mixedStainlessHardware,
     character: "Strength in every line.",
     description:
-      "A stainless-steel cubicle system with SS 304 profile/support construction and SS 316 hardware.",
+      "A stainless-steel cubicle system with SS 304 profiles, SS 316 adjustable legs and SS 304 functional hardware. A complete SS 316 upgrade is available on request.",
     mounting: "Confirmed against the approved layout",
     detail:
       "A refined stainless-steel system family, with the profile and hardware grades clearly distinguished in the approved specification.",
@@ -90,10 +92,10 @@ export const products: Product[] = [
     name: "Base Box",
     family: "Box-Up Series",
     profile: "SS 304 shoe-box",
-    hardware: "SS 316",
+    hardware: ss304HardwareWithUpgrade,
     character: "Grounded. Without the clutter.",
     description:
-      "SS 304 shoe-box support with no legs and no top rail, paired with SS 316 hardware.",
+      "SS 304 shoe-box support with no legs or top rail, paired with SS 304 functional hardware. A complete SS 316 upgrade is available on request.",
     mounting: "No legs / No top rail",
     detail:
       "The shoe-box base creates an ordered elevation. This system has no separate legs and no top rail; dimensions and fixing details are confirmed project-wise.",
@@ -106,10 +108,10 @@ export const products: Product[] = [
     name: "Base Box Pro",
     family: "Box-Up Series",
     profile: "SS 304 shoe-box + rail",
-    hardware: "SS 316",
+    hardware: ss304HardwareWithUpgrade,
     character: "A base line. A defined top line.",
     description:
-      "SS 304 shoe-box support with a top rail, paired with SS 316 hardware.",
+      "SS 304 shoe-box support with a top rail and SS 304 functional hardware. A complete SS 316 upgrade is available on request.",
     mounting: "Top rail support",
     detail:
       "The shoe-box base and top rail create two clear architectural lines. The support arrangement is coordinated with the layout and approved detail.",
@@ -122,10 +124,10 @@ export const products: Product[] = [
     name: "Float",
     family: "Suspended Systems",
     profile: "Powder-coated aluminium; H-Type Top Rail; wall support",
-    hardware: "SS 316",
+    hardware: ss304HardwareWithUpgrade,
     character: "An open floor. A lighter expression.",
     description:
-      "A wall-to-wall free-floor cubicle system with powder-coated aluminium profiles, an H-Type top rail and SS 316 hardware.",
+      "A wall-to-wall free-floor cubicle system with powder-coated aluminium profiles, an H-Type top rail and SS 304 functional hardware. A complete SS 316 upgrade is available on request.",
     mounting: "Wall-to-wall floating",
     detail:
       "Float uses a wall-supported free-floor configuration. Structural wall interfaces and final fixing arrangements are verified before approval.",
@@ -138,10 +140,10 @@ export const products: Product[] = [
     name: "Sky Hung",
     family: "Suspended Systems",
     profile: "Ceiling-hung box-up",
-    hardware: "SS 316",
+    hardware: ss304HardwareWithUpgrade,
     character: "Suspended above the everyday.",
     description:
-      "A ceiling-hung box-up cubicle system with SS 316 hardware and a clear, leg-free floor.",
+      "A ceiling-hung box-up cubicle system with SS 304 functional hardware and a clear, leg-free floor. A complete SS 316 upgrade is available on request.",
     mounting: "Ceiling mounted / leg-free floor",
     detail:
       "The support arrangement is coordinated from the ceiling. Final feasibility and fixing details are subject to site and structural coordination.",

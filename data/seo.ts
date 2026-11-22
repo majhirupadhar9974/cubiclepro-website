@@ -24,13 +24,13 @@ export const pageSeo: Record<
   "/products/nova/": {
     title: "Nova Commercial Toilet Cubicle System | Cubiclepro",
     description:
-      "Explore Nova, a clean commercial cubicle system with anodised aluminium profiles and SS 316 hardware, finalized to the project specification.",
+      "Explore Nova with anodised aluminium profiles, SS 316 adjustable legs and SS 304 functional hardware, with a full SS 316 upgrade available on request.",
     h1: "Nova commercial cubicle system",
   },
   "/products/supernova/": {
     title: "Supernova Stainless Toilet Cubicle System | Cubiclepro",
     description:
-      "Explore Supernova with SS 304 profile/support construction and SS 316 hardware for a refined stainless-steel cubicle expression.",
+      "Explore Supernova with SS 304 profiles and functional hardware plus SS 316 adjustable legs, with a full SS 316 upgrade available on request.",
     h1: "Supernova stainless-steel cubicle system",
   },
   "/products/supernova-plus/": {
@@ -42,25 +42,25 @@ export const pageSeo: Record<
   "/products/base-box/": {
     title: "Base Box Shoe-Box Toilet Cubicle System | Cubiclepro",
     description:
-      "Explore Base Box, an SS 304 shoe-box cubicle system with SS 316 hardware, no legs and no top rail for a minimal expression.",
+      "Explore Base Box with an SS 304 shoe-box and functional hardware, no separate legs and no top rail, plus an optional full SS 316 hardware upgrade.",
     h1: "Base Box shoe-box cubicle system",
   },
   "/products/base-box-pro/": {
     title: "Base Box Pro Cubicle with Top Rail | Cubiclepro",
     description:
-      "Discover Base Box Pro, combining an SS 304 shoe-box and top rail with SS 316 hardware for a defined support line.",
+      "Discover Base Box Pro with an SS 304 shoe-box, top rail and functional hardware, plus a full SS 316 hardware upgrade available on request.",
     h1: "Base Box Pro cubicle system",
   },
   "/products/float/": {
     title: "Float Wall-to-Wall Floating Toilet Cubicle | Cubiclepro",
     description:
-      "Explore Float, a wall-to-wall floating toilet cubicle system with powder-coated aluminium, H-Type Top Rail, wall support and SS 316 hardware.",
+      "Explore Float, a wall-to-wall floating toilet cubicle with powder-coated aluminium, an H-Type top rail and SS 304 functional hardware; full SS 316 is optional.",
     h1: "Float wall-to-wall floating cubicle",
   },
   "/products/sky-hung/": {
     title: "Sky Hung Ceiling-Hung Toilet Cubicle | Cubiclepro",
     description:
-      "Discover Sky Hung, a ceiling-hung box-up toilet cubicle system with SS 316 hardware and a clear, leg-free floor condition.",
+      "Discover Sky Hung, a ceiling-hung box-up toilet cubicle with SS 304 functional hardware, optional full SS 316 hardware and a clear leg-free floor.",
     h1: "Sky Hung ceiling-hung toilet cubicle",
   },
   "/products/pro-doors/": {
@@ -131,7 +131,7 @@ export const pageSeo: Record<
   "/hardware/": {
     title: "Toilet Cubicle Hardware & Profiles | Cubiclepro",
     description:
-      "Understand nylon and SS 316 hardware, aluminium profiles, stainless supports, shoe-box, floating and ceiling-hung configurations.",
+      "Compare Nylon PA-6, SS 304 standard hardware, SS 316 adjustable legs where applicable and optional full SS 316 upgrades across Cubiclepro systems.",
     h1: "Hardware and profiles that define the system.",
   },
   "/applications/": {

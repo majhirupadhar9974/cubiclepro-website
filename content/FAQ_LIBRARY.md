@@ -112,7 +112,7 @@ The approved black profile family includes components such as U-channel, F-chann
 
 ### 1. What profiles and hardware does Nova use?
 
-Nova uses anodised aluminium profiles with SS 316 hardware.
+Nova uses anodised aluminium profiles and SS 316 adjustable legs with SS 304 hinges, knob, internal coat hook and indicator lock as standard. Complete SS 316 hardware is available on request at revised pricing.
 
 ### 2. Is the Nova top rail powder-coated aluminium?
 
@@ -128,17 +128,17 @@ Yes. Dimensions, layout and compatible configuration can be customised subject t
 
 ### 5. Is Nova the same as Titan Black?
 
-No. Their profile finish and hardware families differ. Titan Black uses black powder-coated aluminium with nylon hardware; Nova uses anodised aluminium with SS 316 hardware.
+No. Their profile finish and hardware families differ. Titan Black uses black powder-coated aluminium with Nylon PA-6 hardware; Nova uses anodised aluminium, SS 316 adjustable legs and SS 304 functional hardware as standard.
 
 ## E. Supernova FAQs
 
 ### 1. What material grades are used in Supernova?
 
-Supernova uses SS 304 profiles or supports with SS 316 hardware.
+Supernova uses SS 304 profiles and functional hardware with SS 316 adjustable legs as standard. Complete SS 316 hardware is available on request at revised pricing.
 
 ### 2. Is all Supernova metal SS 316?
 
-No. Its profile or support grade is SS 304, while its hardware grade is SS 316.
+No. Its standard profile and functional-hardware grade is SS 304, while its adjustable legs are SS 316. Complete SS 316 hardware can be provided on request.
 
 ### 3. Can Supernova dimensions be customised?
 
@@ -146,7 +146,7 @@ Yes. Dimensions and configuration can be reviewed for the approved layout and si
 
 ### 4. How is Supernova different from Nova?
 
-Nova uses anodised aluminium profiles. Supernova uses SS 304 profiles or supports. Both use SS 316 hardware.
+Nova uses anodised aluminium profiles while Supernova uses SS 304 profiles or supports. Both use SS 316 adjustable legs with SS 304 functional hardware as standard; complete SS 316 hardware is optional.
 
 ### 5. When should Supernova be considered?
 
@@ -160,7 +160,7 @@ Supernova+ uses SS 316 profiles or supports with SS 316 hardware.
 
 ### 2. How does Supernova+ differ from Supernova?
 
-Supernova uses SS 304 profiles or supports with SS 316 hardware. Supernova+ uses SS 316 for both the profile/support system and hardware.
+Supernova uses SS 304 profiles and functional hardware with SS 316 adjustable legs as standard. Supernova+ uses SS 316 for the profile/support system and complete hardware as standard.
 
 ### 3. Is Supernova+ the main website hero product?
 
@@ -178,7 +178,7 @@ No. Cleaning, inspection, correct chemical use and maintenance remain necessary 
 
 ### 1. What is the Base Box support condition?
 
-Base Box uses an SS 304 shoe-box base support with SS 316 hardware.
+Base Box uses an SS 304 shoe-box base support and SS 304 functional hardware. Complete SS 316 hardware is available on request at revised pricing.
 
 ### 2. Does Base Box use separate legs?
 
@@ -200,7 +200,7 @@ Base Box has no top rail. Base Box Pro combines its shoe-box support direction w
 
 ### 1. What is the Base Box Pro configuration?
 
-Base Box Pro uses an SS 304 shoe-box support with a top rail and SS 316 hardware.
+Base Box Pro uses an SS 304 shoe-box support, top rail and SS 304 functional hardware. Complete SS 316 hardware is available on request at revised pricing.
 
 ### 2. Does Base Box Pro use separate legs?
 
