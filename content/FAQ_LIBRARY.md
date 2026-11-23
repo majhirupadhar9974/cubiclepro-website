@@ -178,7 +178,7 @@ No. Cleaning, inspection, correct chemical use and maintenance remain necessary 
 
 ### 1. What is the Base Box support condition?
 
-Base Box uses an SS 304 shoe-box base support and SS 304 functional hardware. Complete SS 316 hardware is available on request at revised pricing.
+Base Box uses an SS 316 shoe-box base support with SS 304 profiles and functional hardware. It has no top rail. Complete SS 316 functional hardware is available on request at revised pricing.
 
 ### 2. Does Base Box use separate legs?
 
@@ -200,7 +200,7 @@ Base Box has no top rail. Base Box Pro combines its shoe-box support direction w
 
 ### 1. What is the Base Box Pro configuration?
 
-Base Box Pro uses an SS 304 shoe-box support, top rail and SS 304 functional hardware. Complete SS 316 hardware is available on request at revised pricing.
+Base Box Pro uses an SS 316 shoe-box support, SS 304 top rail and SS 304 functional hardware. Complete SS 316 functional hardware is available on request at revised pricing.
 
 ### 2. Does Base Box Pro use separate legs?
 

@@ -89,16 +89,16 @@ export const productDetails: Record<string, ProductDetail> = {
   "base-box": {
     introduction: [
       "Base Box by CubiclePro is a premium floor-mounted restroom cubicle system with a distinctive box-type support beneath the pilasters. The shoe-box base gives the elevation a strong, visually ordered lower line without separate legs.",
-      "The approved Base Box configuration has no top rail. SS 304 shoe-box, profile components and functional hardware create a clean floor-supported expression. Complete SS 316 hardware is available on request.",
+      "The approved Base Box configuration has no top rail. Its SS 316 shoe-box support combines with SS 304 profile components and functional hardware for a clean floor-supported expression. Complete SS 316 functional hardware is available on request.",
     ],
-    features: ["Premium floor-mounted system", "SS 304 shoe-box support beneath pilasters", "No separate legs", "No top rail", "12 mm and 18 mm compact-panel options", "SS 304 profile system", "SS 304 functional hardware", "Complete SS 316 hardware upgrade available on request", "100-150 mm bottom clearance*", "Project-wise colours, textures and patterns", "Customisable to site and project requirements"],
+    features: ["Premium floor-mounted system", "SS 316 shoe-box support beneath pilasters", "No separate legs", "No top rail", "12 mm and 18 mm compact-panel options", "SS 304 profile system", "SS 304 functional hardware", "Complete SS 316 functional hardware upgrade available on request", "100-150 mm bottom clearance*", "Project-wise colours, textures and patterns", "Customisable to site and project requirements"],
     dimensions: standardDimensions,
     sections: [
       { heading: "HPL compact panels", body: compactPanel },
-      { heading: "Doors and pilasters", body: "Doors use the selected compact-panel specification with SS 304 hinges, knob, coat hook and indicator lock. Pilasters use the same panel construction and the characteristic SS 304 box-type floor-support arrangement, giving Base Box its structural and visual identity." },
+      { heading: "Doors and pilasters", body: "Doors use the selected compact-panel specification with SS 304 hinges, knob, coat hook and indicator lock. Pilasters use the same panel construction and the characteristic SS 316 shoe-box floor-support arrangement, giving Base Box its structural and visual identity." },
       { heading: "Dividers", body: "Intermediate dividers use the same compact-panel specification and connect through stainless-steel U-Channels. Dimensions are customised against the approved layout and drawings." },
-      { heading: "SS 304 profiles and support", body: "Base Box uses a shoe-box floor support without separate legs or a top rail.", items: ["SS 304 shoe-box support", "F-Channel", "U-Channel"] },
-      { heading: "Standard stainless-steel hardware", body: "Base Box uses SS 304 functional hardware as standard. Complete SS 316 hardware is available on request; final component grades, compatibility, pricing and lead time are confirmed in the approved quotation.", items: ["SS 304 box-type floor-support components", "SS 304 hinges", "SS 304 internal coat hook", "SS 304 door knob", "SS 304 thumb-turn lock with occupancy indicator", "Anti-noise rubber lining", "Stainless-steel screws", "Nylon PA-6 expandable wall plugs"] },
+      { heading: "Profiles and shoe-box support", body: "Base Box uses an SS 316 shoe-box floor support without separate legs or a top rail. Its remaining approved profile family is SS 304.", items: ["SS 316 shoe-box support", "SS 304 F-Channel", "SS 304 U-Channel"] },
+      { heading: "Standard stainless-steel hardware", body: "Base Box uses SS 304 functional hardware as standard. Complete SS 316 functional hardware is available on request; final component grades, compatibility, pricing and lead time are confirmed in the approved quotation.", items: ["SS 316 shoe-box support", "SS 304 hinges", "SS 304 internal coat hook", "SS 304 door knob", "SS 304 thumb-turn lock with occupancy indicator", "Anti-noise rubber lining", "Stainless-steel screws", "Nylon PA-6 expandable wall plugs"] },
     ],
     applications: commonApplications,
     cta: "Share your washroom layout and project requirements for a customised Base Box proposal.",
@@ -106,16 +106,16 @@ export const productDetails: Record<string, ProductDetail> = {
   "base-box-pro": {
     introduction: [
       "Base Box Pro by CubiclePro is a premium floor-mounted restroom cubicle system for projects requiring strong base support, clean detailing and a defined architectural finish. Its box-type support beneath the pilasters is combined with a square stainless-steel top rail.",
-      "SS 304 profiles, SS 304 functional hardware and the shoe-box floor-support arrangement create a stable system for premium commercial and institutional environments. Complete SS 316 hardware is available on request.",
+      "An SS 316 shoe-box support, SS 304 top rail and profiles, and SS 304 functional hardware create a stable system for premium commercial and institutional environments. Complete SS 316 functional hardware is available on request.",
     ],
-    features: ["Premium floor-mounted system", "Box-type support beneath pilasters", "Square stainless-steel top rail", "12 mm and 18 mm compact-panel options", "SS 304 profiles", "SS 304 functional hardware", "Complete SS 316 hardware upgrade available on request", "100-150 mm bottom clearance*", "Clean structured appearance", "Project-wise colours, textures and patterns", "Customisable to site and project requirements"],
+    features: ["Premium floor-mounted system", "SS 316 box-type support beneath pilasters", "SS 304 square top rail", "12 mm and 18 mm compact-panel options", "SS 304 profiles", "SS 304 functional hardware", "Complete SS 316 functional hardware upgrade available on request", "100-150 mm bottom clearance*", "Clean structured appearance", "Project-wise colours, textures and patterns", "Customisable to site and project requirements"],
     dimensions: standardDimensions,
     sections: [
       { heading: "HPL compact panels", body: compactPanel },
       { heading: "Doors and pilasters", body: "Doors use the selected compact-panel specification with SS 304 hinges, knob, coat hook and indicator lock. Pilasters use the same panel construction and are supported by the characteristic box-type floor-support arrangement." },
       { heading: "Dividers", body: "Intermediate dividers use the same panel specification and connect through stainless-steel profiles. Dimensions are customised against the approved layout." },
-      { heading: "SS 304 profiles and support", body: "The square top rail distinguishes Base Box Pro from Base Box.", items: ["Square Top Rail", "F-Channel", "U-Channel", "Box-type floor-support components"] },
-      { heading: "Standard stainless-steel hardware", body: "Base Box Pro uses SS 304 functional hardware as standard. Complete SS 316 hardware is available on request; final component grades, compatibility, pricing and lead time are confirmed in the approved quotation.", items: ["SS 304 hinges", "SS 304 internal coat hook", "SS 304 door knob", "SS 304 thumb-turn lock with occupancy indicator", "Anti-noise rubber lining", "Stainless-steel screws", "Nylon PA-6 expandable wall plugs"] },
+      { heading: "Profiles and shoe-box support", body: "The SS 304 square top rail distinguishes Base Box Pro from Base Box, while the shoe-box floor support remains SS 316.", items: ["SS 316 shoe-box support", "SS 304 Square Top Rail", "SS 304 F-Channel", "SS 304 U-Channel"] },
+      { heading: "Standard stainless-steel hardware", body: "Base Box Pro uses SS 304 functional hardware as standard. Complete SS 316 functional hardware is available on request; final component grades, compatibility, pricing and lead time are confirmed in the approved quotation.", items: ["SS 316 shoe-box support", "SS 304 top rail", "SS 304 hinges", "SS 304 internal coat hook", "SS 304 door knob", "SS 304 thumb-turn lock with occupancy indicator", "Anti-noise rubber lining", "Stainless-steel screws", "Nylon PA-6 expandable wall plugs"] },
     ],
     applications: commonApplications,
     cta: "Share your washroom layout and design direction for a customised Base Box Pro proposal.",

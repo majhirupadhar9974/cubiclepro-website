@@ -126,7 +126,7 @@ Supernova uses SS 304 profiles and functional hardware with SS 316 adjustable le
 
 ### For a shoe-box base condition
 
-Base Box uses an SS 304 shoe-box support and SS 304 functional hardware, without separate legs or a top rail. Base Box Pro adds the defined top-rail condition. Complete SS 316 functional hardware is optional for both systems. These two products should not share the same mounting description.
+Base Box uses an SS 316 shoe-box support with SS 304 profiles and functional hardware, without separate legs or a top rail. Base Box Pro retains the SS 316 shoe-box and adds an SS 304 top rail. Complete SS 316 functional hardware is optional for both systems. These two products should not share the same mounting description.
 
 ### For a clear floor expression
 
@@ -216,7 +216,7 @@ Many commercial cubicles use floor-connected legs or pedestals together with wal
 
 ### Shoe-box systems
 
-A shoe-box creates a continuous base expression rather than separate visible legs. Base Box uses the shoe-box condition without a top rail. Base Box Pro combines the shoe-box base with a defined top-rail condition. Their elevations may look related, but their approved support descriptions differ.
+A shoe-box creates a continuous base expression rather than separate visible legs. Both Base Box and Base Box Pro use an SS 316 shoe-box support. Base Box has no top rail, while Base Box Pro adds an SS 304 top rail. Their elevations may look related, but their approved support descriptions differ.
 
 ### Wall-to-wall floating systems
 

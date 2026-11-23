@@ -20,12 +20,12 @@ export const hardwareGradeConfigs: Record<string, HardwareGradeConfig> = {
     components: [["Adjustable pedestal legs", "SS 316"], ...ss304FunctionalHardware],
   },
   "base-box": {
-    summary: "SS 304 functional hardware in the standard configuration",
-    components: ss304FunctionalHardware,
+    summary: "SS 316 shoe-box support with SS 304 functional hardware",
+    components: [["Shoe-box support", "SS 316"], ["Top rail", "Not used"], ...ss304FunctionalHardware],
   },
   "base-box-pro": {
-    summary: "SS 304 functional hardware in the standard configuration",
-    components: ss304FunctionalHardware,
+    summary: "SS 316 shoe-box support, SS 304 top rail and SS 304 functional hardware",
+    components: [["Shoe-box support", "SS 316"], ["Top rail", "SS 304"], ...ss304FunctionalHardware],
   },
   float: {
     summary: "SS 304 functional hardware in the standard configuration",
@@ -37,4 +37,4 @@ export const hardwareGradeConfigs: Record<string, HardwareGradeConfig> = {
   },
 };
 
-export const hardwareUpgradeNote = "Complete SS 316 hardware is available on request. Final component grades, compatibility, pricing and lead time are confirmed in the approved quotation.";
+export const hardwareUpgradeNote = "Complete SS 316 functional hardware and compatible component upgrades are available on request. Final grades, compatibility, pricing and lead time are confirmed in the approved quotation.";

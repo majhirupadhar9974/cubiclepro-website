@@ -2881,10 +2881,14 @@ button:hover .arrow {
 .system-component-title h3, .component-family > h3 { font: 500 26px/1.2 var(--font-cp-display); margin:8px 0; }
 .system-component-title p { color:var(--muted); margin:0; font-size:13px; }
 .component-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.hardware-component-grid { grid-template-columns:repeat(2,minmax(0,1fr)); align-items:start; }
 .component-grid.two-columns { grid-template-columns:repeat(2,minmax(0,1fr)); }
 .component-grid.four { grid-template-columns:repeat(4,minmax(0,1fr)); }
 .component-family { margin-top:36px; }
 .component-card { margin:0; min-width:0; border:1px solid var(--line); background:#fff; }
+.component-image.approved-system-component-image { aspect-ratio:4 / 3; background:#f7f7f5; }
+.component-image.approved-system-component-image img { object-fit:contain; object-position:center; }
+.hardware-component-grid .hardware-grade-overview { grid-column:1 / -1; }
 .hardware-grade-overview { display:flex; flex-direction:column; min-height:100%; overflow:hidden; color:#172a3c; }
 .hardware-grade-heading { padding:24px 24px 20px; background:linear-gradient(135deg,#eaf2f8,#f8fafb); border-bottom:1px solid #d7e0e5; }
 .hardware-grade-heading > span { display:block; margin-bottom:7px; color:#71321e; font-size:9px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
@@ -2943,6 +2947,7 @@ button:hover .arrow {
   .hero-controls { left:20px; right:20px; bottom:126px; justify-content:space-between; gap:2px; }
   .hero-controls button { gap:4px; padding:9px 2px 0; font-size:9px; }
   .component-grid, .component-grid.four { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+  .hardware-component-grid { grid-template-columns:1fr; }
   .system-component-title { align-items:flex-start; flex-direction:column; gap:12px; }
 }
 @media(max-width:560px) {

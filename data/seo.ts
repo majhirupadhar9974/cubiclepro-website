@@ -42,13 +42,13 @@ export const pageSeo: Record<
   "/products/base-box/": {
     title: "Base Box Shoe-Box Toilet Cubicle System | Cubiclepro",
     description:
-      "Explore Base Box with an SS 304 shoe-box and functional hardware, no separate legs and no top rail, plus an optional full SS 316 hardware upgrade.",
+      "Explore Base Box with an SS 316 shoe-box support, SS 304 profiles and functional hardware, no separate legs or top rail, plus an optional full SS 316 hardware upgrade.",
     h1: "Base Box shoe-box cubicle system",
   },
   "/products/base-box-pro/": {
     title: "Base Box Pro Cubicle with Top Rail | Cubiclepro",
     description:
-      "Discover Base Box Pro with an SS 304 shoe-box, top rail and functional hardware, plus a full SS 316 hardware upgrade available on request.",
+      "Discover Base Box Pro with an SS 316 shoe-box support, SS 304 top rail and functional hardware, plus a full SS 316 hardware upgrade available on request.",
     h1: "Base Box Pro cubicle system",
   },
   "/products/float/": {

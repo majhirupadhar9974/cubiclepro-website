@@ -91,11 +91,11 @@ export const products: Product[] = [
     slug: "base-box",
     name: "Base Box",
     family: "Box-Up Series",
-    profile: "SS 304 shoe-box",
+    profile: "SS 316 shoe-box + SS 304 profiles",
     hardware: ss304HardwareWithUpgrade,
     character: "Grounded. Without the clutter.",
     description:
-      "SS 304 shoe-box support with no legs or top rail, paired with SS 304 functional hardware. A complete SS 316 upgrade is available on request.",
+      "SS 316 shoe-box support with no separate legs or top rail, paired with SS 304 profiles and functional hardware. Complete SS 316 functional hardware is available on request.",
     mounting: "No legs / No top rail",
     detail:
       "The shoe-box base creates an ordered elevation. This system has no separate legs and no top rail; dimensions and fixing details are confirmed project-wise.",
@@ -107,11 +107,11 @@ export const products: Product[] = [
     slug: "base-box-pro",
     name: "Base Box Pro",
     family: "Box-Up Series",
-    profile: "SS 304 shoe-box + rail",
+    profile: "SS 316 shoe-box + SS 304 top rail",
     hardware: ss304HardwareWithUpgrade,
     character: "A base line. A defined top line.",
     description:
-      "SS 304 shoe-box support with a top rail and SS 304 functional hardware. A complete SS 316 upgrade is available on request.",
+      "SS 316 shoe-box support with an SS 304 top rail and SS 304 functional hardware. Complete SS 316 functional hardware is available on request.",
     mounting: "Top rail support",
     detail:
       "The shoe-box base and top rail create two clear architectural lines. The support arrangement is coordinated with the layout and approved detail.",

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PageHero, SectionHeading, QuoteBand, Eyebrow } from "@/components/ui";
 import { metadata, PageSchema } from "@/lib/seo";
 import { products } from "@/data/products";
-import { hardwareGroups, profiles, supportComponents } from "@/data/approved-gallery";
+import { hardwareGroups, profiles, supportComponents, systemComponents } from "@/data/approved-gallery";
 import HardwareGradeOverview from "@/components/hardware-grade-overview";
 import { hardwareGradeConfigs } from "@/data/hardware-grades";
 export const generateMetadata = () => metadata(
@@ -11,8 +11,8 @@ export const generateMetadata = () => metadata(
   "Compare Cubiclepro Nylon PA-6, SS 304 standard hardware, SS 316 adjustable legs and optional complete SS 316 upgrades with system-specific profiles.",
   "/hardware/",
 );
-function Gallery({ title, src, alt }: { title: string; src: string; alt: string }) {
-  return <figure className="component-card"><div className="component-image"><Image src={src} alt={alt} fill sizes="(max-width: 640px) 45vw, 22vw" /></div><figcaption>{title}<span>Product Visual</span></figcaption></figure>;
+function Gallery({ title, src, alt, systemVisual = false }: { title: string; src: string; alt: string; systemVisual?: boolean }) {
+  return <figure className="component-card"><div className={`component-image ${systemVisual ? "approved-system-component-image" : ""}`}><Image src={src} alt={alt} fill sizes={systemVisual ? "(max-width: 760px) 100vw, 50vw" : "(max-width: 640px) 45vw, 22vw"} /></div><figcaption>{title}<span>Product Visual</span></figcaption></figure>;
 }
 export default function Hardware() {
   return <>
@@ -24,7 +24,7 @@ export default function Hardware() {
         const parts = (requireSystemParts(p.slug));
         return <article className="system-component" key={p.slug}>
           <div className="system-component-title"><div><Eyebrow>{p.family}</Eyebrow><h3>{p.name}</h3><p>{p.profile} <span aria-hidden="true">·</span> {p.hardware}</p></div><Link className="text-link" href={`/products/${p.slug}/`}>System details ↗</Link></div>
-          <div className="component-grid"><Gallery title="Profile / support" src={parts.profile} alt={`${p.name} profile and support overview`} />{hardwareGradeConfigs[p.slug] ? <HardwareGradeOverview slug={p.slug} name={p.name} /> : <Gallery title="Hardware" src={parts.hardware} alt={`${p.name} hardware overview`} />}</div>
+          <div className="component-grid hardware-component-grid"><Gallery title="Profile / support" src={parts.profile} alt={`${p.name} profile and support overview`} systemVisual />{hardwareGradeConfigs[p.slug] ? <HardwareGradeOverview slug={p.slug} name={p.name} imageSrc={parts.hardware} /> : <Gallery title="Hardware" src={parts.hardware} alt={`${p.name} hardware overview`} systemVisual />}</div>
         </article>;
       })}
     </section>
@@ -42,15 +42,7 @@ export default function Hardware() {
   </>;
 }
 function requireSystemParts(slug: string) {
-  const parts: Record<string, {profile:string;hardware:string}> = {
-    "titan-black": {profile:"/images/approved/cubicle-systems/titan-black/titan-black-black-powder-coated-profile-overview.jpg",hardware:"/images/approved/cubicle-systems/titan-black/titan-black-black-nylon-hardware-overview.jpg"},
-    nova: {profile:"/images/approved/cubicle-systems/nova/nova-anodised-aluminium-profile-overview.jpg",hardware:"/images/approved/cubicle-systems/nova/nova-ss316-hardware-overview.jpg"},
-    supernova: {profile:"/images/approved/cubicle-systems/supernova/supernova-ss304-profile-overview.jpg",hardware:"/images/approved/cubicle-systems/supernova/supernova-ss316-hardware-overview.jpg"},
-    "supernova-plus": {profile:"/images/approved/cubicle-systems/supernova-plus/supernova-plus-ss316-profile-overview.jpg",hardware:"/images/approved/cubicle-systems/supernova-plus/supernova-plus-ss316-hardware-overview.jpg"},
-    "base-box": {profile:"/images/approved/cubicle-systems/base-box/base-box-ss304-profile-overview.jpg",hardware:"/images/approved/cubicle-systems/base-box/base-box-ss316-hardware-overview.jpg"},
-    "base-box-pro": {profile:"/images/approved/cubicle-systems/base-box-pro/base-box-pro-ss304-profile-overview.jpg",hardware:"/images/approved/cubicle-systems/base-box-pro/base-box-pro-ss316-hardware-overview.jpg"},
-    float: {profile:"/images/approved/cubicle-systems/flot/flot-profile-overview.jpg",hardware:"/images/approved/cubicle-systems/flot/flot-ss316-hardware-overview.jpg"},
-    "sky-hung": {profile:"/images/approved/cubicle-systems/sky-hung/sky-hung-profile-overview.jpg",hardware:"/images/approved/cubicle-systems/sky-hung/sky-hung-ss316-hardware-overview.jpg"},
-  };
-  return parts[slug];
+  const parts = systemComponents[slug];
+  if (!parts) throw new Error(`Missing approved component mapping for ${slug}`);
+  return { profile: `/images/approved/${parts.profile}`, hardware: `/images/approved/${parts.hardware}` };
 }

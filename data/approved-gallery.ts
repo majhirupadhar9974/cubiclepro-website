@@ -26,13 +26,13 @@ export const supportComponents = [
 ];
 export const systemComponents: Record<string, { profile: string; hardware: string }> = {
   "titan-black": { profile: "cubicle-systems/titan-black/titan-black-black-powder-coated-profile-overview.jpg", hardware: "cubicle-systems/titan-black/titan-black-black-nylon-hardware-overview.jpg" },
-  nova: { profile: "cubicle-systems/nova/nova-anodised-aluminium-profile-overview.jpg", hardware: "cubicle-systems/nova/nova-ss316-hardware-overview.jpg" },
-  supernova: { profile: "cubicle-systems/supernova/supernova-ss304-profile-overview.jpg", hardware: "cubicle-systems/supernova/supernova-ss316-hardware-overview.jpg" },
+  nova: { profile: "cubicle-systems/nova/nova-anodised-aluminium-profile-overview.jpg", hardware: "cubicle-systems/nova/nova-hardware-final.png" },
+  supernova: { profile: "cubicle-systems/supernova/supernova-ss304-profile-overview.jpg", hardware: "cubicle-systems/supernova/supernova-hardware-final.png" },
   "supernova-plus": { profile: "cubicle-systems/supernova-plus/supernova-plus-ss316-profile-overview.jpg", hardware: "cubicle-systems/supernova-plus/supernova-plus-ss316-hardware-overview.jpg" },
-  "base-box": { profile: "cubicle-systems/base-box/base-box-ss304-profile-overview.jpg", hardware: "cubicle-systems/base-box/base-box-ss316-hardware-overview.jpg" },
-  "base-box-pro": { profile: "cubicle-systems/base-box-pro/base-box-pro-ss304-profile-overview.jpg", hardware: "cubicle-systems/base-box-pro/base-box-pro-ss316-hardware-overview.jpg" },
-  float: { profile: "cubicle-systems/flot/flot-profile-overview.jpg", hardware: "cubicle-systems/flot/flot-ss316-hardware-overview.jpg" },
-  "sky-hung": { profile: "cubicle-systems/sky-hung/sky-hung-profile-overview.jpg", hardware: "cubicle-systems/sky-hung/sky-hung-ss316-hardware-overview.jpg" },
+  "base-box": { profile: "cubicle-systems/base-box/base-box-profile-final.png", hardware: "cubicle-systems/base-box/base-box-hardware-final.png" },
+  "base-box-pro": { profile: "cubicle-systems/base-box-pro/base-box-pro-profile-final.png", hardware: "cubicle-systems/base-box-pro/base-box-pro-hardware-final.png" },
+  float: { profile: "cubicle-systems/flot/flot-profile-overview.jpg", hardware: "cubicle-systems/flot/flot-hardware-final.png" },
+  "sky-hung": { profile: "cubicle-systems/sky-hung/sky-hung-profile-overview.jpg", hardware: "cubicle-systems/sky-hung/sky-hung-hardware-final.png" },
 };
 export const juniorAgeBands = [
   {
